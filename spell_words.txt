@@ -1,0 +1,311 @@
+#echo +-------------------------------+
+#echo | SPELL WORDS TRANSLATOR V1.3   |
+#echo | MODIFIED 15.02.2007           |
+#echo | Shows spell name with color ! |
+#echo | Report any bugs by MUDmail,   |
+#echo | thank you ! :)                |
+#echo +-------------------------------+
+#echo #######################
+#echo ### TARMALEN SPELLS ###
+#echo #######################
+#trigger {'blese partina aqua'} {#cw 3;#sub {'blese partina aqua' (Bless ship)}} {SpellWords}
+#trigger {'nilaehz arzocupne'} {#cw 3;#sub {'nilaehz arzocupne' (Blessing of tarmalen)}} {SpellWords}
+#trigger {'juustoa ja pullaa, sita mun maha halajaa'} {#cw 3;#sub {'juustoa ja pullaa, sita mun maha halajaa' (Create food)}} {SpellWords}
+#trigger {'judicandus mangenic'} {#cw 15;#sub {'judicandus mangenic' (Cure critical wounds)}} {SpellWords}
+#trigger {'judicandus mercuree'} {#cw 15;#sub {'judicandus mercuree' (Cure light wounds)}} {SpellWords}
+#trigger {'freudemas egoid'} {#cw 3;#sub {'freudemas egoid' (Cure player)}} {SpellWords}
+#trigger {'judicandus ignius'} {#cw 15;#sub {'judicandus ignius' (Cure serious wounds)}} {SpellWords}
+#trigger {'nilaehz temnahecne'} {#cw 8;#sub {'nilaehz temnahecne' (Curse of tarmalen)}} {SpellWords}
+#trigger {'mumbo jumbo'} {#cw 3;#sub {'mumbo jumbo' (Deaths door)}} {SpellWords}
+#trigger {'annihilar hzzz golum'} {#cw 3;#sub {'annihilar hzzz golum' (Detect alignment)}} {SpellWords}
+#trigger {'misery ior noctar report'} {#cw 3;#sub {'misery ior noctar report' (Detect misery)}} {SpellWords}
+#echo Enhanced vitality
+#trigger {'Judicandee iocus merciaa Tarmalen'} {#cw 3;#sub {'Judicandee iocus merciaa Tarmalen' (Guardian angel)}} {SpellWords}
+#trigger {'koko mudi kuntoon, hep'} {#cw 15;#sub {'koko mudi kuntoon, hep' (Heal all)}} {SpellWords}
+#trigger {'Avee Alee adudaaa..'} {#cw 3;#sub {'Avee Alee adudaaa..' (Holy way)}} {SpellWords}
+#trigger {'Impuqueto es Bien'} {#cw 3;#sub {'Impuqueto es Bien' (Lessen poison)}} {SpellWords}
+#trigger {'Corporem Connecticut Corporee'} {#cw 3;#sub {'Corporem Connecticut Corporee' (Life link)}} {SpellWords}
+#trigger {'ful'} {#cw 3;#sub {'ful' (Light)}} {SpellWords}
+#trigger {'judicandus pafzarmus'} {#cw 15;#sub {'judicandus pafzarmus' (Major heal)}} {SpellWords}
+#trigger {'judicandus puorgo mangenic'} {#cw 15;#sub {'judicandus puorgo mangenic' (Major party heal)}} {SpellWords}
+#trigger {'judicandus pzarcumus'} {#cw 15;#sub {'judicandus pzarcumus' (Minor heal)}} {SpellWords}
+#trigger {'judicandus puorgo ignius'} {#cw 15;#sub {'judicandus puorgo ignius' (Minor party heal)}} {SpellWords}
+#trigger {'daaa timaaa of daaa maaanth'} {#cw 3;#sub {'daaa timaaa of daaa maaanth' (Moon sense)}} {SpellWords}
+#trigger {'Naturallis Judicandus Imellys'} {#cw 3;#sub {'Naturallis Judicandus Imellys' (Natural renewal)}} {SpellWords}
+#trigger {'corpus novus foobar'} {#cw 3;#sub {'corpus novus foobar' (New body)}} {SpellWords}
+#trigger {'vokinsalak elfirtluassa'} {#cw 3;#sub {'vokinsalak elfirtluassa' (Raise dead)}} {SpellWords}
+#trigger {'judicandus saugaiii'} {#cw 15;#sub {'judicandus saugaiii' (Remove poison)}} {SpellWords}
+#trigger {'lkzaz zueei enz orn'} {#cw 3;#sub {'lkzaz zueei enz orn' (Remove scar)}} {SpellWords}
+#trigger {'Siwa on selvaa saastoa.'} {#cw 3;#sub {'Siwa on selvaa saastoa.' (Restore)}} {SpellWords}
+#trigger {'tuo fo wen stanhc'} {#cw 3;#sub {'tuo fo wen stanhc' (Resurrect)}} {SpellWords}
+#trigger {'Creo Herbamus Satisfus'} {#cw 3;#sub {'Creo Herbamus Satisfus' (Satiate person)}} {SpellWords}
+#trigger {'ogyawaelbirroh'} {#cw 3;#sub {'ogyawaelbirroh' (See the light)}} {SpellWords}
+#trigger {'likz az zurgeeon'} {#cw 3;#sub {'likz az zurgeeon' (Sex change)}} {SpellWords}
+#trigger {'naxanhar hecnatemne'} {#cw 3;#sub {'naxanhar hecnatemne' (Soul hold)}} {SpellWords}
+#trigger {'gwwaaajj'} {#cw 3;#sub {'gwwaaajj' (Summon)}} {SpellWords}
+#trigger {'judicandus zapracus'} {#cw 15;#sub {'judicandus zapracus' (True heal)}} {SpellWords}
+#trigger {'judicandus eurto mangenic'} {#cw 15;#sub {'judicandus eurto mangenic' (True party heal)}} {SpellWords}
+#trigger {'harnaxan temnahecne'} {#cw 3;#sub {'harnaxan temnahecne' (Unpain)}} {SpellWords}
+#trigger {'Paxus'} {#cw 3;#sub {'Paxus' (Unstun)}} {SpellWords}
+#trigger {'Jeeeeeeeeeeeesuuuuuuuus'} {#cw 3;#sub {'Jeeeeeeeeeeeesuuuuuuuus' (Water walking)}} {SpellWords}
+#trigger {'vole love velo levo'} {#cw 3;#sub {'vole love velo levo' (Word of recall)}} {SpellWords}
+#echo #########################
+#echo ### PSIONICIST SPELLS ###
+#echo #########################
+#trigger {'fooohh haaahhh booooloooooh'} {#cw 3;#sub {'fooohh haaahhh booooloooooh' (Aura detection)}} {SpellWords}
+#trigger {'na ful'} {#cw 3;#sub {'na ful' (Darkness)}} {SpellWords}
+#trigger {'transformaticus minimus'} {#cw 3;#sub {'transformaticus minimus' (Feather weight)}} {SpellWords}
+#trigger {'wheeeaaaaaa oooooo'} {#cw 9;#sub {'wheeeaaaaaa oooooo' (Field of fear)}} {SpellWords}
+#trigger {'lentavia lauseita'} {#cw 3;#sub {'lentavia lauseita' (Floating letters)}} {SpellWords}
+#trigger {'xulu tango charlie'} {#cw 9;#sub {'xulu tango charlie' (Force dome)}} {SpellWords}
+#trigger {'thoiiiiiisss huuuiahashn'} {#cw 9;#sub {'thoiiiiiisss huuuiahashn' (Force shield)}} {SpellWords}
+#trigger {'sulta taiat pois, mulle hyva mieli taikadaikaduu'} {#cw 9;#sub {'sulta taiat pois, mulle hyva mieli taikadaikaduu' (Forget)}} {SpellWords}
+#trigger {'judicandus littleee'} {#cw 15;#sub {'judicandus littleee' (Heal self)}} {SpellWords}
+#trigger {'..... .... ... .. .  .!'} {#cw 3;#sub {'..... .... ... .. .  .!' (Invisibility)}} {SpellWords}
+#trigger {'nostaaaanndiz noszum'} {#cw 3;#sub {'nostaaaanndiz noszum' (Iron will)}} {SpellWords}
+#trigger {'ful'} {#cw 3;#sub {'ful' (Light)}} {SpellWords}
+#trigger {'vaxtextraktdryck'} {#cw 9;#sub {'vaxtextraktdryck' (Mental glance)}} {SpellWords}
+#trigger {'kakakaaa tsooon'} {#cw 9;#sub {'kakakaaa tsooon' (Mental watch)}} {SpellWords}
+#trigger {'omm zur fehh'} {#cw 9;#sub {'omm zur fehh' (Mind blast)}} {SpellWords}
+#trigger {'Annatheer graaweizta'} {#cw 9;#sub {'Annatheer graaweizta' (Mind development)}} {SpellWords}
+#trigger {'omm mar nak semen'} {#cw 9;#sub {'omm mar nak semen' (Mind disruption)}} {SpellWords}
+#trigger {'memono locati'} {#cw 9;#sub {'memono locati' (Mind store)}} {SpellWords}
+#trigger {'diir mieelis sxil miarr mieelin'} {#cw 9;#sub {'diir mieelis sxil miarr mieelin' (Mindseize)}} {SpellWords}
+#trigger {'peilikuvia ja lasinsirpaleita'} {#cw 3;#sub {'peilikuvia ja lasinsirpaleita' (Mirror image)}} {SpellWords}
+#trigger {'vorek ky taree'} {#cw 9;#sub {'vorek ky taree' (Paralyze)}} {SpellWords}
+#trigger {'xafe uurthq'} {#cw 3;#sub {'xafe uurthq' (Phaze shift/Relocate)}} {SpellWords}
+#trigger {'omm zur semen'} {#cw 9;#sub {'omm zur semen' (Psi blast)}} {SpellWords}
+#trigger {'omm zur sanc'} {#cw 9;#sub {'omm zur sanc' (Psibolt)}} {SpellWords}
+#trigger {'niihek atierapip aj niiramaan aaffaj'} {#cw 9;#sub {'niihek atierapip aj niiramaan aaffaj' (Psionic shield)}} {SpellWords}
+#trigger {'tora tora tora'} {#cw 9;#sub {'tora tora tora' (Psychic crush)}} {SpellWords}
+#trigger {'aamad ato naav aanarub atyak ala'} {#cw 9;#sub {'aamad ato naav aanarub atyak ala' (Psychic purge)}} {SpellWords}
+#trigger {'toughen da mind reeez un biis'} {#cw 9;#sub {'toughen da mind reeez un biis' (Psychic sanctuary)}} {SpellWords}
+#trigger {'omm zur semen gnatlnamauch'} {#cw 9;#sub {'omm zur semen gnatlnamauch' (Psychic shout)}} {SpellWords}
+#trigger {'omm mar nak grttzt gnatlnamauch'} {#cw 9;#sub {'omm mar nak grttzt gnatlnamauch' (Psychic storm)}} {SpellWords}
+#trigger {'moon fiksu, soot tyhma - opi tasta taika'} {#cw 9;#sub {'moon fiksu, soot tyhma - opi tasta taika' (Spellteaching)}} {SpellWords}
+#trigger {'BBBBOOOOOO!!!!'} {#cw 9;#sub {'BBBBOOOOOO!!!!' (Terror)}} {SpellWords}
+#trigger {'jakki makupala'} {#cw 9;#sub {'jakki makupala' (There not there)}} {SpellWords}
+#trigger {'nihenuak assaam no nek orrek'} {#cw 9;#sub {'nihenuak assaam no nek orrek' (Transmute self)}} {SpellWords}
+#trigger {'ragus on etsat mumixam!'} {#cw 9;#sub {'ragus on etsat mumixam!' (Unstable mutation)}} {SpellWords}
+#echo ##########################
+#echo ### CHANNELLERS SPELLS ###
+#echo ##########################
+#trigger {'Give my creation life!!'} {#cw 3;#sub {'Give my creation life!!' (Animate golem)}} {SpellWords}
+#trigger {'shar ryo den...Haa!'} {#cw 13;#sub {'shar ryo den...Haa!' (Channelball)}} {SpellWords}
+#trigger {'tsaibaa'} {#cw 14;#sub {'tsaibaa' (Channelbolt)}} {SpellWords}
+#trigger {'grhagrhagrhagrah gra gra Hyaa!'} {#cw 6;#sub {'grhagrhagrhagrah gra gra Hyaa!' (Channelburn)}} {SpellWords}
+#trigger {'lecaps meeb nonnock'} {#cw 13;#sub {'lecaps meeb nonnock' (Channelray)}} {SpellWords}
+#trigger {'grinurb sdan imflagrum'} {#cw 6;#sub {'grinurb sdan imflagrum' (Channelspray)}} {SpellWords}
+#trigger {'greeeenie fiiingerie'} {#cw 3;#sub {'greeeenie fiiingerie' (Create herb)}} {SpellWords}
+#trigger {'na ful'} {#cw 3;#sub {'na ful' (Darkness)}} {SpellWords}
+#trigger {'enfuego delmigo'} {#cw 3;#sub {'enfuego delmigo' (Drain ally)}} {SpellWords}
+#trigger {'enfuego delvivendo'} {#cw 13;#sub {'enfuego delvivendo' (Drain enemy)}} {SpellWords}
+#trigger {'enfuego delcosa'} {#cw 3;#sub {'enfuego delcosa' (Drain item)}} {SpellWords}
+#trigger {'enfuegome delterra'} {#cw 3;#sub {'enfuegome delterra' (Drain room)}} {SpellWords}
+#trigger {'hhhnnnnnrrrrraaahhh!!'} {#cw 6;#sub {'hhhnnnnnrrrrraaahhh!!' (Energy aura)}} {SpellWords}
+#trigger {'hnnn....Urrgggg.....RRAAHH!!!'} {#cw 4;#sub {'hnnn....Urrgggg.....RRAAHH!!!' (Energy aura)}} {SpellWords}
+#trigger {'RRRRAAAAAHHRRRRGGGGGGHHH!!!!!'} {#cw 1;#sub {'RRRRAAAAAHHRRRRGGGGGGHHH!!!!!' (Energy aura)}} {SpellWords}
+#trigger {'incantar enfeugo aggriva'} {#cw 3;#sub {'incantar enfeugo aggriva' (Energy vortex)}} {SpellWords}
+#trigger {'transformaticus minimus'} {#cw 3;#sub {'transformaticus minimus' (Feather weight)}} {SpellWords}
+#trigger {'fah zur sanc'} {#cw 6;#sub {'fah zur sanc' (Firebolt)}} {SpellWords}
+#trigger {'fah zur fehh'} {#cw 6;#sub {'fah zur fehh' (Flame arrow)}} {SpellWords}
+#trigger {'rise Rise RISE'} {#cw 3;#sub {'rise Rise RISE' (Floating)}} {SpellWords}
+#trigger {'shalambala shoashu'} {#cw 15;#sub {'shalambala shoashu' (Golem heal)}} {SpellWords}
+#trigger {'vas na ful'} {#cw 3;#sub {'vas na ful' (Greater darkness)}} {SpellWords}
+#trigger {'vas ful'} {#cw 3;#sub {'vas ful' (Greater light)}} {SpellWords}
+#trigger {'mega visa huijari'} {#cw 3;#sub {'mega visa huijari' (Identify)}} {SpellWords}
+#trigger {'h'njya'} {#cw 3;#sub {'h'njya' (Item dispersion shield)}} {SpellWords}
+#trigger {'ful'} {#cw 3;#sub {'ful' (Light)}} {SpellWords}
+#trigger {'zot zur sanc'} {#cw 14;#sub {'zot zur sanc' (Lightning bolt)}} {SpellWords}
+#trigger {'gtzt zur fehh'} {#cw 13;#sub {'gtzt zur fehh' (Magic missile)}} {SpellWords}
+#trigger {'riljya'} {#cw 3;#sub {'riljya' (Personal force field)}} {SpellWords}
+#trigger {'enfuego delyo'} {#cw 3;#sub {'enfuego delyo' (Replenish ally)}} {SpellWords}
+#trigger {'ahne paskianen olen ma kun taikuutta nahda tahdon'} {#cw 3;#sub {'ahne paskianen olen ma kun taikuutta nahda tahdon' (See magic)}} {SpellWords}
+#trigger {'zot zur fehh'} {#cw 14;#sub {'zot zur fehh' (Shocking grasp)}} {SpellWords}
+#trigger {'gwwaaajj'} {#cw 3;#sub {'gwwaaajj' (Summon)}} {SpellWords}
+#trigger {'gtzt zur sanc'} {#cw 13;#sub {'gtzt zur sanc' (Summon lesser spores)}} {SpellWords}
+#trigger {'insignificus et gargantum alternos'} {#cw 3;#sub {'insignificus et gargantum alternos' (Transfor golem)}} {SpellWords}
+#echo ######################
+#echo ### TEMPLAR SPELLS ###
+#echo ######################
+#trigger {'Faerwon, grant your favor!'} {#cw 3;#sub {'Faerwon, grant your favor!' (Bless armament)}} {SpellWords}
+#trigger {'Benedic, Faerwon, nos et haec tua dona quae de tua largitate sumus sumpturi'} {#cw 3;#sub {'Benedic, Faerwon, nos et haec tua dona quae de tua largitate sumus sumpturi' (Blessing of faerwon)}} {SpellWords}
+#trigger {'annihilar hzzz golum'} {#cw 3;#sub {'annihilar hzzz golum' (Detect alignment)}} {SpellWords}
+#trigger {'In the name of Faerwon, make this shield stronger'} {#cw 3;#sub {'In the name of Faerwon, make this shield stronger' (Divine enhancement)}} {SpellWords}
+#trigger {'Renew our strength'} {#cw 3;#sub {'Renew our strength' (Laying on hands)}} {SpellWords}
+#trigger {'ful'} {#cw 3;#sub {'ful' (Light)}} {SpellWords}
+#trigger {'judicandus saugaiii'} {#cw 15;#sub {'judicandus saugaiii' (Remove poison)}} {SpellWords}
+#trigger {'Grant your worshipper your protection'} {#cw 3;#sub {'Grant your worshipper your protection' (Shield of faith)}} {SpellWords}
+#echo ######################
+#echo ### PRIESTS SPELLS ###
+#echo ######################
+#trigger {'yugzhrr paf'} {#cw 8;#sub {'yugzhrr paf' (Aneurysm)}} {SpellWords}
+#trigger {'Feel your anger and strike with all your hatred. Use your aggressive feelings and let the hate flow through you.'} {#cw 8;#sub {'Feel your anger and strike with all your hatred. Use your aggressive feelings and let the hate flow through you.' (Aura of hate)}} {SpellWords}
+#trigger {'Bastage'} {#cw 8;#sub {'Bastage' (Bastardly balm)}} {SpellWords}
+#trigger {'rhuuuumm angotz klekltz'} {#cw 8;#sub {'rhuuuumm angotz klekltz' (Cause critical wounds)}} {SpellWords}
+#trigger {'tosi pieni neula'} {#cw 8;#sub {'tosi pieni neula' (Cause light wounds)}} {SpellWords}
+#trigger {'rhuuuumm angotz amprltz'} {#cw 8;#sub {'rhuuuumm angotz amprltz' (Cause serious wounds)}} {SpellWords}
+#trigger {'judicandus mangenic'} {#cw 15;#sub {'judicandus mangenic' (Cure light wounds)}} {SpellWords}
+#trigger {'judicandus ignius'} {#cw 15;#sub {'judicandus ignius' (Cure serious wounds)}} {SpellWords}
+#trigger {'Gawd DAMN IT!'} {#cw 3;#sub {'Gawd DAMN IT!' (Damn armament)}} {SpellWords}
+#trigger {'annihilar hzzz golum'} {#cw 3;#sub {'annihilar hzzz golum' (Detect alignment)}} {SpellWords}
+#trigger {'whoosy banzziii pal eeeiizz dooneb'} {#cw 8;#sub {'whoosy banzziii pal eeeiizz dooneb' (Dispel good)}} {SpellWords}
+#trigger {'yugfzhrrr suuck suuuuuck suuuuuuuuuuck'} {#cw 8;#sub {'yugfzhrrr suuck suuuuuck suuuuuuuuuuck' (Energy drain)}} {SpellWords}
+#trigger {'flzeeeziiiiying nyyyaaa'} {#cw 3;#sub {'flzeeeziiiiying nyyyaaa' (Go)}} {SpellWords}
+#trigger {'PAF PAF PAF!'} {#cw 8;#sub {'PAF PAF PAF!' (Harm body)}} {SpellWords}
+#trigger {'yugzhrr'} {#cw 8;#sub {'yugzhrr' (Hemorrhage)}} {SpellWords}
+#trigger {'Ab sinestris, mortum demitteri'} {#cw 3;#sub {'Ab sinestris, mortum demitteri' (Last rites)}} {SpellWords}
+#trigger {'viiltaja jaska'} {#cw 8;#sub {'viiltaja jaska' (Make scar)}} {SpellWords}
+#trigger {'I HATE MAGIC'} {#cw 8;#sub {'I HATE MAGIC' (Mana drain)}} {SpellWords}
+#trigger {'Zmasching Pupkins's infanitsadnnes'} {#cw 8;#sub {'Zmasching Pupkins's infanitsadnnes' (Mellon collie)}} {SpellWords}
+#trigger {'buuuummbzdiiiiiibummm'} {#cw 3;#sub {'buuuummbzdiiiiiibummm' (Mobile cannon)}} {SpellWords}
+#trigger {'corpus novus foobar'} {#cw 3;#sub {'corpus novus foobar' (New body)}} {SpellWords}
+#trigger {'Harken to me and hear my plea, disease is what I call to thee'} {#cw 8;#sub {'Harken to me and hear my plea, disease is what I call to thee' (Pestilence)}} {SpellWords}
+#trigger {'Good is dumb'} {#cw 3;#sub {'Good is dumb' (Protection from good)}} {SpellWords}
+#trigger {'vokinsalak elfirtluassa'} {#cw 3;#sub {'vokinsalak elfirtluassa' (Raise dead)}} {SpellWords}
+#trigger {'tuo fo wen stanhc'} {#cw 3;#sub {'tuo fo wen stanhc' (Resurrect)}} {SpellWords}
+#trigger {'With this ring, i do deconsecrate thee'} {#cw 8;#sub {'With this ring, i do deconsecrate thee' (Unholy matrimony)}} {SpellWords}
+#echo ####################
+#echo ### TIGER SPELLS ###
+#echo ####################
+#trigger {'tamakan natelo assim'} {#cw 3;#sub {'tamakan natelo assim' (All-seeing eye)}} {SpellWords}
+#trigger {'judicandus mercuree'} {#cw 15;#sub {'judicandus mercuree' (Cure light wounds)}} {SpellWords}
+#trigger {'na ful'} {#cw 3;#sub {'na ful' (Darkness)}} {SpellWords}
+#trigger {'Polo Polomii'} {#cw 6;#sub {'Polo Polomii' (Flame fists)}} {SpellWords}
+#trigger {'sakenoivasta voimasta'} {#cw 3;#sub {'sakenoivasta voimasta' (Haste)}} {SpellWords}
+#trigger {'demoni on pomoni'} {#cw 3;#sub {'demoni on pomoni' (Infravision)}} {SpellWords}
+#trigger {'..... .... ... .. .  .!'} {#cw 3;#sub {'..... .... ... .. .  .!' (Invisibility)}} {SpellWords}
+#trigger {'jumpiiz laika wabbitzz'} {#cw 3;#sub {'jumpiiz laika wabbitzz' (Quicksilver)}} {SpellWords}
+#trigger {dra(*) a large circle to the air with (*) 'Haii!'} {#cw 3;#sub {dra%1 a large circle to the air with %2 'Haii!' (Shadow leap)}} {SpellWords}
+#trigger {shre(*) air with (*) 'Haii!'} {#cw 8;#sub {shre%1 air with %2 'Haii!' (Tiger claw)}} {SpellWords}
+#trigger {'Tiger Power!'} {#cw 3;#sub {'Tiger Power!' (Tiger mask)}} {SpellWords}
+#trigger {'Jeeeeeeeeeeeesuuuuuuuus'} {#cw 3;#sub {'Jeeeeeeeeeeeesuuuuuuuus' (Water walking)}} {SpellWords}
+#echo ########################
+#echo ### NAVIGATOR SPELLS ###
+#echo ########################
+#trigger {'havia kauhistus pois'} {#cw 3;#sub {'havia kauhistus pois' (Banish)}} {SpellWords}
+#trigger {'prtolala offf pwerrrr'} {#cw 3;#sub {'prtolala offf pwerrrr' (Dimension door)}} {SpellWords}
+#trigger {'flzeeeziiiiying nyyyaaa'} {#cw 3;#sub {'flzeeeziiiiying nyyyaaa' (Go)}} {SpellWords}
+#trigger {'etheria aquariq nihilz'} {#cw 3;#sub {'etheria aquariq nihilz' (Goto ship)}} {SpellWords}
+#trigger {'tonnikalaa'} {#cw 3;#sub {'tonnikalaa' (Heavy weight)}} {SpellWords}
+#trigger {'buuuummbzdiiiiiibummm'} {#cw 3;#sub {'buuuummbzdiiiiiibummm' (Mobile cannon)}} {SpellWords}
+#trigger {'xafe uurthq'} {#cw 3;#sub {'xafe uurthq' (Relocate)}} {SpellWords}
+#echo rune of warding
+#trigger {'gwwaaajj'} {#cw 3;#sub {'gwwaaajj' (Summon)}} {SpellWords}
+#trigger {'xafe xyyqh xckgandhuzqarr'} {#cw 3;#sub {'xafe xyyqh xckgandhuzqarr' (Teleport with error)}} {SpellWords}
+#trigger {'xafe ayz xckgandhuzqarr'} {#cw 3;#sub {'xafe ayz xckgandhuzqarr' (Teleport without error)}} {SpellWords}
+#trigger {'mad rad dar'} {#cw 3;#sub {'mad rad dar' (Wizard eye)}} {SpellWords}
+#trigger {'vole love velo levo'} {#cw 3;#sub {'vole love velo levo' (Word of recall)}} {SpellWords}
+#echo #####################
+#echo ### SPIDER SPELLS ###
+#echo #####################
+#trigger {'tonnikalaa'} {#cw 3;#sub {'tonnikalaa' (Heavy weight)}} {SpellWords}
+#trigger {'Khizanth Arachnidus Vitalis'} {#cw 3;#sub {'Khizanth Arachnidus Vitalis' (Hunger of the spider)}} {SpellWords}
+#trigger {'demoni on pomoni'} {#cw 3;#sub {'demoni on pomoni' (Infravision)}} {SpellWords}
+#trigger {'saugaiii'} {#cw 10;#sub {'saugaiii' (Poison)}} {SpellWords}
+#trigger {'ddt ddt ddt is good for you and me!'} {#cw 10;#sub {'ddt ddt ddt is good for you and me!' (Poison cloud)}} {SpellWords}
+#trigger {'Khizanth Arachnidus Satisfusmus'} {#cw 3;#sub {'Khizanth Arachnidus Satisfusmus' (Prayer to the spider queen)}} {SpellWords}
+#trigger {'judicandus saugaiii'} {#cw 15;#sub {'judicandus saugaiii' (Remove poison)}} {SpellWords}
+#trigger {'infernalicus thanatos arachnidos'} {#cw 3;#sub {'infernalicus thanatos arachnidos' (Spider demon banishment)}} {SpellWords}
+#trigger {'infernalicus nexus arachnid rex'} {#cw 3;#sub {'infernalicus nexus arachnid rex' (Spider demon channeling)}} {SpellWords}
+#trigger {'arachnid infernalicus arachnoidus demonicus'} {#cw 3;#sub {'arachnid infernalicus arachnoidus demonicus' (Spider demon conjuration)}} {SpellWords}
+#trigger {'infernalicus domus arachnid rex'} {#cw 3;#sub {'infernalicus domus arachnid rex' (Spider demon control)}} {SpellWords}
+#trigger {'Khirsah Zokant Arachnidus'} {#cw 3;#sub {'Khirsah Zokant Arachnidus' (Spider demon inquiry)}} {SpellWords}
+#trigger {'infernalicus domus arachnid rex magnos'} {#cw 3;#sub {'infernalicus domus arachnid rex magnos' (Spider demon mass sacrifice)}} {SpellWords}
+#trigger {'infernalicus domus arachnid rex'} {#cw 3;#sub {'infernalicus domus arachnid rex' (Spider demon sacrifice)}} {SpellWords}
+#trigger {'infernalicus intellegus arachnidos'} {#cw 3;#sub {'infernalicus intellegus arachnidos' (Spider eye)}} {SpellWords}
+#trigger {'Khirsah Khazanth Arachinidus'} {#cw 3;#sub {'Khirsah Khazanth Arachinidus' (Spider gate)}} {SpellWords}
+#trigger {'infernalicus claravonticus arachnidos'} {#cw 3;#sub {'infernalicus claravonticus arachnidos' (Spider gaze)}} {SpellWords}
+#trigger {'infernalicus conjuratis arachnidos'} {#cw 3;#sub {'infernalicus conjuratis arachnidos' (Spider servant)}} {SpellWords}
+#trigger {'Khizanth Arachnidus Diametricus'} {#cw 3;#sub {'Khizanth Arachnidus Diametricus' (Spider touch)}} {SpellWords}
+#trigger {'Khizanth Arachnidus Walkitus'} {#cw 3;#sub {'Khizanth Arachnidus Walkitus' (Spider walk)}} {SpellWords}
+#trigger {'infernalicus thanatos arachnidos'} {#cw 3;#sub {'infernalicus thanatos arachnidos' (Spider web)}} {SpellWords}
+#trigger {'Khizanth Arachnidus Iracundus'} {#cw 10;#sub {'Khizanth Arachnidus Iracundus' (Spider wrath)}} {SpellWords}
+#trigger {'morri nam pantoloosa'} {#cw 3;#sub {'morri nam pantoloosa' (Toxic dilution)}} {SpellWords}
+#trigger {'May this become the blood of the Spider queen'} {#cw 3;#sub {'May this become the blood of the Spider queen' (Venom blade)}} {SpellWords}
+#echo ###################
+#echo ### MAGE SPELLS ###
+#echo ###################
+#trigger {'fzz zur semen'} {#cw 2;#sub {'fzz zur semen' (Acid arrow)}} {SpellWords}
+#trigger {'fzz mar nak grttzt'} {#cw 2;#sub {'fzz mar nak grttzt' (Acid blast)}} {SpellWords}
+#trigger {'fzz zur sanc gnatlnamauch'} {#cw 2;#sub {'fzz zur sanc gnatlnamauch' (Acid rain)}} {SpellWords}
+#trigger {'fzz mar nak semen'} {#cw 2;#sub {'fzz mar nak semen' (Acid ray)}} {SpellWords}
+#trigger {'fzz mar nak semen gnatlnamauch'} {#cw 2;#sub {'fzz mar nak semen gnatlnamauch' (Acid storm)}} {SpellWords}
+#trigger {'fzz zur sanc'} {#cw 2;#sub {'fzz zur sanc' (Acid wind)}} {SpellWords}
+#trigger {'zot zur semen'} {#cw 14;#sub {'zot zur semen' (Blast lightning)}} {SpellWords}
+#trigger {'ghht mar nak grttzt'} {#cw 5;#sub {'ghht mar nak grttzt' (Blast vacuum)}} {SpellWords}
+#trigger {'zot zur sanc gnatlnamauch'} {#cw 14;#sub {'zot zur sanc gnatlnamauch' (Chain lightning)}} {SpellWords}
+#trigger {'ghht zur semen'} {#cw 5;#sub {'ghht zur semen' (Chaos bolt)}} {SpellWords}
+#trigger {'cah zur fehh'} {#cw 11;#sub {'cah zur fehh' (Chill touch)}} {SpellWords}
+#trigger {'cah mar nak grttzt'} {#cw 11;#sub {'cah mar nak grttzt' (Cold ray)}} {SpellWords}
+#trigger {'cah zur semen gnatlnamauch'} {#cw 11;#sub {'cah zur semen gnatlnamauch' (Cone of cold)}} {SpellWords}
+#trigger {'cah zur semen'} {#cw 11;#sub {'cah zur semen' (Darkfire)}} {SpellWords}
+#trigger {'na ful'} {#cw 3;#sub {'na ful' (Darkness)}} {SpellWords}
+#trigger {'kewa dan dol rae hout'} {#cw 3;#sub {'kewa dan dol rae hout' (Degenerate person)}} {SpellWords}
+#trigger {'prtolala offf pwerrrr'} {#cw 3;#sub {'prtolala offf pwerrrr' (Dimension door)}} {SpellWords}
+#echo Disrupt magic
+#trigger {'fzz zur fehh'} {#cw 2;#sub {'fzz zur fehh' (Disruption)}} {SpellWords}
+#trigger {'zot mar nak grttzt'} {#cw 14;#sub {'zot mar nak grttzt' (Electrocution)}} {SpellWords}
+#trigger {'isar avatap patyan'} {#cw 3;#sub {'isar avatap patyan' (Enhance vision)}} {SpellWords}
+#trigger {'suomen hoyhen'} {#cw 3;#sub {'suomen hoyhen' (Feather weight)}} {SpellWords}
+#trigger {'fah zur semen'} {#cw 6;#sub {'fah zur semen' (Fire blast)}} {SpellWords}
+#trigger {'fah zur sanc'} {#cw 6;#sub {'fah zur sanc' (Firebolt)}} {SpellWords}
+#trigger {'fah zur fehh'} {#cw 6;#sub {'fah zur fehh' (Flame arrow)}} {SpellWords}
+#trigger {'cah zur sanc'} {#cw 11;#sub {'cah zur sanc' (Flaming ice)}} {SpellWords}
+#trigger {'rise Rise RISE'} {#cw 3;#sub {'rise Rise RISE' (Floating)}} {SpellWords}
+#trigger {'lentavia lauseita'} {#cw 3;#sub {'lentavia lauseita' (Floating letters)}} {SpellWords}
+#trigger {'zot mar nak semen'} {#cw 14;#sub {'zot mar nak semen' (Forked lightning)}} {SpellWords}
+#trigger {'gtzt mar nak grttzt'} {#cw 13;#sub {'gtzt mar nak grttzt' (Golden arrow)}} {SpellWords}
+#trigger {'vas na ful'} {#cw 3;#sub {'vas na ful' (Greater darkness)}} {SpellWords}
+#trigger {'vas ful'} {#cw 3;#sub {'vas ful' (Greater light)}} {SpellWords}
+#trigger {'cah mar nak grttzt gnatlnamauch'} {#cw 11;#sub {'cah mar nak grttzt gnatlnamauch' (Hailstorm)}} {SpellWords}
+#trigger {'judicandus littleee'} {#cw 15;#sub {'judicandus littleee' (Heal self)}} {SpellWords}
+#trigger {'tonnikalaa'} {#cw 3;#sub {'tonnikalaa' (Heavy weight)}} {SpellWords}
+#trigger {'cah mar nak semen'} {#cw 11;#sub {'cah mar nak semen' (Icebolt)}} {SpellWords}
+#trigger {'..... .... ... .. . .!'} {#cw 3;#sub {'..... .... ... .. . .!' (Invisibility)}} {SpellWords}
+#trigger {'krkx mar nak semen gnatlnamauch'} {#cw 10;#sub {'krkx mar nak semen gnatlnamauch' (Killing cloud)}} {SpellWords}
+#trigger {'fah mar nak grttzt'} {#cw 6;#sub {'fah mar nak grttzt' (Lava blast)}} {SpellWords}
+#trigger {'fah mar nak grttzt gnatlnamauch'} {#cw 6;#sub {'fah mar nak grttzt gnatlnamauch' (Lava storm)}} {SpellWords}
+#trigger {'gtzt zur semen'} {#cw 13;#sub {'gtzt zur semen' (Levin bolt)}} {SpellWords}
+#trigger {'ful'} {#cw 3;#sub {'ful' (Light)}} {SpellWords}
+#trigger {'zot zur sanc'} {#cw 14;#sub {'zot zur sanc' (Lightning bolt)}} {SpellWords}
+#trigger {'zot mar nak semen gnatlnamauch'} {#cw 14;#sub {'zot mar nak semen gnatlnamauch' (Lightning storm)}} {SpellWords}
+#trigger {'gtzt mar nak semen gnatlnamauch'} {#cw 13;#sub {'gtzt mar nak semen gnatlnamauch' (Magic eruption)}} {SpellWords}
+#trigger {'gtzt zur fehh'} {#cw 13;#sub {'gtzt zur fehh' (Magic missile)}} {SpellWords}
+#trigger {'gtzt zur semen gnatlnamauch'} {#cw 13;#sub {'gtzt zur semen gnatlnamauch' (Magic wave)}} {SpellWords}
+#trigger {'fah mar nak semen'} {#cw 6;#sub {'fah mar nak semen' (Meteor blast)}} {SpellWords}
+#trigger {'fah zur sanc gnatlnamauch'} {#cw 6;#sub {'fah zur sanc gnatlnamauch' (Meteor swarm)}} {SpellWords}
+#trigger {'peilikuvia ja lasinsirpaleita'} {#cw 3;#sub {'peilikuvia ja lasinsirpaleita' (Mirror image)}} {SpellWords}
+#trigger {'daaa timaaa of daaa maaanth'} {#cw 3;#sub {'daaa timaaa of daaa maaanth' (Moon sense)}} {SpellWords}
+#trigger {'krkx zur sanc'} {#cw 10;#sub {'krkx zur sanc' (Poison blast)}} {SpellWords}
+#trigger {'krkx zur sanc gnatlnamauch'} {#cw 10;#sub {'krkx zur sanc gnatlnamauch' (Poison spray)}} {SpellWords}
+#trigger {'krkx mar nak semen'} {#cw 10;#sub {'krkx mar nak semen' (Power blast)}} {SpellWords}
+#trigger {'xafe uurthq'} {#cw 3;#sub {'xafe uurthq' (Relocate)}} {SpellWords}
+#trigger {'zot zur fehh'} {#cw 14;#sub {'zot zur fehh' (Shocking grasp)}} {SpellWords}
+#trigger {'ghht mar nak semen'} {#cw 5;#sub {'ghht mar nak semen' (Strangulation)}} {SpellWords}
+#trigger {'ghht zur sanc'} {#cw 5;#sub {'ghht zur sanc' (Suffocation)}} {SpellWords}
+#trigger {'gwwaaajj'} {#cw 3;#sub {'gwwaaajj' (Summon)}} {SpellWords}
+#trigger {'krkx mar nak grttzt'} {#cw 10;#sub {'krkx mar nak grttzt' (Summon carnal spores)}} {SpellWords}
+#trigger {'gtzt mar nak semen'} {#cw 13;#sub {'gtzt mar nak semen' (Summon greater spores)}} {SpellWords}
+#trigger {'gtzt zur sanc'} {#cw 13;#sub {'gtzt zur sanc' (Summon lesser spores)}} {SpellWords}
+#trigger {'xafe xyyqh xckgandhuzqarr'} {#cw 3;#sub {'xafe xyyqh xckgandhuzqarr' (Teleport with error)}} {SpellWords}
+#trigger {'xafe ayz xckgandhuzqarr'} {#cw 3;#sub {'xafe ayz xckgandhuzqarr' (Teleport without error)}} {SpellWords}
+#trigger {'krkx zur fehh'} {#cw 10;#sub {'krkx zur fehh' (Thorn spray)}} {SpellWords}
+#trigger {''} {#cw 3;#sub {'' (Uncontrollable hideous laughter)}} {SpellWords}
+#trigger {'ghht zur sanc gnatlnamauch'} {#cw 5;#sub {'ghht zur sanc gnatlnamauch' (Vacuum ball)}} {SpellWords}
+#trigger {'ghht mar nak semen gnatlnamauch'} {#cw 5;#sub {'ghht mar nak semen gnatlnamauch' (Vacuum globe)}} {SpellWords}
+#trigger {'ghht zur fehh'} {#cw 5;#sub {'ghht zur fehh' (Vacuumbolt)}} {SpellWords}
+#trigger {'krkx zur semen'} {#cw 10;#sub {'krkx zur semen' (Venom strike)}} {SpellWords}
+#trigger {'vole love velo levo'} {#cw 3;#sub {'vole love velo levo' (Word of recall)}} {SpellWords}
+#echo ##################
+#echo ### LOC SPELLS ###
+#echo ##################
+#trigger {'fzz zur sanc gnatlnamauch'} {#cw 2;#sub {'fzz zur sanc gnatlnamauch' (Acid rain)}} {SpellWords}
+#echo Aura of chaos
+#trigger {'dsaflk aslfoir'} {#cw 3;#sub {'dsaflk aslfoir' (Blade of fire)}} {SpellWords}
+#trigger {'ghht zur semen'} {#cw 5;#sub {'ghht zur semen' (Chaos bolt)}} {SpellWords}
+#trigger {'weaapytama wezup boomie'} {#cw 3;#sub {'weaapytama wezup boomie' (Chaotic warp)}} {SpellWords}
+#trigger {'na ful'} {#cw 3;#sub {'na ful' (Darkness)}} {SpellWords}
+#trigger {'annihilar hzzz golum'} {#cw 3;#sub {'annihilar hzzz golum' (Detect alignment)}} {SpellWords}
+#trigger {'demoni on pomoni'} {#cw 3;#sub {'demoni on pomoni' (Infravision)}} {SpellWords}
+#trigger {'ahieppa weaapytama nyttemmin'} {#cw 3;#sub {'ahieppa weaapytama nyttemmin' (Summon blade)}} {SpellWords}

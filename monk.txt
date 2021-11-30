@@ -1,0 +1,127 @@
+#echo +------------------------------------+
+#echo | MONK MA HIT COUNTER (V2.1)         |
+#echo | MODIFIED 05.03.2006                |
+#echo | Shows hit count on status window   |
+#echo | or echoes to screen. Select!       |
+#echo | Report any bugs by MUDmail,        |
+#echo | thank you ! :)                     |
+#echo +------------------------------------+
+#echo ### Variables ###
+#var MONKmiss {0} {0} {MONK_Var}
+#var MONKstep {0} {0} {MONK_Var}
+#var MONKkick {0} {0} {MONK_Var}
+#var MONKsmash {0} {0} {MONK_Var}
+#var MONKcirclekick {0} {0} {MONK_Var}
+#var MONKstomp {0} {0} {MONK_Var}
+#var MONKstompkick {0} {0} {MONK_Var}
+#var MONKspinkick {0} {0} {MONK_Var}
+#var MONKlunge {0} {0} {MONK_Var}
+#var MONKattack {0} {0} {MONK_Var}
+#var MONKlegtwist {0} {0} {MONK_Var}
+#var MONKsidekick {0} {0} {MONK_Var}
+#var MONKthud {0} {0} {MONK_Var}
+#var MONKgouge {0} {0} {MONK_Var}
+#var MONKstrike {0} {0} {MONK_Var}
+#var MONKbearhug {0} {0} {MONK_Var}
+#var MONKjumpkick {0} {0} {MONK_Var}
+#var MONKbackkick {0} {0} {MONK_Var}
+#var MONKtotal {0} {0} {MONK_Var}
+#var MONKCstep {0} {0} {MONK_C_Var}
+#var MONKCkick {0} {0} {MONK_C_Var}
+#var MONKCsmash {0} {0} {MONK_C_Var}
+#var MONKCcirclekick {0} {0} {MONK_C_Var}
+#var MONKCstomp {0} {0} {MONK_C_Var}
+#var MONKCstompkick {0} {0} {MONK_C_Var}
+#var MONKCspinkick {0} {0} {MONK_C_Var}
+#var MONKClunge {0} {0} {MONK_C_Var}
+#var MONKCattack {0} {0} {MONK_C_Var}
+#var MONKClegtwist {0} {0} {MONK_C_Var}
+#var MONKCsidekick {0} {0} {MONK_C_Var}
+#var MONKCthud {0} {0} {MONK_C_Var}
+#var MONKCgouge {0} {0} {MONK_C_Var}
+#var MONKCstrike {0} {0} {MONK_C_Var}
+#var MONKCbearhug {0} {0} {MONK_C_Var}
+#var MONKCjumpkick {0} {0} {MONK_C_Var}
+#var MONKCbackkick {0} {0} {MONK_C_Var}
+#var MONKLENmiss {4} {4} {MONK_LEN_Var}
+#var MONKLENstep {4} {4} {MONK_LEN_Var}
+#var MONKLENkick {4} {4} {MONK_LEN_Var}
+#var MONKLENsmash {4} {4} {MONK_LEN_Var}
+#var MONKLENcirclekick {4} {4} {MONK_LEN_Var}
+#var MONKLENstompkick {4} {4} {MONK_LEN_Var}
+#var MONKLENspinkick {4} {4} {MONK_LEN_Var}
+#var MONKLENstomp {4} {4} {MONK_LEN_Var}
+#var MONKLENlunge {4} {4} {MONK_LEN_Var}
+#var MONKLENattack {4} {4} {MONK_LEN_Var}
+#var MONKLENlegtwist {4} {4} {MONK_LEN_Var}
+#var MONKLENsidekick {4} {4} {MONK_LEN_Var}
+#var MONKLENthud {4} {4} {MONK_LEN_Var}
+#var MONKLENgouge {4} {4} {MONK_LEN_Var}
+#var MONKLENstrike {4} {4} {MONK_LEN_Var}
+#var MONKLENbearhug {4} {4} {MONK_LEN_Var}
+#var MONKLENjumpkick {4} {4} {MONK_LEN_Var}
+#var MONKLENbackkick {4} {4} {MONK_LEN_Var}
+#var MONKLENtotal {12} {12} {MONK_LEN_Var}
+#var MONKLENCstep {5} {5} {MONK_LEN_C_Var}
+#var MONKLENCkick {5} {5} {MONK_LEN_C_Var}
+#var MONKLENCsmash {5} {5} {MONK_LEN_C_Var}
+#var MONKLENCcirclekick {5} {5} {MONK_LEN_C_Var}
+#var MONKLENCstompkick {5} {5} {MONK_LEN_C_Var}
+#var MONKLENCspinkick {5} {5} {MONK_LEN_C_Var}
+#var MONKLENCstomp {5} {5} {MONK_LEN_C_Var}
+#var MONKLENClunge {5} {5} {MONK_LEN_C_Var}
+#var MONKLENCattack {5} {5} {MONK_LEN_C_Var}
+#var MONKLENClegtwist {5} {5} {MONK_LEN_C_Var}
+#var MONKLENCsidekick {5} {5} {MONK_LEN_C_Var}
+#var MONKLENCthud {5} {5} {MONK_LEN_C_Var}
+#var MONKLENCgouge {5} {5} {MONK_LEN_C_Var}
+#var MONKLENCstrike {5} {5} {MONK_LEN_C_Var}
+#var MONKLENCbearhug {5} {5} {MONK_LEN_C_Var}
+#var MONKLENCjumpkick {5} {5} {MONK_LEN_C_Var}
+#var MONKLENCbackkick {5} {5} {MONK_LEN_C_Var}
+#echo ### Triggers ###
+#trigger {^You miss} {#ad MONKmiss 1;calcmonkhits;#IF (@MONKmiss < 100 AND @MONKmiss > 9) {#var MONKLENmiss 3} {};#IF (@MONKmiss < 1000 AND @MONKmiss > 99) {#var MONKLENmiss 2} {};#IF (@MONKmiss < 10000 AND @MONKmiss > 999) {#var MONKLENmiss 1} {}} {Monk_Hit}
+#trigger {^You step {^on}} {#ad MONKstep 1;calcmonkhits;#IF (@MONKstep < 100 AND @MONKstep > 9) {#var MONKLENstep 3} {};#IF (@MONKstep < 1000 AND @MONKstep > 99) {#var MONKLENstep 2} {};#IF (@MONKstep < 10000 AND @MONKstep > 999) {#var MONKLENstep 1} {}} {Monk_Hit}
+#trigger {^You kick * {^in the}} {#ad MONKkick 1;calcmonkhits;#IF (@MONKkick < 100 AND @MONKkick > 9) {#var MONKLENkick 3} {};#IF (@MONKkick < 1000 AND @MONKkick > 99) {#var MONKLENkick 2} {};#IF (@MONKkick < 10000 AND @MONKkick > 999) {#var MONKLENkick 1} {}} {Monk_Hit}
+#trigger {^You smash} {#ad MONKsmash 1;calcmonkhits;#IF (@MONKsmash < 100 AND @MONKsmash > 9) {#var MONKLENsmash 3} {};#IF (@MONKsmash < 1000 AND @MONKsmash > 99) {#var MONKLENsmash 2} {};#IF (@MONKsmash < 10000 AND @MONKsmash > 999) {#var MONKLENsmash 1} {}} {Monk_Hit}
+#trigger {^You circle kick} {#ad MONKcirclekick 1;calcmonkhits;#IF (@MONKcirclekick < 100 AND @MONKcirclekick > 9) {#var MONKLENcirclekick 3} {};#IF (@MONKcirclekick < 1000 AND @MONKcirclekick > 99) {#var MONKLENcirclekick 2} {};#IF (@MONKcirclekick < 10000 AND @MONKcirclekick > 999) {#var MONKLENcirclekick 1} {}} {Monk_Hit}
+#trigger {^You stomp } {#ad MONKstomp 1;calcmonkhits;#IF (@MONKstomp < 100 AND @MONKstomp > 9) {#var MONKLENstomp 3} {};#IF (@MONKstomp < 1000 AND @MONKstomp > 99) {#var MONKLENstomp 2} {};#IF (@MONKstomp < 10000 AND @MONKstomp > 999) {#var MONKLENstomp 1} {}} {Monk_Hit}
+#trigger {^You stomp-kick} {#ad MONKstompkick 1;calcmonkhits;#IF (@MONKstompkick < 100 AND @MONKstompkick > 9) {#var MONKLENstompkick 3} {};#IF (@MONKstompkick < 1000 AND @MONKstompkick > 99) {#var MONKLENstompkick 2} {};#IF (@MONKstompkick < 10000 AND @MONKstompkick > 999) {#var MONKLENstompkick 1} {}} {Monk_Hit}
+#trigger {^You spin-kick} {#ad MONKspinkick 1;calcmonkhits;#IF (@MONKspinkick < 100 AND @MONKspinkick > 9) {#var MONKLENspinkick 3} {};#IF (@MONKspinkick < 1000 AND @MONKspinkick > 99) {#var MONKLENspinkick 2} {};#IF (@MONKspinkick < 10000 AND @MONKspinkick > 999) {#var MONKLENspinkick 1} {}} {Monk_Hit}
+#trigger {^You lunge} {#ad MONKlunge 1;calcmonkhits;#IF (@MONKlunge < 100 AND @MONKlunge > 9) {#var MONKLENlunge 3} {};#IF (@MONKlunge < 1000 AND @MONKlunge > 99) {#var MONKLENlunge 2} {};#IF (@MONKlunge < 10000 AND @MONKlunge > 999) {#var MONKLENlunge 1} {}} {Monk_Hit}
+#trigger {^You attack} {#ad MONKattack 1;calcmonkhits;#IF (@MONKattack < 100 AND @MONKattack > 9) {#var MONKLENattack 3} {};#IF (@MONKattack < 1000 AND @MONKattack > 99) {#var MONKLENattack 2} {};#IF (@MONKattack < 10000 AND @MONKattack > 999) {#var MONKLENattack 1} {}} {Monk_Hit}
+#trigger {^You leg-twist} {#ad MONKlegtwist 1;calcmonkhits;#IF (@MONKlegtwist < 100 AND @MONKlegtwist > 9) {#var MONKLENlegtwist 3} {};#IF (@MONKlegtwist < 1000 AND @MONKlegtwist > 99) {#var MONKLENlegtwist 2} {};#IF (@MONKlegtwist < 10000 AND @MONKlegtwist > 999) {#var MONKLENlegtwist 1} {}} {Monk_Hit}
+#trigger {^You side-kick} {#ad MONKsidekick 1;calcmonkhits;#IF (@MONKsidekick < 100 AND @MONKsidekick > 9) {#var MONKLENsidekick 3} {};#IF (@MONKsidekick < 1000 AND @MONKsidekick > 99) {#var MONKLENsidekick 2} {};#IF (@MONKsidekick < 10000 AND @MONKsidekick > 999) {#var MONKLENsidekick 1} {}} {Monk_Hit}
+#trigger {^You thud} {#ad MONKthud 1;calcmonkhits;#IF (@MONKthud < 100 AND @MONKthud > 9) {#var MONKLENthud 3} {};#IF (@MONKthud < 1000 AND @MONKthud > 99) {#var MONKLENthud 2} {};#IF (@MONKthud < 10000 AND @MONKthud > 999) {#var MONKLENthud 1} {}} {Monk_Hit}
+#trigger {^You gouge} {#ad MONKgouge 1;calcmonkhits;#IF (@MONKgouge < 100 AND @MONKgouge > 9) {#var MONKLENgouge 3} {};#IF (@MONKgouge < 1000 AND @MONKgouge > 99) {#var MONKLENgouge 2} {};#IF (@MONKgouge < 10000 AND @MONKgouge > 999) {#var MONKLENgouge 1} {}} {Monk_Hit}
+#trigger {^You strike} {#ad MONKstrike 1;calcmonkhits;#IF (@MONKstrike < 100 AND @MONKstrike > 9) {#var MONKLENstrike 3} {};#IF (@MONKstrike < 1000 AND @MONKstrike > 99) {#var MONKLENstrike 2} {};#IF (@MONKstrike < 10000 AND @MONKstrike > 999) {#var MONKLENstrike 1} {}} {Monk_Hit}
+#trigger {^You bearhug} {#ad MONKbearhug 1;calcmonkhits;#IF (@MONKbearhug < 100 AND @MONKbearhug > 9) {#var MONKLENbearhug 3} {};#IF (@MONKbearhug < 1000 AND @MONKbearhug > 99) {#var MONKLENbearhug 2} {};#IF (@MONKbearhug < 10000 AND @MONKbearhug > 999) {#var MONKLENbearhug 1} {}} {Monk_Hit}
+#trigger {^You jump-kick} {#ad MONKjumpkick 1;calcmonkhits;#IF (@MONKjumpkick < 100 AND @MONKjumpkick > 9) {#var MONKLENjumpkick 3} {};#IF (@MONKjumpkick < 1000 AND @MONKjumpkick > 99) {#var MONKLENjumpkick 2} {};#IF (@MONKjumpkick < 10000 AND @MONKjumpkick > 999) {#var MONKLENjumpkick 1} {}} {Monk_Hit}
+#trigger {^You back-kick} {#ad MONKbackkick 1;calcmonkhits;#IF (@MONKbackkick < 100 AND @MONKbackkick > 9) {#var MONKLENbackkick 3} {};#IF (@MONKbackkick < 1000 AND @MONKbackkick > 99) {#var MONKLENbackkick 2} {};#IF (@MONKbackkick < 10000 AND @MONKbackkick > 999) {#var MONKLENbackkick 1} {}} {Monk_Hit}
+#trigger {^* successfully dodges your *.} {#ad MONKmiss 1;calcmonkhits;#IF (@MONKmiss < 100 AND @MONKmiss > 9) {#var MONKLENmiss 3} {};#IF (@MONKmiss < 1000 AND @MONKmiss > 99) {#var MONKLENmiss 2} {};#IF (@MONKmiss < 10000 AND @MONKmiss > 999) {#var MONKLENmiss 1} {}} {Monk_Hit}
+#trigger {^* successfully parries your *.} {#ad MONKmiss 1;calcmonkhits;#IF (@MONKmiss < 100 AND @MONKmiss > 9) {#var MONKLENmiss 3} {};#IF (@MONKmiss < 1000 AND @MONKmiss > 99) {#var MONKLENmiss 2} {};#IF (@MONKmiss < 10000 AND @MONKmiss > 999) {#var MONKLENmiss 1} {}} {Monk_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you step} {#ad MONKCstep 1;calcmonkhits;#IF (@MONKCstep < 100 AND @MONKCstep > 9) {#var MONKLENCstep 3} {};#IF (@MONKCstep < 1000 AND @MONKCstep > 99) {#var MONKLENCstep 2} {};#IF (@MONKCstep < 10000 AND @MONKCstep > 999) {#var MONKLENCstep 1} {}} {Monk_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you kick} {#ad MONKCkick 1;calcmonkhits;#IF (@MONKCkick < 100 AND @MONKCkick > 9) {#var MONKLENCkick 3} {};#IF (@MONKCkick < 1000 AND @MONKCkick > 99) {#var MONKLENCkick 2} {};#IF (@MONKCkick < 10000 AND @MONKCkick > 999) {#var MONKLENCkick 1} {}} {Monk_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you smash} {#ad MONKCsmash 1;calcmonkhits;#IF (@MONKCsmash < 100 AND @MONKCsmash > 9) {#var MONKLENCsmash 3} {};#IF (@MONKCsmash < 1000 AND @MONKCsmash > 99) {#var MONKLENCsmash 2} {};#IF (@MONKCsmash < 10000 AND @MONKCsmash > 999) {#var MONKLENCsmash 1} {}} {Monk_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you circle kick} {#ad MONKCcirclekick 1;calcmonkhits;#IF (@MONKCcirclekick < 100 AND @MONKCcirclekick > 9) {#var MONKLENCcirclekick 3} {};#IF (@MONKCcirclekick < 1000 AND @MONKCcirclekick > 99) {#var MONKLENCcirclekick 2} {};#IF (@MONKCcirclekick < 10000 AND @MONKCcirclekick > 999) {#var MONKLENCcirclekick 1} {}} {Monk_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you stomp } {#ad MONKCstomp 1;calcmonkhits;#IF (@MONKCstomp < 100 AND @MONKCstomp > 9) {#var MONKLENCstomp 3} {};#IF (@MONKCstomp < 1000 AND @MONKCstomp > 99) {#var MONKLENCstomp 2} {};#IF (@MONKCstomp < 10000 AND @MONKCstomp > 999) {#var MONKLENCstomp 1} {}} {Monk_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you stomp-kick} {#ad MONKCstompkick 1;calcmonkhits;#IF (@MONKCstompkick < 100 AND @MONKCstompkick > 9) {#var MONKLENCstompkick 3} {};#IF (@MONKCstompkick < 1000 AND @MONKCstompkick > 99) {#var MONKLENCstompkick 2} {};#IF (@MONKCstompkick < 10000 AND @MONKCstompkick > 999) {#var MONKLENCstompkick 1} {}} {Monk_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you spin-kick} {#ad MONKCspinkick 1;calcmonkhits;#IF (@MONKCspinkick < 100 AND @MONKCspinkick > 9) {#var MONKLENCspinkick 3} {};#IF (@MONKCspinkick < 1000 AND @MONKCspinkick > 99) {#var MONKLENCspinkick 2} {};#IF (@MONKCspinkick < 10000 AND @MONKCspinkick > 999) {#var MONKLENCspinkick 1} {}} {Monk_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you lunge} {#ad MONKClunge 1;calcmonkhits;#IF (@MONKClunge < 100 AND @MONKClunge > 9) {#var MONKLENClunge 3} {};#IF (@MONKClunge < 1000 AND @MONKClunge > 99) {#var MONKLENClunge 2} {};#IF (@MONKClunge < 10000 AND @MONKClunge > 999) {#var MONKLENClunge 1} {}} {Monk_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you attack} {#ad MONKCattack 1;calcmonkhits;#IF (@MONKCattack < 100 AND @MONKCattack > 9) {#var MONKLENCattack 3} {};#IF (@MONKCattack < 1000 AND @MONKCattack > 99) {#var MONKLENCattack 2} {};#IF (@MONKCattack < 10000 AND @MONKCattack > 999) {#var MONKLENCattack 1} {}} {Monk_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you leg-twist} {#ad MONKClegtwist 1;calcmonkhits;#IF (@MONKClegtwist < 100 AND @MONKClegtwist > 9) {#var MONKLENClegtwist 3} {};#IF (@MONKClegtwist < 1000 AND @MONKClegtwist > 99) {#var MONKLENClegtwist 2} {};#IF (@MONKClegtwist < 10000 AND @MONKClegtwist > 999) {#var MONKLENClegtwist 1} {}} {Monk_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you side-kick} {#ad MONKCsidekick 1;calcmonkhits;#IF (@MONKCsidekick < 100 AND @MONKCsidekick > 9) {#var MONKLENCsidekick 3} {};#IF (@MONKCsidekick < 1000 AND @MONKCsidekick > 99) {#var MONKLENCsidekick 2} {};#IF (@MONKCsidekick < 10000 AND @MONKCsidekick > 999) {#var MONKLENCsidekick 1} {}} {Monk_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you thud} {#ad MONKCthud 1;calcmonkhits;#IF (@MONKCthud < 100 AND @MONKCthud > 9) {#var MONKLENCthud 3} {};#IF (@MONKCthud < 1000 AND @MONKCthud > 99) {#var MONKLENCthud 2} {};#IF (@MONKCthud < 10000 AND @MONKCthud > 999) {#var MONKLENCthud 1} {}} {Monk_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you gouge} {#ad MONKCgouge 1;calcmonkhits;#IF (@MONKCgouge < 100 AND @MONKCgouge > 9) {#var MONKLENCgouge 3} {};#IF (@MONKCgouge < 1000 AND @MONKCgouge > 99) {#var MONKLENCgouge 2} {};#IF (@MONKCgouge < 10000 AND @MONKCgouge > 999) {#var MONKLENCgouge 1} {}} {Monk_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you strike} {#ad MONKCstrike 1;calcmonkhits;#IF (@MONKCstrike < 100 AND @MONKCstrike > 9) {#var MONKLENCstrike 3} {};#IF (@MONKCstrike < 1000 AND @MONKCstrike > 99) {#var MONKLENCstrike 2} {};#IF (@MONKCstrike < 10000 AND @MONKCstrike > 999) {#var MONKLENCstrike 1} {}} {Monk_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you bearhug} {#ad MONKCbearhug 1;calcmonkhits;#IF (@MONKCbearhug < 100 AND @MONKCbearhug > 9) {#var MONKLENCbearhug 3} {};#IF (@MONKCbearhug < 1000 AND @MONKCbearhug > 99) {#var MONKLENCbearhug 2} {};#IF (@MONKCbearhug < 10000 AND @MONKCbearhug > 999) {#var MONKLENCbearhug 1} {}} {Monk_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you jump-kick} {#ad MONKCjumpkick 1;calcmonkhits;#IF (@MONKCjumpkick < 100 AND @MONKCjumpkick > 9) {#var MONKLENCjumpkick 3} {};#IF (@MONKCjumpkick < 1000 AND @MONKCjumpkick > 99) {#var MONKLENCjumpkick 2} {};#IF (@MONKCjumpkick < 10000 AND @MONKCjumpkick > 999) {#var MONKLENCjumpkick 1} {}} {Monk_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you back-kick} {#ad MONKCbackkick 1;calcmonkhits;#IF (@MONKCbackkick < 100 AND @MONKCbackkick > 9) {#var MONKLENCbackkick 3} {};#IF (@MONKCbackkick < 1000 AND @MONKCbackkick > 99) {#var MONKLENCbackkick 2} {};#IF (@MONKCbackkick < 10000 AND @MONKCbackkick > 999) {#var MONKLENCbackkick 1} {}} {Monk_Hit}
+#echo ### Aliases ###
+#alias calcmonkhits {#math MONKtotal (@MONKmiss+@MONKstep+@MONKkick+@MONKsmash+@MONKcirclekick+@MONKstomp+@MONKstompkick+@MONKspinkick+@MONKlunge+@MONKattack+@MONKlegtwist+@MONKsidekick+@MONKthud+@MONKgouge+@MONKstrike+@MONKbearhug+@MONKjumpkick+@MONKbackkick+@MONKCattack+@MONKCbackkick+@MONKCbearhug+@MONKCcirclekick+@MONKCgouge+@MONKCjumpkick+@MONKCkick+@MONKClegtwist+@MONKClunge+@MONKCstep+@MONKCstomp+@MONKCstompkick+@MONKCstrike+@MONKCthud);#IF (@MONKtotal < 100 AND @MONKtotal > 9) {#var MONKLENTotal 11} {};#IF (@MONKtotal < 1000 AND @MONKtotal > 99) {#var MONKLENTotal 10} {};#IF (@MONKtotal < 10000 AND @MONKtotal > 999) {#var MONKLENTotal 9} {};#IF (@MONKtotal < 100000 AND @MONKtotal > 9999) {#var MONKLENTotal 8} {}}
+
+#echo ### SELECT WINDOW OR ECHO STYLE ###
+#echo ### Status window style (hits shows in small window) ###
+#STW {+-------------+------+-------+%cr| Monk (V2.1) | Hits | Crits |%cr+-------------+------+-------+%cr| Misses %repeat(" ",4) |%repeat(" ",@MONKLENmiss)@MONKmiss | %repeat(" ",1) N/A |%cr| Step %repeat(" ",6) |%repeat(" ",@MONKLENstep)@MONKstep |%repeat(" ",@MONKLENCstep)@MONKCstep |%cr| Kick %repeat(" ",6) |%repeat(" ",@MONKLENkick)@MONKkick |%repeat(" ",@MONKLENCkick)@MONKCkick |%cr| Smash %repeat(" ",5) |%repeat(" ",@MONKLENsmash)@MONKsmash |%repeat(" ",@MONKLENCsmash)@MONKCsmash |%cr| Circle kick |%repeat(" ",@MONKLENcirclekick)@MONKcirclekick |%repeat(" ",@MONKLENCcirclekick)@MONKCcirclekick |%cr| Stomp-kick %repeat(" ",0) |%repeat(" ",@MONKLENstompkick)@MONKstompkick |%repeat(" ",@MONKLENCstompkick)@MONKCstompkick |%cr| Spin-kick %repeat(" ",1) |%repeat(" ",@MONKLENspinkick)@MONKspinkick |%repeat(" ",@MONKLENCspinkick)@MONKCspinkick |%cr| Stomp %repeat(" ",5) |%repeat(" ",@MONKLENstomp)@MONKstomp |%repeat(" ",@MONKLENCstomp)@MONKCstomp |%cr| Lunge %repeat(" ",5) |%repeat(" ",@MONKLENlunge)@MONKlunge |%repeat(" ",@MONKLENClunge)@MONKClunge |%cr| Attack %repeat(" ",4) |%repeat(" ",@MONKLENattack)@MONKattack |%repeat(" ",@MONKLENCattack)@MONKCattack |%cr| Leg-twist %repeat(" ",1) |%repeat(" ",@MONKLENlegtwist)@MONKlegtwist |%repeat(" ",@MONKLENClegtwist)@MONKClegtwist |%cr| Side-kick %repeat(" ",1) |%repeat(" ",@MONKLENsidekick)@MONKsidekick |%repeat(" ",@MONKLENCsidekick)@MONKCsidekick |%cr| Thud %repeat(" ",6) |%repeat(" ",@MONKLENthud)@MONKthud |%repeat(" ",@MONKLENCthud)@MONKCthud |%cr| Gouge %repeat(" ",5) |%repeat(" ",@MONKLENgouge)@MONKgouge |%repeat(" ",@MONKLENCgouge)@MONKCgouge |%cr| Strike %repeat(" ",4) |%repeat(" ",@MONKLENstrike)@MONKstrike |%repeat(" ",@MONKLENCstrike)@MONKCstrike |%cr| Bearhug %repeat(" ",3) |%repeat(" ",@MONKLENbearhug)@MONKbearhug |%repeat(" ",@MONKLENCbearhug)@MONKCbearhug |%cr| Jump-kick %repeat(" ",1) |%repeat(" ",@MONKLENjumpkick)@MONKjumpkick |%repeat(" ",@MONKLENCjumpkick)@MONKCjumpkick |%cr| Back-kick %repeat(" ",1) |%repeat(" ",@MONKLENbackkick)@MONKbackkick |%repeat(" ",@MONKLENCbackkick)@MONKCbackkick |%cr+-------------+------+-------+%cr| Total hits %repeat(" ",0) |%repeat(" ",@MONKLENtotal)@MONKtotal |%cr+-------------+--------------+}
+#echo ### Echo style (hits shows in screen after typing hitcount) ###
+#ALIAS hitcount {#echo +-------------+------+-------+%cr| Monk (V2.1) | Hits | Crits |%cr+-------------+------+-------+%cr| Misses %repeat(" ",4) |%repeat(" ",@MONKLENmiss)@MONKmiss | %repeat(" ",1) N/A |%cr| Step %repeat(" ",6) |%repeat(" ",@MONKLENstep)@MONKstep |%repeat(" ",@MONKLENCstep)@MONKCstep |%cr| Kick %repeat(" ",6) |%repeat(" ",@MONKLENkick)@MONKkick |%repeat(" ",@MONKLENCkick)@MONKCkick |%cr| Smash %repeat(" ",5) |%repeat(" ",@MONKLENsmash)@MONKsmash |%repeat(" ",@MONKLENCsmash)@MONKCsmash |%cr| Circle kick |%repeat(" ",@MONKLENcirclekick)@MONKcirclekick |%repeat(" ",@MONKLENCcirclekick)@MONKCcirclekick |%cr| Stomp-kick %repeat(" ",0) |%repeat(" ",@MONKLENstompkick)@MONKstompkick |%repeat(" ",@MONKLENCstompkick)@MONKCstompkick |%cr| Spin-kick %repeat(" ",1) |%repeat(" ",@MONKLENspinkick)@MONKspinkick |%repeat(" ",@MONKLENCspinkick)@MONKCspinkick |%cr| Stomp %repeat(" ",5) |%repeat(" ",@MONKLENstomp)@MONKstomp |%repeat(" ",@MONKLENCstomp)@MONKCstomp |%cr| Lunge %repeat(" ",5) |%repeat(" ",@MONKLENlunge)@MONKlunge |%repeat(" ",@MONKLENClunge)@MONKClunge |%cr| Attack %repeat(" ",4) |%repeat(" ",@MONKLENattack)@MONKattack |%repeat(" ",@MONKLENCattack)@MONKCattack |%cr| Leg-twist %repeat(" ",1) |%repeat(" ",@MONKLENlegtwist)@MONKlegtwist |%repeat(" ",@MONKLENClegtwist)@MONKClegtwist |%cr| Side-kick %repeat(" ",1) |%repeat(" ",@MONKLENsidekick)@MONKsidekick |%repeat(" ",@MONKLENCsidekick)@MONKCsidekick |%cr| Thud %repeat(" ",6) |%repeat(" ",@MONKLENthud)@MONKthud |%repeat(" ",@MONKLENCthud)@MONKCthud |%cr| Gouge %repeat(" ",5) |%repeat(" ",@MONKLENgouge)@MONKgouge |%repeat(" ",@MONKLENCgouge)@MONKCgouge |%cr| Strike %repeat(" ",4) |%repeat(" ",@MONKLENstrike)@MONKstrike |%repeat(" ",@MONKLENCstrike)@MONKCstrike |%cr| Bearhug %repeat(" ",3) |%repeat(" ",@MONKLENbearhug)@MONKbearhug |%repeat(" ",@MONKLENCbearhug)@MONKCbearhug |%cr| Jump-kick %repeat(" ",1) |%repeat(" ",@MONKLENjumpkick)@MONKjumpkick |%repeat(" ",@MONKLENCjumpkick)@MONKCjumpkick |%cr| Back-kick %repeat(" ",1) |%repeat(" ",@MONKLENbackkick)@MONKbackkick |%repeat(" ",@MONKLENCbackkick)@MONKCbackkick |%cr+-------------+------+-------+%cr| Total hits %repeat(" ",0) |%repeat(" ",@MONKLENtotal)@MONKtotal |%cr+-------------+--------------+}

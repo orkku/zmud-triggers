@@ -1,0 +1,32 @@
+#echo +------------------------------+
+#echo | FIGHTER TRIGGERS (V1.0)      |
+#echo | MODIFIED 23.01.2007          |
+#echo | Basic fighter triggers.      |
+#echo | Report any bugs by MUDmail,  |
+#echo | thank you ! :)               |
+#echo +------------------------------+
+#echo ### Stun Triggers ###
+#trigger {^...WHO breaks the stun quickly off with intense concentration.} {#var Stun_status 0} {Stun}
+#trigger {^You hurt (*) who seems to become somewhat confused.} {#var Stun_status 1;#wa 500;#if (@Stun_status == 1) {party report Somewhat stunned %1!};#if (@Stun_status == 0) {party report Damn, %1 not stunned};#wa 2000;#var Stun_status 1} {Stun}
+#trigger {^You STUN (*), who loses connection to reality.} {#var Stun_status 1;#wa 500;#if (@Stun_status == 1) {party report STUNNED %1!};#if (@Stun_status == 0) {party report Damn, %1 not stunned};#wa 2000;#var Stun_status 1} {Stun}
+#trigger {^Your attack causes (*) to lose focus slightly.} {#var Stun_status 1;#wa 500;#if (@Stun_status == 1) {party report Slighty stunned %1!};#if (@Stun_status == 0) {party report Damn, %1 not stunned};#wa 2000;#var Stun_status 1} {Stun}
+#echo ### Scan Triggers ###
+#trigger {near death} {#CW 15} {*scan}
+#trigger {in very bad shape} {#CW bold,red} {*scan}
+#trigger {in {excellent|a good} shape} {#CW 10} {*scan}
+#trigger {slightly hurt} {#CW 10} {*scan}
+#trigger {noticeably hurt} {#CW 10} {*scan}
+#trigger {not in a good shape} {#CW 14} {*scan}
+#trigger {in bad shape} {#CW 14} {*scan}
+#echo ### Misc Triggers ###
+#trigger {^You score a ~*CRITICAL~* hit!} {party report scored a STAR CRIT!} {combatfighter}
+#trigger {^(%w) has summoned you} {party report %1 has summoned me.} {Summon}
+#trigger {^(%w) lapses into unconsciousness from severe loss of blood.} {#CW 12;party report %1 has gone UNCONSCIOUS!} {First-Aid}
+#trigger {^You are the new leader of the party.} {party forcefollow all} {party leader}
+#trigger {rikki ja poikki} {party report --,-'-{@ DEST! @}-'-,--} {DEST}
+#trigger {se on sarki nyt} {party report --,-'-{@ DEST! @}-'-,--} {DEST}
+#trigger {~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*$} {party report} {autoreport}
+#trigger {^You score a CRITICAL hit!} {#CW 10;party report scored a CRIT!} {combatfighter}
+#trigger {spell makes you feel * better!} {report} {autoreport}
+
+

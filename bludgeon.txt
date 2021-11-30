@@ -1,0 +1,151 @@
+#echo +------------------------------------+
+#echo | BLUDGEON HIT COUNTER (V2.1)        |
+#echo | MODIFIED 05.03.2007                |
+#echo | Shows hit count on status window   |
+#echo | or echoes to screen. Select!       |
+#echo | Report any bugs by MUDmail,        |
+#echo | thank you ! :)                     |
+#echo +------------------------------------+
+#echo ### Variables ###
+#var BLUDmiss {0} {0} {BLUD_Var}
+#var BLUDjostle {0} {0} {BLUD_Var}
+#var BLUDbutt {0} {0} {BLUD_Var}
+#var BLUDbump {0} {0} {BLUD_Var}
+#var BLUDthump {0} {0} {BLUD_Var}
+#var BLUDstroke {0} {0} {BLUD_Var}
+#var BLUDthrust {0} {0} {BLUD_Var}
+#var BLUDjab {0} {0} {BLUD_Var}
+#var BLUDbash {0} {0} {BLUD_Var}
+#var BLUDstrike {0} {0} {BLUD_Var}
+#var BLUDsock {0} {0} {BLUD_Var}
+#var BLUDcuff {0} {0} {BLUD_Var}
+#var BLUDknock {0} {0} {BLUD_Var}
+#var BLUDflail {0} {0} {BLUD_Var}
+#var BLUDbeat {0} {0} {BLUD_Var}
+#var BLUDwhack {0} {0} {BLUD_Var}
+#var BLUDsmash {0} {0} {BLUD_Var}
+#var BLUDcruellybeat {0} {0} {BLUD_Var}
+#var BLUDbadlysmash {0} {0} {BLUD_Var}
+#var BLUDhorriblythrust {0} {0} {BLUD_Var}
+#var BLUDsavagelystrike {0} {0} {BLUD_Var}
+#var BLUDsavagelysock {0} {0} {BLUD_Var}
+#var BLUDtotal {0} {0} {BLUD_Var}
+#var BLUDCjostle {0} {0} {BLUD_Var}
+#var BLUDCbutt {0} {0} {BLUD_Var}
+#var BLUDCbump {0} {0} {BLUD_Var}
+#var BLUDCthump {0} {0} {BLUD_Var}
+#var BLUDCstroke {0} {0} {BLUD_Var}
+#var BLUDCthrust {0} {0} {BLUD_Var}
+#var BLUDCjab {0} {0} {BLUD_Var}
+#var BLUDCbash {0} {0} {BLUD_Var}
+#var BLUDCstrike {0} {0} {BLUD_Var}
+#var BLUDCsock {0} {0} {BLUD_Var}
+#var BLUDCcuff {0} {0} {BLUD_Var}
+#var BLUDCknock {0} {0} {BLUD_Var}
+#var BLUDCflail {0} {0} {BLUD_Var}
+#var BLUDCbeat {0} {0} {BLUD_Var}
+#var BLUDCwhack {0} {0} {BLUD_Var}
+#var BLUDCsmash {0} {0} {BLUD_Var}
+#var BLUDCcruellybeat {0} {0} {BLUD_Var}
+#var BLUDCbadlysmash {0} {0} {BLUD_Var}
+#var BLUDChorriblythrust {0} {0} {BLUD_Var}
+#var BLUDCsavagelystrike {0} {0} {BLUD_Var}
+#var BLUDCsavagelysock {0} {0} {BLUD_Var}
+#var BLUDLENmiss {4} {4} {BLUD_LEN_Var}
+#var BLUDLENjostle {4} {4} {BLUD_LEN_Var}
+#var BLUDLENbutt {4} {4} {BLUD_LEN_Var}
+#var BLUDLENbump {4} {4} {BLUD_LEN_Var}
+#var BLUDLENthump {4} {4} {BLUD_LEN_Var}
+#var BLUDLENstroke {4} {4} {BLUD_LEN_Var}
+#var BLUDLENthrust {4} {4} {BLUD_LEN_Var}
+#var BLUDLENjab {4} {4} {BLUD_LEN_Var}
+#var BLUDLENbash {4} {4} {BLUD_LEN_Var}
+#var BLUDLENstrike {4} {4} {BLUD_LEN_Var}
+#var BLUDLENsock {4} {4} {BLUD_LEN_Var}
+#var BLUDLENcuff {4} {4} {BLUD_LEN_Var}
+#var BLUDLENknock {4} {4} {BLUD_LEN_Var}
+#var BLUDLENflail {4} {4} {BLUD_LEN_Var}
+#var BLUDLENbeat {4} {4} {BLUD_LEN_Var}
+#var BLUDLENwhack {4} {4} {BLUD_LEN_Var}
+#var BLUDLENsmash {4} {4} {BLUD_LEN_Var}
+#var BLUDLENcruellybeat {4} {4} {BLUD_LEN_Var}
+#var BLUDLENbadlysmash {4} {4} {BLUD_LEN_Var}
+#var BLUDLENhorriblythrust {4} {4} {BLUD_LEN_Var}
+#var BLUDLENsavagelystrike {4} {4} {BLUD_LEN_Var}
+#var BLUDLENsavagelysock {4} {4} {BLUD_LEN_Var}
+#var BLUDLENtotal {12} {12} {BLUD_LEN_Var}
+#var BLUDLENCjostle {5} {5} {BLUD_LEN_Var}
+#var BLUDLENCbutt {5} {5} {BLUD_LEN_Var}
+#var BLUDLENCbump {5} {5} {BLUD_LEN_Var}
+#var BLUDLENCthump {5} {5} {BLUD_LEN_Var}
+#var BLUDLENCstroke {5} {5} {BLUD_LEN_Var}
+#var BLUDLENCthrust {5} {5} {BLUD_LEN_Var}
+#var BLUDLENCjab {5} {5} {BLUD_LEN_Var}
+#var BLUDLENCbash {5} {5} {BLUD_LEN_Var}
+#var BLUDLENCstrike {5} {5} {BLUD_LEN_Var}
+#var BLUDLENCsock {5} {5} {BLUD_LEN_Var}
+#var BLUDLENCcuff {5} {5} {BLUD_LEN_Var}
+#var BLUDLENCknock {5} {5} {BLUD_LEN_Var}
+#var BLUDLENCflail {5} {5} {BLUD_LEN_Var}
+#var BLUDLENCbeat {5} {5} {BLUD_LEN_Var}
+#var BLUDLENCwhack {5} {5} {BLUD_LEN_Var}
+#var BLUDLENCsmash {5} {5} {BLUD_LEN_Var}
+#var BLUDLENCcruellybeat {5} {5} {BLUD_LEN_Var}
+#var BLUDLENCbadlysmash {5} {5} {BLUD_LEN_Var}
+#var BLUDLENChorriblythrust {5} {5} {BLUD_LEN_Var}
+#var BLUDLENCsavagelystrike {5} {5} {BLUD_LEN_Var}
+#var BLUDLENCsavagelysock {5} {5} {BLUD_LEN_Var}
+#echo ### Triggers ###
+#trigger {^You miss} {#ad BLUDmiss 1;calcbludhits;#IF (@BLUDmiss < 100 AND @BLUDmiss > 9) {#var BLUDLENmiss 3} {};#IF (@BLUDmiss < 1000 AND @BLUDmiss > 99) {#var BLUDLENmiss 2} {};#IF (@BLUDmiss < 10000 AND @BLUDmiss > 999) {#var BLUDLENmiss 1} {}} {Blud_Hit}
+#trigger {^You jostle} {#ad BLUDjostle 1;calcbludhits;#IF (@BLUDjostle < 100 AND @BLUDjostle > 9) {#var BLUDLENjostle 3} {};#IF (@BLUDjostle < 1000 AND @BLUDjostle > 99) {#var BLUDLENjostle 2} {};#IF (@BLUDjostle < 10000 AND @BLUDjostle > 999) {#var BLUDLENjostle 1} {}} {Blud_Hit}
+#trigger {^You butt} {#ad BLUDbutt 1;calcbludhits;#IF (@BLUDbutt < 100 AND @BLUDbutt > 9) {#var BLUDLENbutt 3} {};#IF (@BLUDbutt < 1000 AND @BLUDbutt > 99) {#var BLUDLENbutt 2} {};#IF (@BLUDbutt < 10000 AND @BLUDbutt > 999) {#var BLUDLENbutt 1} {}} {Blud_Hit}
+#trigger {^You bump} {#ad BLUDbump 1;calcbludhits;#IF (@BLUDbump < 100 AND @BLUDbump > 9) {#var BLUDLENbump 3} {};#IF (@BLUDbump < 1000 AND @BLUDbump > 99) {#var BLUDLENbump 2} {};#IF (@BLUDbump < 10000 AND @BLUDbump > 999) {#var BLUDLENbump 1} {}} {Blud_Hit}
+#trigger {^You thump} {#ad BLUDthump 1;calcbludhits;#IF (@BLUDthump < 100 AND @BLUDthump > 9) {#var BLUDLENthump 3} {};#IF (@BLUDthump < 1000 AND @BLUDthump > 99) {#var BLUDLENthump 2} {};#IF (@BLUDthump < 10000 AND @BLUDthump > 999) {#var BLUDLENthump 1} {}} {Blud_Hit}
+#trigger {^You stroke} {#ad BLUDstroke 1;calcbludhits;#IF (@BLUDstroke < 100 AND @BLUDstroke > 9) {#var BLUDLENstroke 3} {};#IF (@BLUDstroke < 1000 AND @BLUDstroke > 99) {#var BLUDLENstroke 2} {};#IF (@BLUDstroke < 10000 AND @BLUDstroke > 999) {#var BLUDLENstroke 1} {}} {Blud_Hit}
+#trigger {^You thrust} {#ad BLUDthrust 1;calcbludhits;#IF (@BLUDthrust < 100 AND @BLUDthrust > 9) {#var BLUDLENthrust 3} {};#IF (@BLUDthrust < 1000 AND @BLUDthrust > 99) {#var BLUDLENthrust 2} {};#IF (@BLUDthrust < 10000 AND @BLUDthrust > 999) {#var BLUDLENthrust 1} {}} {Blud_Hit}
+#trigger {^You jab} {#ad BLUDjab 1;calcbludhits;#IF (@BLUDjab < 100 AND @BLUDjab > 9) {#var BLUDLENjab 3} {};#IF (@BLUDjab < 1000 AND @BLUDjab > 99) {#var BLUDLENjab 2} {};#IF (@BLUDjab < 10000 AND @BLUDjab > 999) {#var BLUDLENjab 1} {}} {Blud_Hit}
+#trigger {^You bash} {#ad BLUDbash 1;calcbludhits;#IF (@BLUDbash < 100 AND @BLUDbash > 9) {#var BLUDLENbash 3} {};#IF (@BLUDbash < 1000 AND @BLUDbash > 99) {#var BLUDLENbash 2} {};#IF (@BLUDbash < 10000 AND @BLUDbash > 999) {#var BLUDLENbash 1} {}} {Blud_Hit}
+#trigger {^You strike} {#ad BLUDstrike 1;calcbludhits;#IF (@BLUDstrike < 100 AND @BLUDstrike > 9) {#var BLUDLENstrike 3} {};#IF (@BLUDstrike < 1000 AND @BLUDstrike > 99) {#var BLUDLENstrike 2} {};#IF (@BLUDstrike < 10000 AND @BLUDstrike > 999) {#var BLUDLENstrike 1} {}} {Blud_Hit}
+#trigger {^You sock} {#ad BLUDsock 1;calcbludhits;#IF (@BLUDsock < 100 AND @BLUDsock > 9) {#var BLUDLENsock 3} {};#IF (@BLUDsock < 1000 AND @BLUDsock > 99) {#var BLUDLENsock 2} {};#IF (@BLUDsock < 10000 AND @BLUDsock > 999) {#var BLUDLENsock 1} {}} {Blud_Hit}
+#trigger {^You cuff} {#ad BLUDcuff 1;calcbludhits;#IF (@BLUDcuff < 100 AND @BLUDcuff > 9) {#var BLUDLENcuff 3} {};#IF (@BLUDcuff < 1000 AND @BLUDcuff > 99) {#var BLUDLENcuff 2} {};#IF (@BLUDcuff < 10000 AND @BLUDcuff > 999) {#var BLUDLENcuff 1} {}} {Blud_Hit}
+#trigger {^You knock} {#ad BLUDknock 1;calcbludhits;#IF (@BLUDknock < 100 AND @BLUDknock > 9) {#var BLUDLENknock 3} {};#IF (@BLUDknock < 1000 AND @BLUDknock > 99) {#var BLUDLENknock 2} {};#IF (@BLUDknock < 10000 AND @BLUDknock > 999) {#var BLUDLENknock 1} {}} {Blud_Hit}
+#trigger {^You flail} {#ad BLUDflail 1;calcbludhits;#IF (@BLUDflail < 100 AND @BLUDflail > 9) {#var BLUDLENflail 3} {};#IF (@BLUDflail < 1000 AND @BLUDflail > 99) {#var BLUDLENflail 2} {};#IF (@BLUDflail < 10000 AND @BLUDflail > 999) {#var BLUDLENflail 1} {}} {Blud_Hit}
+#trigger {^You beat} {#ad BLUDbeat 1;calcbludhits;#IF (@BLUDbeat < 100 AND @BLUDbeat > 9) {#var BLUDLENbeat 3} {};#IF (@BLUDbeat < 1000 AND @BLUDbeat > 99) {#var BLUDLENbeat 2} {};#IF (@BLUDbeat < 10000 AND @BLUDbeat > 999) {#var BLUDLENbeat 1} {}} {Blud_Hit}
+#trigger {^You whack} {#ad BLUDwhack 1;calcbludhits;#IF (@BLUDwhack < 100 AND @BLUDwhack > 9) {#var BLUDLENwhack 3} {};#IF (@BLUDwhack < 1000 AND @BLUDwhack > 99) {#var BLUDLENwhack 2} {};#IF (@BLUDwhack < 10000 AND @BLUDwhack > 999) {#var BLUDLENwhack 1} {}} {Blud_Hit}
+#trigger {^You smash} {#ad BLUDsmash 1;calcbludhits;#IF (@BLUDsmash < 100 AND @BLUDsmash > 9) {#var BLUDLENsmash 3} {};#IF (@BLUDsmash < 1000 AND @BLUDsmash > 99) {#var BLUDLENsmash 2} {};#IF (@BLUDsmash < 10000 AND @BLUDsmash > 999) {#var BLUDLENsmash 1} {}} {Blud_Hit}
+#trigger {^You cruelly beat} {#ad BLUDcruellybeat 1;calcbludhits;#IF (@BLUDcruellybeat < 100 AND @BLUDcruellybeat > 9) {#var BLUDLENcruellybeat 3} {};#IF (@BLUDcruellybeat < 1000 AND @BLUDcruellybeat > 99) {#var BLUDLENcruellybeat 2} {};#IF (@BLUDcruellybeat < 10000 AND @BLUDcruellybeat > 999) {#var BLUDLENcruellybeat 1} {}} {Blud_Hit}
+#trigger {^You badly smash} {#ad BLUDbadlysmash 1;calcbludhits;#IF (@BLUDbadlysmash < 100 AND @BLUDbadlysmash > 9) {#var BLUDLENbadlysmash 3} {};#IF (@BLUDbadlysmash < 1000 AND @BLUDbadlysmash > 99) {#var BLUDLENbadlysmash 2} {};#IF (@BLUDbadlysmash < 10000 AND @BLUDbadlysmash > 999) {#var BLUDLENbadlysmash 1} {}} {Blud_Hit}
+#trigger {^You horribly thrust} {#ad BLUDhorriblythrust 1;calcbludhits;#IF (@BLUDhorriblythrust < 100 AND @BLUDhorriblythrust > 9) {#var BLUDLENhorriblythrust 3} {};#IF (@BLUDhorriblythrust < 1000 AND @BLUDhorriblythrust > 99) {#var BLUDLENhorriblythrust 2} {};#IF (@BLUDhorriblythrust < 10000 AND @BLUDhorriblythrust > 999) {#var BLUDLENhorriblythrust 1} {}} {Blud_Hit}
+#trigger {^You savagely strike} {#ad BLUDsavagelystrike 1;calcbludhits;#IF (@BLUDsavagelystrike < 100 AND @BLUDsavagelystrike > 9) {#var BLUDLENsavagelystrike 3} {};#IF (@BLUDsavagelystrike < 1000 AND @BLUDsavagelystrike > 99) {#var BLUDLENsavagelystrike 2} {};#IF (@BLUDsavagelystrike < 10000 AND @BLUDsavagelystrike > 999) {#var BLUDLENsavagelystrike 1} {}} {Blud_Hit}
+#trigger {^You savagely sock} {#ad BLUDsavagelysock 1;calcbludhits;#IF (@BLUDsavagelysock < 100 AND @BLUDsavagelysock > 9) {#var BLUDLENsavagelysock 3} {};#IF (@BLUDsavagelysock < 1000 AND @BLUDsavagelysock > 99) {#var BLUDLENsavagelysock 2} {};#IF (@BLUDsavagelysock < 10000 AND @BLUDsavagelysock > 999) {#var BLUDLENsavagelysock 1} {}} {Blud_Hit}
+#trigger {^* successfully dodges your *.} {#ad BLUDmiss 1;calcbludhits;#IF (@BLUDmiss < 100 AND @BLUDmiss > 9) {#var BLUDLENmiss 3} {};#IF (@BLUDmiss < 1000 AND @BLUDmiss > 99) {#var BLUDLENmiss 2} {};#IF (@BLUDmiss < 10000 AND @BLUDmiss > 999) {#var BLUDLENmiss 1} {}} {Blud_Hit}
+#trigger {^* successfully parries your *.} {#ad BLUDmiss 1;calcbludhits;#IF (@BLUDmiss < 100 AND @BLUDmiss > 9) {#var BLUDLENmiss 3} {};#IF (@BLUDmiss < 1000 AND @BLUDmiss > 99) {#var BLUDLENmiss 2} {};#IF (@BLUDmiss < 10000 AND @BLUDmiss > 999) {#var BLUDLENmiss 1} {}} {Blud_Hit}
+#trigger {^Cackling demonically you jostle} {#ad BLUDCjostle 1;calcbludhits;#IF (@BLUDCjostle < 100 AND @BLUDCjostle > 9) {#var BLUDLENCjostle 4} {};#IF (@BLUDCjostle < 1000 AND @BLUDCjostle > 99) {#var BLUDLENCjostle 3} {};#IF (@BLUDCjostle < 10000 AND @BLUDCjostle > 999) {#var BLUDLENCjostle 2} {}} {Blud_Hit}
+#trigger {^Cackling demonically you butt} {#ad BLUDCbutt 1;calcbludhits;#IF (@BLUDCbutt < 100 AND @BLUDCbutt > 9) {#var BLUDLENCbutt 4} {};#IF (@BLUDCbutt < 1000 AND @BLUDCbutt > 99) {#var BLUDLENCbutt 3} {};#IF (@BLUDCbutt < 10000 AND @BLUDCbutt > 999) {#var BLUDLENCbutt 2} {}} {Blud_Hit}
+#trigger {^Cackling demonically you bump} {#ad BLUDCbump 1;calcbludhits;#IF (@BLUDCbump < 100 AND @BLUDCbump > 9) {#var BLUDLENCbump 4} {};#IF (@BLUDCbump < 1000 AND @BLUDCbump > 99) {#var BLUDLENCbump 3} {};#IF (@BLUDCbump < 10000 AND @BLUDCbump > 999) {#var BLUDLENCbump 2} {}} {Blud_Hit}
+#trigger {^Cackling demonically you thump} {#ad BLUDCthump 1;calcbludhits;#IF (@BLUDCthump < 100 AND @BLUDCthump > 9) {#var BLUDLENCthump 4} {};#IF (@BLUDCthump < 1000 AND @BLUDCthump > 99) {#var BLUDLENCthump 3} {};#IF (@BLUDCthump < 10000 AND @BLUDCthump > 999) {#var BLUDLENCthump 2} {}} {Blud_Hit}
+#trigger {^Cackling demonically you stroke} {#ad BLUDCstroke 1;calcbludhits;#IF (@BLUDCstroke < 100 AND @BLUDCstroke > 9) {#var BLUDLENCstroke 4} {};#IF (@BLUDCstroke < 1000 AND @BLUDCstroke > 99) {#var BLUDLENCstroke 3} {};#IF (@BLUDCstroke < 10000 AND @BLUDCstroke > 999) {#var BLUDLENCstroke 2} {}} {Blud_Hit}
+#trigger {^Cackling demonically you thrust} {#ad BLUDCthrust 1;calcbludhits;#IF (@BLUDCthrust < 100 AND @BLUDCthrust > 9) {#var BLUDLENCthrust 4} {};#IF (@BLUDCthrust < 1000 AND @BLUDCthrust > 99) {#var BLUDLENCthrust 3} {};#IF (@BLUDCthrust < 10000 AND @BLUDCthrust > 999) {#var BLUDLENCthrust 2} {}} {Blud_Hit}
+#trigger {^Cackling demonically you jab} {#ad BLUDCjab 1;calcbludhits;#IF (@BLUDCjab < 100 AND @BLUDCjab > 9) {#var BLUDLENCjab 4} {};#IF (@BLUDCjab < 1000 AND @BLUDCjab > 99) {#var BLUDLENCjab 3} {};#IF (@BLUDCjab < 10000 AND @BLUDCjab > 999) {#var BLUDLENCjab 2} {}} {Blud_Hit}
+#trigger {^Cackling demonically you bash} {#ad BLUDCbash 1;calcbludhits;#IF (@BLUDCbash < 100 AND @BLUDCbash > 9) {#var BLUDLENCbash 4} {};#IF (@BLUDCbash < 1000 AND @BLUDCbash > 99) {#var BLUDLENCbash 3} {};#IF (@BLUDCbash < 10000 AND @BLUDCbash > 999) {#var BLUDLENCbash 2} {}} {Blud_Hit}
+#trigger {^Cackling demonically you strike} {#ad BLUDCstrike 1;calcbludhits;#IF (@BLUDCstrike < 100 AND @BLUDCstrike > 9) {#var BLUDLENCstrike 4} {};#IF (@BLUDCstrike < 1000 AND @BLUDCstrike > 99) {#var BLUDLENCstrike 3} {};#IF (@BLUDCstrike < 10000 AND @BLUDCstrike > 999) {#var BLUDLENCstrike 2} {}} {Blud_Hit}
+#trigger {^Cackling demonically you sock} {#ad BLUDCsock 1;calcbludhits;#IF (@BLUDCsock < 100 AND @BLUDCsock > 9) {#var BLUDLENCsock 4} {};#IF (@BLUDCsock < 1000 AND @BLUDCsock > 99) {#var BLUDLENCsock 3} {};#IF (@BLUDCsock < 10000 AND @BLUDCsock > 999) {#var BLUDLENCsock 2} {}} {Blud_Hit}
+#trigger {^Cackling demonically you cuff} {#ad BLUDCcuff 1;calcbludhits;#IF (@BLUDCcuff < 100 AND @BLUDCcuff > 9) {#var BLUDLENCcuff 4} {};#IF (@BLUDCcuff < 1000 AND @BLUDCcuff > 99) {#var BLUDLENCcuff 3} {};#IF (@BLUDCcuff < 10000 AND @BLUDCcuff > 999) {#var BLUDLENCcuff 2} {}} {Blud_Hit}
+#trigger {^Cackling demonically you knock} {#ad BLUDCknock 1;calcbludhits;#IF (@BLUDCknock < 100 AND @BLUDCknock > 9) {#var BLUDLENCknock 4} {};#IF (@BLUDCknock < 1000 AND @BLUDCknock > 99) {#var BLUDLENCknock 3} {};#IF (@BLUDCknock < 10000 AND @BLUDCknock > 999) {#var BLUDLENCknock 2} {}} {Blud_Hit}
+#trigger {^Cackling demonically you flail} {#ad BLUDCflail 1;calcbludhits;#IF (@BLUDCflail < 100 AND @BLUDCflail > 9) {#var BLUDLENCflail 4} {};#IF (@BLUDCflail < 1000 AND @BLUDCflail > 99) {#var BLUDLENCflail 3} {};#IF (@BLUDCflail < 10000 AND @BLUDCflail > 999) {#var BLUDLENCflail 2} {}} {Blud_Hit}
+#trigger {^Cackling demonically you beat} {#ad BLUDCbeat 1;calcbludhits;#IF (@BLUDCbeat < 100 AND @BLUDCbeat > 9) {#var BLUDLENCbeat 4} {};#IF (@BLUDCbeat < 1000 AND @BLUDCbeat > 99) {#var BLUDLENCbeat 3} {};#IF (@BLUDCbeat < 10000 AND @BLUDCbeat > 999) {#var BLUDLENCbeat 2} {}} {Blud_Hit}
+#trigger {^Cackling demonically you whack} {#ad BLUDCwhack 1;calcbludhits;#IF (@BLUDCwhack < 100 AND @BLUDCwhack > 9) {#var BLUDLENCwhack 4} {};#IF (@BLUDCwhack < 1000 AND @BLUDCwhack > 99) {#var BLUDLENCwhack 3} {};#IF (@BLUDCwhack < 10000 AND @BLUDCwhack > 999) {#var BLUDLENCwhack 2} {}} {Blud_Hit}
+#trigger {^Cackling demonically you smash} {#ad BLUDCsmash 1;calcbludhits;#IF (@BLUDCsmash < 100 AND @BLUDCsmash > 9) {#var BLUDLENCsmash 4} {};#IF (@BLUDCsmash < 1000 AND @BLUDCsmash > 99) {#var BLUDLENCsmash 3} {};#IF (@BLUDCsmash < 10000 AND @BLUDCsmash > 999) {#var BLUDLENCsmash 2} {}} {Blud_Hit}
+#trigger {^Cackling demonically you cruelly beat} {#ad BLUDCcruellybeat 1;calcbludhits;#IF (@BLUDCcruellybeat < 100 AND @BLUDCcruellybeat > 9) {#var BLUDLENCcruellybeat 4} {};#IF (@BLUDCcruellybeat < 1000 AND @BLUDCcruellybeat > 99) {#var BLUDLENCcruellybeat 3} {};#IF (@BLUDCcruellybeat < 10000 AND @BLUDCcruellybeat > 999) {#var BLUDLENCcruellybeat 2} {}} {Blud_Hit}
+#trigger {^Cackling demonically you badly smash} {#ad BLUDCbadlysmash 1;calcbludhits;#IF (@BLUDCbadlysmash < 100 AND @BLUDCbadlysmash > 9) {#var BLUDLENCbadlysmash 4} {};#IF (@BLUDCbadlysmash < 1000 AND @BLUDCbadlysmash > 99) {#var BLUDLENCbadlysmash 3} {};#IF (@BLUDCbadlysmash < 10000 AND @BLUDCbadlysmash > 999) {#var BLUDLENCbadlysmash 2} {}} {Blud_Hit}
+#trigger {^Cackling demonically you horribly thrust} {#ad BLUDChorriblythrust 1;calcbludhits;#IF (@BLUDChorriblythrust < 100 AND @BLUDChorriblythrust > 9) {#var BLUDLENChorriblythrust 4} {};#IF (@BLUDChorriblythrust < 1000 AND @BLUDChorriblythrust > 99) {#var BLUDLENChorriblythrust 3} {};#IF (@BLUDChorriblythrust < 10000 AND @BLUDChorriblythrust > 999) {#var BLUDLENChorriblythrust 2} {}} {Blud_Hit}
+#trigger {^Cackling demonically you savagely strike} {#ad BLUDCsavagelystrike 1;calcbludhits;#IF (@BLUDCsavagelystrike < 100 AND @BLUDCsavagelystrike > 9) {#var BLUDLENCsavagelystrike 4} {};#IF (@BLUDCsavagelystrike < 1000 AND @BLUDCsavagelystrike > 99) {#var BLUDLENCsavagelystrike 3} {};#IF (@BLUDCsavagelystrike < 10000 AND @BLUDCsavagelystrike > 999) {#var BLUDLENCsavagelystrike 2} {}} {Blud_Hit}
+#trigger {^Cackling demonically you savagely sock} {#ad BLUDCsavagelysock 1;calcbludhits;#IF (@BLUDCsavagelysock < 100 AND @BLUDCsavagelysock > 9) {#var BLUDLENCsavagelysock 4} {};#IF (@BLUDCsavagelysock < 1000 AND @BLUDCsavagelysock > 99) {#var BLUDLENCsavagelysock 3} {};#IF (@BLUDCsavagelysock < 10000 AND @BLUDCsavagelysock > 999) {#var BLUDLENCsavagelysock 2} {}} {Blud_Hit}
+#echo ### Aliases ###
+#alias calcbludhits {#math BLUDtotal (@BLUDmiss+@BLUDjostle+@BLUDbutt+@BLUDbump+@BLUDthump+@BLUDstroke+@BLUDthrust+@BLUDjab+@BLUDbash+@BLUDstrike+@BLUDsock+@BLUDcuff+@BLUDknock+@BLUDflail+@BLUDbeat+@BLUDwhack+@BLUDsmash+@BLUDcruellybeat+@BLUDbadlysmash+@BLUDhorriblythrust+@BLUDsavagelystrike+@BLUDsavagelysock+@BLUDCjostle+@BLUDCbutt+@BLUDCbump+@BLUDCthump+@BLUDCstroke+@BLUDCthrust+@BLUDCjab+@BLUDCbash+@BLUDCstrike+@BLUDCsock+@BLUDCcuff+@BLUDCknock+@BLUDCflail+@BLUDCbeat+@BLUDCwhack+@BLUDCsmash+@BLUDCcruellybeat+@BLUDCbadlysmash+@BLUDChorriblythrust+@BLUDCsavagelystrike+@BLUDCsavagelysock);#IF (@BLUDtotal < 100 AND @BLUDtotal > 9) {#var BLUDLENtotal 11} {};#IF (@BLUDtotal < 1000 AND @BLUDtotal > 99) {#var BLUDLENtotal 10} {};#IF (@BLUDtotal < 10000 AND @BLUDtotal > 999) {#var BLUDLENtotal 9} {};#IF (@BLUDtotal < 100000 AND @BLUDtotal > 9999) {#var BLUDLENtotal 8} {}}
+
+#echo ### SELECT WINDOW OR ECHO STYLE ###
+#echo ### Status window style (hits shows in small window) ###
+#STW {+-----------------+------+-------+%cr| Bludgeon (V2.1) | Hits | Crits |%cr+-----------------+------+-------+%cr| Misses %repeat(" ",8) |%repeat(" ",@BLUDLENmiss)@BLUDmiss | %repeat(" ",1) N/A |%cr| Jostle %repeat(" ",8) |%repeat(" ",@BLUDLENjostle)@BLUDjostle |%repeat(" ",@BLUDLENCjostle)@BLUDCjostle |%cr| Butt %repeat(" ",10) |%repeat(" ",@BLUDLENbutt)@BLUDbutt |%repeat(" ",@BLUDLENCbutt)@BLUDCbutt |%cr| Bump %repeat(" ",10) |%repeat(" ",@BLUDLENbump)@BLUDbump |%repeat(" ",@BLUDLENCbump)@BLUDCbump |%cr| Thump %repeat(" ",9) |%repeat(" ",@BLUDLENthump)@BLUDthump |%repeat(" ",@BLUDLENCthump)@BLUDCthump |%cr| Stroke %repeat(" ",8) |%repeat(" ",@BLUDLENstroke)@BLUDstroke |%repeat(" ",@BLUDLENCstroke)@BLUDCstroke |%cr| Thrust %repeat(" ",8) |%repeat(" ",@BLUDLENthrust)@BLUDthrust |%repeat(" ",@BLUDLENCthrust)@BLUDCthrust |%cr| Jab %repeat(" ",11) |%repeat(" ",@BLUDLENjab)@BLUDjab |%repeat(" ",@BLUDLENCjab)@BLUDCjab |%cr| Bash %repeat(" ",10) |%repeat(" ",@BLUDLENbash)@BLUDbash |%repeat(" ",@BLUDLENCbash)@BLUDCbash |%cr| Strike %repeat(" ",8) |%repeat(" ",@BLUDLENstrike)@BLUDstrike |%repeat(" ",@BLUDLENCstrike)@BLUDCstrike |%cr| Sock %repeat(" ",10) |%repeat(" ",@BLUDLENsock)@BLUDsock |%repeat(" ",@BLUDLENCsock)@BLUDCsock |%cr| Cuff %repeat(" ",10) |%repeat(" ",@BLUDLENcuff)@BLUDcuff |%repeat(" ",@BLUDLENCcuff)@BLUDCcuff |%cr| Knock %repeat(" ",9) |%repeat(" ",@BLUDLENknock)@BLUDknock |%repeat(" ",@BLUDLENCknock)@BLUDCknock |%cr| Flail %repeat(" ",9) |%repeat(" ",@BLUDLENflail)@BLUDflail |%repeat(" ",@BLUDLENCflail)@BLUDCflail |%cr| Beat %repeat(" ",10) |%repeat(" ",@BLUDLENbeat)@BLUDbeat |%repeat(" ",@BLUDLENCbeat)@BLUDCbeat |%cr| Whack %repeat(" ",9) |%repeat(" ",@BLUDLENwhack)@BLUDwhack |%repeat(" ",@BLUDLENCwhack)@BLUDCwhack |%cr| Smash %repeat(" ",9) |%repeat(" ",@BLUDLENsmash)@BLUDsmash |%repeat(" ",@BLUDLENCsmash)@BLUDCsmash |%cr| Cruelly beat %repeat(" ",2) |%repeat(" ",@BLUDLENcruellybeat)@BLUDcruellybeat |%repeat(" ",@BLUDLENCcruellybeat)@BLUDCcruellybeat |%cr| Badly smash %repeat(" ",3) |%repeat(" ",@BLUDLENbadlysmash)@BLUDbadlysmash |%repeat(" ",@BLUDLENCbadlysmash)@BLUDCbadlysmash |%cr| Horribly thrust |%repeat(" ",@BLUDLENhorriblythrust)@BLUDhorriblythrust |%repeat(" ",@BLUDLENChorriblythrust)@BLUDChorriblythrust |%cr| Savagely strike |%repeat(" ",@BLUDLENsavagelystrike)@BLUDsavagelystrike |%repeat(" ",@BLUDLENCsavagelystrike)@BLUDCsavagelystrike |%cr| Savagely sock %repeat(" ",1) |%repeat(" ",@BLUDLENsavagelysock)@BLUDsavagelysock |%repeat(" ",@BLUDLENCsavagelysock)@BLUDCsavagelysock |%cr+-----------------+------+-------+%cr| Total hits %repeat(" ",4) |%repeat(" ",@BLUDLENtotal)@BLUDtotal |%cr+-----------------+--------------+%cr}
+#echo ### Echo style (hits shows in screen after typing hitcount) ###
+#ALIAS hitcount {#echo +-----------------+------+-------+%cr| Bludgeon (V2.1) | Hits | Crits |%cr+-----------------+------+-------+%cr| Misses %repeat(" ",8) |%repeat(" ",@BLUDLENmiss)@BLUDmiss | %repeat(" ",1) N/A |%cr| Jostle %repeat(" ",8) |%repeat(" ",@BLUDLENjostle)@BLUDjostle |%repeat(" ",@BLUDLENCjostle)@BLUDCjostle |%cr| Butt %repeat(" ",10) |%repeat(" ",@BLUDLENbutt)@BLUDbutt |%repeat(" ",@BLUDLENCbutt)@BLUDCbutt |%cr| Bump %repeat(" ",10) |%repeat(" ",@BLUDLENbump)@BLUDbump |%repeat(" ",@BLUDLENCbump)@BLUDCbump |%cr| Thump %repeat(" ",9) |%repeat(" ",@BLUDLENthump)@BLUDthump |%repeat(" ",@BLUDLENCthump)@BLUDCthump |%cr| Stroke %repeat(" ",8) |%repeat(" ",@BLUDLENstroke)@BLUDstroke |%repeat(" ",@BLUDLENCstroke)@BLUDCstroke |%cr| Thrust %repeat(" ",8) |%repeat(" ",@BLUDLENthrust)@BLUDthrust |%repeat(" ",@BLUDLENCthrust)@BLUDCthrust |%cr| Jab %repeat(" ",11) |%repeat(" ",@BLUDLENjab)@BLUDjab |%repeat(" ",@BLUDLENCjab)@BLUDCjab |%cr| Bash %repeat(" ",10) |%repeat(" ",@BLUDLENbash)@BLUDbash |%repeat(" ",@BLUDLENCbash)@BLUDCbash |%cr| Strike %repeat(" ",8) |%repeat(" ",@BLUDLENstrike)@BLUDstrike |%repeat(" ",@BLUDLENCstrike)@BLUDCstrike |%cr| Sock %repeat(" ",10) |%repeat(" ",@BLUDLENsock)@BLUDsock |%repeat(" ",@BLUDLENCsock)@BLUDCsock |%cr| Cuff %repeat(" ",10) |%repeat(" ",@BLUDLENcuff)@BLUDcuff |%repeat(" ",@BLUDLENCcuff)@BLUDCcuff |%cr| Knock %repeat(" ",9) |%repeat(" ",@BLUDLENknock)@BLUDknock |%repeat(" ",@BLUDLENCknock)@BLUDCknock |%cr| Flail %repeat(" ",9) |%repeat(" ",@BLUDLENflail)@BLUDflail |%repeat(" ",@BLUDLENCflail)@BLUDCflail |%cr| Beat %repeat(" ",10) |%repeat(" ",@BLUDLENbeat)@BLUDbeat |%repeat(" ",@BLUDLENCbeat)@BLUDCbeat |%cr| Whack %repeat(" ",9) |%repeat(" ",@BLUDLENwhack)@BLUDwhack |%repeat(" ",@BLUDLENCwhack)@BLUDCwhack |%cr| Smash %repeat(" ",9) |%repeat(" ",@BLUDLENsmash)@BLUDsmash |%repeat(" ",@BLUDLENCsmash)@BLUDCsmash |%cr| Cruelly beat %repeat(" ",2) |%repeat(" ",@BLUDLENcruellybeat)@BLUDcruellybeat |%repeat(" ",@BLUDLENCcruellybeat)@BLUDCcruellybeat |%cr| Badly smash %repeat(" ",3) |%repeat(" ",@BLUDLENbadlysmash)@BLUDbadlysmash |%repeat(" ",@BLUDLENCbadlysmash)@BLUDCbadlysmash |%cr| Horribly thrust |%repeat(" ",@BLUDLENhorriblythrust)@BLUDhorriblythrust |%repeat(" ",@BLUDLENChorriblythrust)@BLUDChorriblythrust |%cr| Savagely strike |%repeat(" ",@BLUDLENsavagelystrike)@BLUDsavagelystrike |%repeat(" ",@BLUDLENCsavagelystrike)@BLUDCsavagelystrike |%cr| Savagely sock %repeat(" ",1) |%repeat(" ",@BLUDLENsavagelysock)@BLUDsavagelysock |%repeat(" ",@BLUDLENCsavagelysock)@BLUDCsavagelysock |%cr+-----------------+------+-------+%cr| Total hits %repeat(" ",4) |%repeat(" ",@BLUDLENtotal)@BLUDtotal |%cr+-----------------+--------------+%cr}

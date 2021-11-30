@@ -1,0 +1,121 @@
+#echo +------------------------------------+
+#echo | TIGER MA HIT COUNTER (V2.1)        |
+#echo | MODIFIED 06.03.2007                |
+#echo | Shows hit count on status window   |
+#echo | or echoes to screen. Select!       |
+#echo | Report any bugs by MUDmail,        |
+#echo | thank you ! :)                     |
+#echo +------------------------------------+
+#echo ### Variables ###
+#var TIGERmiss {0} {0} {TIGER_Var}
+#var TIGERstep {0} {0} {TIGER_Var}
+#var TIGERkick {0} {0} {TIGER_Var}
+#var TIGERsmash {0} {0} {TIGER_Var}
+#var TIGERpunch {0} {0} {TIGER_Var}
+#var TIGERstompkick {0} {0} {TIGER_Var}
+#var TIGERspinkick {0} {0} {TIGER_Var}
+#var TIGERsweep {0} {0} {TIGER_Var}
+#var TIGERattack {0} {0} {TIGER_Var}
+#var TIGERsidekick {0} {0} {TIGER_Var}
+#var TIGERpoke {0} {0} {TIGER_Var}
+#var TIGERstrike {0} {0} {TIGER_Var}
+#var TIGERhit {0} {0} {TIGER_Var}
+#var TIGERjointlock {0} {0} {TIGER_Var}
+#var TIGERjumpkick {0} {0} {TIGER_Var}
+#var TIGERthrust {0} {0} {TIGER_Var}
+#var TIGERpummel {0} {0} {TIGER_Var}
+#var TIGERtotal {0} {0} {TIGER_Var}
+#var TIGERCstep {0} {0} {TIGER_C_Var}
+#var TIGERCkick {0} {0} {TIGER_C_Var}
+#var TIGERCsmash {0} {0} {TIGER_C_Var}
+#var TIGERCpunch {0} {0} {TIGER_C_Var}
+#var TIGERCstompkick {0} {0} {TIGER_C_Var}
+#var TIGERCspinkick {0} {0} {TIGER_C_Var}
+#var TIGERCsweep {0} {0} {TIGER_C_Var}
+#var TIGERCattack {0} {0} {TIGER_C_Var}
+#var TIGERCsidekick {0} {0} {TIGER_C_Var}
+#var TIGERCpoke {0} {0} {TIGER_C_Var}
+#var TIGERCstrike {0} {0} {TIGER_C_Var}
+#var TIGERChit {0} {0} {TIGER_C_Var}
+#var TIGERCjointlock {0} {0} {TIGER_C_Var}
+#var TIGERCjumpkick {0} {0} {TIGER_C_Var}
+#var TIGERCthrust {0} {0} {TIGER_C_Var}
+#var TIGERCpummel {0} {0} {TIGER_C_Var}
+#var TIGERLENmiss {4} {4} {TIGER_LEN_Var}
+#var TIGERLENstep {4} {4} {TIGER_LEN_Var}
+#var TIGERLENkick {4} {4} {TIGER_LEN_Var}
+#var TIGERLENsmash {4} {4} {TIGER_LEN_Var}
+#var TIGERLENpunch {4} {4} {TIGER_LEN_Var}
+#var TIGERLENstompkick {4} {4} {TIGER_LEN_Var}
+#var TIGERLENspinkick {4} {4} {TIGER_LEN_Var}
+#var TIGERLENsweep {4} {4} {TIGER_LEN_Var}
+#var TIGERLENattack {4} {4} {TIGER_LEN_Var}
+#var TIGERLENsidekick {4} {4} {TIGER_LEN_Var}
+#var TIGERLENpoke {4} {4} {TIGER_LEN_Var}
+#var TIGERLENstrike {4} {4} {TIGER_LEN_Var}
+#var TIGERLENhit {4} {4} {TIGER_LEN_Var}
+#var TIGERLENjointlock {4} {4} {TIGER_LEN_Var}
+#var TIGERLENjumpkick {4} {4} {TIGER_LEN_Var}
+#var TIGERLENthrust {4} {4} {TIGER_LEN_Var}
+#var TIGERLENpummel {4} {4} {TIGER_LEN_Var}
+#var TIGERLENtotal {12} {12} {TIGER_LEN_Var}
+#var TIGERLENCstep {5} {5} {TIGER_LEN_C_Var}
+#var TIGERLENCkick {5} {5} {TIGER_LEN_C_Var}
+#var TIGERLENCsmash {5} {5} {TIGER_LEN_C_Var}
+#var TIGERLENCpunch {5} {5} {TIGER_LEN_C_Var}
+#var TIGERLENCstompkick {5} {5} {TIGER_LEN_C_Var}
+#var TIGERLENCspinkick {5} {5} {TIGER_LEN_C_Var}
+#var TIGERLENCsweep {5} {5} {TIGER_LEN_C_Var}
+#var TIGERLENCattack {5} {5} {TIGER_LEN_C_Var}
+#var TIGERLENCsidekick {5} {5} {TIGER_LEN_C_Var}
+#var TIGERLENCpoke {5} {5} {TIGER_LEN_C_Var}
+#var TIGERLENCstrike {5} {5} {TIGER_LEN_C_Var}
+#var TIGERLENChit {5} {5} {TIGER_LEN_C_Var}
+#var TIGERLENCjointlock {5} {5} {TIGER_LEN_C_Var}
+#var TIGERLENCjumpkick {5} {5} {TIGER_LEN_C_Var}
+#var TIGERLENCthrust {5} {5} {TIGER_LEN_C_Var}
+#var TIGERLENCpummel {5} {5} {TIGER_LEN_C_Var}
+#echo ### Triggers ###
+#trigger {^You miss} {#ad TIGERmiss 1;calctigerhits;#IF (@TIGERmiss < 100 AND @TIGERmiss > 9) {#var TIGERLENmiss 3} {};#IF (@TIGERmiss < 1000 AND @TIGERmiss > 99) {#var TIGERLENmiss 2} {};#IF (@TIGERmiss < 10000 AND @TIGERmiss > 999) {#var TIGERLENmiss 1} {}} {TIGER_Hit_Trig}
+#trigger {^You step} {#ad TIGERstep 1;calctigerhits;#IF (@TIGERstep < 100 AND @TIGERstep > 9) {#var TIGERLENstep 3} {};#IF (@TIGERstep < 1000 AND @TIGERstep > 99) {#var TIGERLENstep 2} {};#IF (@TIGERstep < 10000 AND @TIGERstep > 999) {#var TIGERLENstep 1} {}} {TIGER_Hit_Trig}
+#trigger {^You kick} {#ad TIGERkick 1;calctigerhits;#IF (@TIGERkick < 100 AND @TIGERkick > 9) {#var TIGERLENkick 3} {};#IF (@TIGERkick < 1000 AND @TIGERkick > 99) {#var TIGERLENkick 2} {};#IF (@TIGERkick < 10000 AND @TIGERkick > 999) {#var TIGERLENkick 1} {}} {TIGER_Hit_Trig}
+#trigger {^You smash} {#ad TIGERsmash 1;calctigerhits;#IF (@TIGERsmash < 100 AND @TIGERsmash > 9) {#var TIGERLENsmash 3} {};#IF (@TIGERsmash < 1000 AND @TIGERsmash > 99) {#var TIGERLENsmash 2} {};#IF (@TIGERsmash < 10000 AND @TIGERsmash > 999) {#var TIGERLENsmash 1} {}} {TIGER_Hit_Trig}
+#trigger {^You punch} {#ad TIGERpunch 1;calctigerhits;#IF (@TIGERpunch < 100 AND @TIGERpunch > 9) {#var TIGERLENpunch 3} {};#IF (@TIGERpunch < 1000 AND @TIGERpunch > 99) {#var TIGERLENpunch 2} {};#IF (@TIGERpunch < 10000 AND @TIGERpunch > 999) {#var TIGERLENpunch 1} {}} {TIGER_Hit_Trig}
+#trigger {^You stomp-kick} {#ad TIGERstompkick 1;calctigerhits;#IF (@TIGERstompkick < 100 AND @TIGERstompkick > 9) {#var TIGERLENstompkick 3} {};#IF (@TIGERstompkick < 1000 AND @TIGERstompkick > 99) {#var TIGERLENstompkick 2} {};#IF (@TIGERstompkick < 10000 AND @TIGERstompkick > 999) {#var TIGERLENstompkick 1} {}} {TIGER_Hit_Trig}
+#trigger {^You spin-kick} {#ad TIGERspinkick 1;calctigerhits;#IF (@TIGERspinkick < 100 AND @TIGERspinkick > 9) {#var TIGERLENspinkick 3} {};#IF (@TIGERspinkick < 1000 AND @TIGERspinkick > 99) {#var TIGERLENspinkick 2} {};#IF (@TIGERspinkick < 10000 AND @TIGERspinkick > 999) {#var TIGERLENspinkick 1} {}} {TIGER_Hit_Trig}
+#trigger {^You sweep} {#ad TIGERsweep 1;calctigerhits;#IF (@TIGERsweep < 100 AND @TIGERsweep > 9) {#var TIGERLENsweep 3} {};#IF (@TIGERsweep < 1000 AND @TIGERsweep > 99) {#var TIGERLENsweep 2} {};#IF (@TIGERsweep < 10000 AND @TIGERsweep > 999) {#var TIGERLENsweep 1} {}} {TIGER_Hit_Trig}
+#trigger {^You attack} {#ad TIGERattack 1;calctigerhits;#IF (@TIGERattack < 100 AND @TIGERattack > 9) {#var TIGERLENattack 3} {};#IF (@TIGERattack < 1000 AND @TIGERattack > 99) {#var TIGERLENattack 2} {};#IF (@TIGERattack < 10000 AND @TIGERattack > 999) {#var TIGERLENattack 1} {}} {TIGER_Hit_Trig}
+#trigger {^You side-kick} {#ad TIGERsidekick 1;calctigerhits;#IF (@TIGERsidekick < 100 AND @TIGERsidekick > 9) {#var TIGERLENsidekick 3} {};#IF (@TIGERsidekick < 1000 AND @TIGERsidekick > 99) {#var TIGERLENsidekick 2} {};#IF (@TIGERsidekick < 10000 AND @TIGERsidekick > 999) {#var TIGERLENsidekick 1} {}} {TIGER_Hit_Trig}
+#trigger {^You poke} {#ad TIGERpoke 1;calctigerhits;#IF (@TIGERpoke < 100 AND @TIGERpoke > 9) {#var TIGERLENpoke 3} {};#IF (@TIGERpoke < 1000 AND @TIGERpoke > 99) {#var TIGERLENpoke 2} {};#IF (@TIGERpoke < 10000 AND @TIGERpoke > 999) {#var TIGERLENpoke 1} {}} {TIGER_Hit_Trig}
+#trigger {^You strike} {#ad TIGERstrike 1;calctigerhits;#IF (@TIGERstrike < 100 AND @TIGERstrike > 9) {#var TIGERLENstrike 3} {};#IF (@TIGERstrike < 1000 AND @TIGERstrike > 99) {#var TIGERLENstrike 2} {};#IF (@TIGERstrike < 10000 AND @TIGERstrike > 999) {#var TIGERLENstrike 1} {}} {TIGER_Hit_Trig}
+#trigger {^You hit} {#ad TIGERhit 1;calctigerhits;#IF (@TIGERhit < 100 AND @TIGERhit > 9) {#var TIGERLENhit 3} {};#IF (@TIGERhit < 1000 AND @TIGERhit > 99) {#var TIGERLENhit 2} {};#IF (@TIGERhit < 10000 AND @TIGERhit > 999) {#var TIGERLENhit 1} {}} {TIGER_Hit_Trig}
+#trigger {^You joint-lock} {#ad TIGERjointlock 1;calctigerhits;#IF (@TIGERjointlock < 100 AND @TIGERjointlock > 9) {#var TIGERLENjointlock 3} {};#IF (@TIGERjointlock < 1000 AND @TIGERjointlock > 99) {#var TIGERLENjointlock 2} {};#IF (@TIGERjointlock < 10000 AND @TIGERjointlock > 999) {#var TIGERLENjointlock 1} {}} {TIGER_Hit_Trig}
+#trigger {^You jump-kick} {#ad TIGERjumpkick 1;calctigerhits;#IF (@TIGERjumpkick < 100 AND @TIGERjumpkick > 9) {#var TIGERLENjumpkick 3} {};#IF (@TIGERjumpkick < 1000 AND @TIGERjumpkick > 99) {#var TIGERLENjumpkick 2} {};#IF (@TIGERjumpkick < 10000 AND @TIGERjumpkick > 999) {#var TIGERLENjumpkick 1} {}} {TIGER_Hit_Trig}
+#trigger {^You thrust} {#ad TIGERthrust 1;calctigerhits;#IF (@TIGERthrust < 100 AND @TIGERthrust > 9) {#var TIGERLENthrust 3} {};#IF (@TIGERthrust < 1000 AND @TIGERthrust > 99) {#var TIGERLENthrust 2} {};#IF (@TIGERthrust < 10000 AND @TIGERthrust > 999) {#var TIGERLENthrust 1} {}} {TIGER_Hit_Trig}
+#trigger {^You pummel} {#ad TIGERpummel 1;calctigerhits;#IF (@TIGERpummel < 100 AND @TIGERpummel > 9) {#var TIGERLENpummel 3} {};#IF (@TIGERpummel < 1000 AND @TIGERpummel > 99) {#var TIGERLENpummel 2} {};#IF (@TIGERpummel < 10000 AND @TIGERpummel > 999) {#var TIGERLENpummel 1} {}} {TIGER_Hit_Trig}
+#trigger {^* successfully dodges your *.} {#ad TIGERmiss 1;calctigerhits;#IF (@TIGERmiss < 100 AND @TIGERmiss > 9) {#var TIGERLENmiss 3} {};#IF (@TIGERmiss < 1000 AND @TIGERmiss > 99) {#var TIGERLENmiss 2} {};#IF (@TIGERmiss < 10000 AND @TIGERmiss > 999) {#var TIGERLENmiss 1} {}} {Monk_Hit}
+#trigger {^* successfully parries your *.} {#ad TIGERmiss 1;calctigerhits;#IF (@TIGERmiss < 100 AND @TIGERmiss > 9) {#var TIGERLENmiss 3} {};#IF (@TIGERmiss < 1000 AND @TIGERmiss > 99) {#var TIGERLENmiss 2} {};#IF (@TIGERmiss < 10000 AND @TIGERmiss > 999) {#var TIGERLENmiss 1} {}} {Monk_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you step} {#ad TIGERCstep 1;calcmonkhits;#IF (@TIGERCstep < 100 AND @TIGERCstep > 9) {#var TIGERLENCstep 3} {};#IF (@TIGERCstep < 1000 AND @TIGERCstep > 99) {#var TIGERLENCstep 2} {};#IF (@TIGERCstep < 10000 AND @TIGERCstep > 999) {#var TIGERLENCstep 1} {}} {TIGER_Hit_Trig}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you kick} {#ad TIGERCkick 1;calcmonkhits;#IF (@TIGERCkick < 100 AND @TIGERCkick > 9) {#var TIGERLENCkick 3} {};#IF (@TIGERCkick < 1000 AND @TIGERCkick > 99) {#var TIGERLENCkick 2} {};#IF (@TIGERCkick < 10000 AND @TIGERCkick > 999) {#var TIGERLENCkick 1} {}} {TIGER_Hit_Trig}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you smash} {#ad TIGERCsmash 1;calcmonkhits;#IF (@TIGERCsmash < 100 AND @TIGERCsmash > 9) {#var TIGERLENCsmash 3} {};#IF (@TIGERCsmash < 1000 AND @TIGERCsmash > 99) {#var TIGERLENCsmash 2} {};#IF (@TIGERCsmash < 10000 AND @TIGERCsmash > 999) {#var TIGERLENCsmash 1} {}} {TIGER_Hit_Trig}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you punch} {#ad TIGERCpunch 1;calcmonkhits;#IF (@TIGERCpunch < 100 AND @TIGERCpunch > 9) {#var TIGERLENCpunch 3} {};#IF (@TIGERCpunch < 1000 AND @TIGERCpunch > 99) {#var TIGERLENCpunch 2} {};#IF (@TIGERCpunch < 10000 AND @TIGERCpunch > 999) {#var TIGERLENCpunch 1} {}} {TIGER_Hit_Trig}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you stomp-kick} {#ad TIGERCstompkick 1;calcmonkhits;#IF (@TIGERCstompkick < 100 AND @TIGERCstompkick > 9) {#var TIGERLENCstompkick 3} {};#IF (@TIGERCstompkick < 1000 AND @TIGERCstompkick > 99) {#var TIGERLENCstompkick 2} {};#IF (@TIGERCstompkick < 10000 AND @TIGERCstompkick > 999) {#var TIGERLENCstompkick 1} {}} {TIGER_Hit_Trig}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you spin-kick} {#ad TIGERCspinkick 1;calcmonkhits;#IF (@TIGERCspinkick < 100 AND @TIGERCspinkick > 9) {#var TIGERLENCspinkick 3} {};#IF (@TIGERCspinkick < 1000 AND @TIGERCspinkick > 99) {#var TIGERLENCspinkick 2} {};#IF (@TIGERCspinkick < 10000 AND @TIGERCspinkick > 999) {#var TIGERLENCspinkick 1} {}} {TIGER_Hit_Trig}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you sweep} {#ad TIGERCsweep 1;calcmonkhits;#IF (@TIGERCsweep < 100 AND @TIGERCsweep > 9) {#var TIGERLENCsweep 3} {};#IF (@TIGERCsweep < 1000 AND @TIGERCsweep > 99) {#var TIGERLENCsweep 2} {};#IF (@TIGERCsweep < 10000 AND @TIGERCsweep > 999) {#var TIGERLENCsweep 1} {}} {TIGER_Hit_Trig}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you attack} {#ad TIGERCattack 1;calcmonkhits;#IF (@TIGERCattack < 100 AND @TIGERCattack > 9) {#var TIGERLENCattack 3} {};#IF (@TIGERCattack < 1000 AND @TIGERCattack > 99) {#var TIGERLENCattack 2} {};#IF (@TIGERCattack < 10000 AND @TIGERCattack > 999) {#var TIGERLENCattack 1} {}} {TIGER_Hit_Trig}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you side-kick} {#ad TIGERCsidekick 1;calcmonkhits;#IF (@TIGERCsidekick < 100 AND @TIGERCsidekick > 9) {#var TIGERLENCsidekick 3} {};#IF (@TIGERCsidekick < 1000 AND @TIGERCsidekick > 99) {#var TIGERLENCsidekick 2} {};#IF (@TIGERCsidekick < 10000 AND @TIGERCsidekick > 999) {#var TIGERLENCsidekick 1} {}} {TIGER_Hit_Trig}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you poke} {#ad TIGERCpoke 1;calcmonkhits;#IF (@TIGERCpoke < 100 AND @TIGERCpoke > 9) {#var TIGERLENCpoke 3} {};#IF (@TIGERCpoke < 1000 AND @TIGERCpoke > 99) {#var TIGERLENCpoke 2} {};#IF (@TIGERCpoke < 10000 AND @TIGERCpoke > 999) {#var TIGERLENCpoke 1} {}} {TIGER_Hit_Trig}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you strike} {#ad TIGERCstrike 1;calcmonkhits;#IF (@TIGERCstrike < 100 AND @TIGERCstrike > 9) {#var TIGERLENCstrike 3} {};#IF (@TIGERCstrike < 1000 AND @TIGERCstrike > 99) {#var TIGERLENCstrike 2} {};#IF (@TIGERCstrike < 10000 AND @TIGERCstrike > 999) {#var TIGERLENCstrike 1} {}} {TIGER_Hit_Trig}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you hit} {#ad TIGERChit 1;calcmonkhits;#IF (@TIGERChit < 100 AND @TIGERChit > 9) {#var TIGERLENChit 3} {};#IF (@TIGERChit < 1000 AND @TIGERChit > 99) {#var TIGERLENChit 2} {};#IF (@TIGERChit < 10000 AND @TIGERChit > 999) {#var TIGERLENChit 1} {}} {TIGER_Hit_Trig}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you joint-lock} {#ad TIGERCjointlock 1;calcmonkhits;#IF (@TIGERCjointlock < 100 AND @TIGERCjointlock > 9) {#var TIGERLENCjointlock 3} {};#IF (@TIGERCjointlock < 1000 AND @TIGERCjointlock > 99) {#var TIGERLENCjointlock 2} {};#IF (@TIGERCjointlock < 10000 AND @TIGERCjointlock > 999) {#var TIGERLENCjointlock 1} {}} {TIGER_Hit_Trig}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you jump-kick} {#ad TIGERCjumpkick 1;calcmonkhits;#IF (@TIGERCjumpkick < 100 AND @TIGERCjumpkick > 9) {#var TIGERLENCjumpkick 3} {};#IF (@TIGERCjumpkick < 1000 AND @TIGERCjumpkick > 99) {#var TIGERLENCjumpkick 2} {};#IF (@TIGERCjumpkick < 10000 AND @TIGERCjumpkick > 999) {#var TIGERLENCjumpkick 1} {}} {TIGER_Hit_Trig}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you thrust} {#ad TIGERCthrust 1;calcmonkhits;#IF (@TIGERCthrust < 100 AND @TIGERCthrust > 9) {#var TIGERLENCthrust 3} {};#IF (@TIGERCthrust < 1000 AND @TIGERCthrust > 99) {#var TIGERLENCthrust 2} {};#IF (@TIGERCthrust < 10000 AND @TIGERCthrust > 999) {#var TIGERLENCthrust 1} {}} {TIGER_Hit_Trig}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you pummel} {#ad TIGERCpummel 1;calcmonkhits;#IF (@TIGERCpummel < 100 AND @TIGERCpummel > 9) {#var TIGERLENCpummel 3} {};#IF (@TIGERCpummel < 1000 AND @TIGERCpummel > 99) {#var TIGERLENCpummel 2} {};#IF (@TIGERCpummel < 10000 AND @TIGERCpummel > 999) {#var TIGERLENCpummel 1} {}} {TIGER_Hit_Trig}
+#echo ### Aliases ###
+#alias calctigerhits {#math TIGERtotal (@TIGERmiss+@TIGERstep+@TIGERkick+@TIGERsmash+@TIGERpunch+@TIGERstompkick+@TIGERspinkick+@TIGERsweep+@TIGERattack+@TIGERsidekick+@TIGERpoke+@TIGERstrike+@TIGERhit+@TIGERjointlock+@TIGERjumpkick+@TIGERthrust+@TIGERpummel+@TIGERCstep+@TIGERCkick+@TIGERCsmash+@TIGERCpunch+@TIGERCstompkick+@TIGERCspinkick+@TIGERCsweep+@TIGERCattack+@TIGERCsidekick+@TIGERCpoke+@TIGERCstrike+@TIGERChit+@TIGERCjointlock+@TIGERCjumpkick+@TIGERCthrust+@TIGERCpummel);#IF (@TIGERtotal < 100 AND @TIGERtotal > 9) {#var TIGERLENtotal 11} {};#IF (@TIGERtotal < 1000 AND @TIGERtotal > 99) {#var TIGERLENtotal 10} {};#IF (@TIGERtotal < 10000 AND @TIGERtotal > 999) {#var TIGERLENtotal 9} {};#IF (@TIGERtotal < 100000 AND @TIGERtotal > 9999) {#var TIGERLENtotal 8} {}}
+
+#echo ### SELECT WINDOW OR ECHO STYLE ###
+#echo ### Status window style (hits shows in small window) ###
+#STW {+--------------+------+-------+%cr| Tiger (V2.1) | Hits | Crits |%cr+--------------+------+-------+%cr| Misses %repeat(" ",5) |%repeat(" ",@TIGERLENmiss)@TIGERmiss | %repeat(" ",1) N/A |%cr| Step %repeat(" ",7) |%repeat(" ",@TIGERLENstep)@TIGERstep |%repeat(" ",@TIGERLENCstep)@TIGERCstep |%cr| Kick %repeat(" ",7) |%repeat(" ",@TIGERLENkick)@TIGERkick |%repeat(" ",@TIGERLENCkick)@TIGERCkick |%cr| Smash %repeat(" ",6) |%repeat(" ",@TIGERLENsmash)@TIGERsmash |%repeat(" ",@TIGERLENCsmash)@TIGERCsmash |%cr| Punch %repeat(" ",6) |%repeat(" ",@TIGERLENpunch)@TIGERpunch |%repeat(" ",@TIGERLENCpunch)@TIGERCpunch |%cr| Stomp-kick %repeat(" ",1) |%repeat(" ",@TIGERLENstompkick)@TIGERstompkick |%repeat(" ",@TIGERLENCstompkick)@TIGERCstompkick |%cr| Spin-kick %repeat(" ",2) |%repeat(" ",@TIGERLENspinkick)@TIGERspinkick |%repeat(" ",@TIGERLENCspinkick)@TIGERCspinkick |%cr| Sweep %repeat(" ",6) |%repeat(" ",@TIGERLENsweep)@TIGERsweep |%repeat(" ",@TIGERLENCsweep)@TIGERCsweep |%cr| Attack %repeat(" ",5) |%repeat(" ",@TIGERLENattack)@TIGERattack |%repeat(" ",@TIGERLENCattack)@TIGERCattack |%cr| Side-kick %repeat(" ",2) |%repeat(" ",@TIGERLENsidekick)@TIGERsidekick |%repeat(" ",@TIGERLENCsidekick)@TIGERCsidekick |%cr| Poke %repeat(" ",7) |%repeat(" ",@TIGERLENpoke)@TIGERpoke |%repeat(" ",@TIGERLENCpoke)@TIGERCpoke |%cr| Strike %repeat(" ",5) |%repeat(" ",@TIGERLENstrike)@TIGERstrike |%repeat(" ",@TIGERLENCstrike)@TIGERCstrike |%cr| Hit %repeat(" ",8) |%repeat(" ",@TIGERLENhit)@TIGERhit |%repeat(" ",@TIGERLENChit)@TIGERChit |%cr| Joint-lock %repeat(" ",1) |%repeat(" ",@TIGERLENjointlock)@TIGERjointlock |%repeat(" ",@TIGERLENCjointlock)@TIGERCjointlock |%cr| Jump-kick %repeat(" ",2) |%repeat(" ",@TIGERLENjumpkick)@TIGERjumpkick |%repeat(" ",@TIGERLENCjumpkick)@TIGERCjumpkick |%cr| Thrust %repeat(" ",5) |%repeat(" ",@TIGERLENthrust)@TIGERthrust |%repeat(" ",@TIGERLENCthrust)@TIGERCthrust |%cr| Pummel %repeat(" ",5) |%repeat(" ",@TIGERLENpummel)@TIGERpummel |%repeat(" ",@TIGERLENCpummel)@TIGERCpummel |%cr+--------------+------+-------+%cr| Total hits %repeat(" ",1) |%repeat(" ",@TIGERLENtotal)@TIGERtotal |%cr+--------------+--------------+}
+#echo ### Echo style (hits shows in screen after typing hitcount) ###
+#ALIAS hitcount {#echo +--------------+------+-------+%cr| Tiger (V2.1) | Hits | Crits |%cr+--------------+------+-------+%cr| Misses %repeat(" ",5) |%repeat(" ",@TIGERLENmiss)@TIGERmiss | %repeat(" ",1) N/A |%cr| Step %repeat(" ",7) |%repeat(" ",@TIGERLENstep)@TIGERstep |%repeat(" ",@TIGERLENCstep)@TIGERCstep |%cr| Kick %repeat(" ",7) |%repeat(" ",@TIGERLENkick)@TIGERkick |%repeat(" ",@TIGERLENCkick)@TIGERCkick |%cr| Smash %repeat(" ",6) |%repeat(" ",@TIGERLENsmash)@TIGERsmash |%repeat(" ",@TIGERLENCsmash)@TIGERCsmash |%cr| Punch %repeat(" ",6) |%repeat(" ",@TIGERLENpunch)@TIGERpunch |%repeat(" ",@TIGERLENCpunch)@TIGERCpunch |%cr| Stomp-kick %repeat(" ",1) |%repeat(" ",@TIGERLENstompkick)@TIGERstompkick |%repeat(" ",@TIGERLENCstompkick)@TIGERCstompkick |%cr| Spin-kick %repeat(" ",2) |%repeat(" ",@TIGERLENspinkick)@TIGERspinkick |%repeat(" ",@TIGERLENCspinkick)@TIGERCspinkick |%cr| Sweep %repeat(" ",6) |%repeat(" ",@TIGERLENsweep)@TIGERsweep |%repeat(" ",@TIGERLENCsweep)@TIGERCsweep |%cr| Attack %repeat(" ",5) |%repeat(" ",@TIGERLENattack)@TIGERattack |%repeat(" ",@TIGERLENCattack)@TIGERCattack |%cr| Side-kick %repeat(" ",2) |%repeat(" ",@TIGERLENsidekick)@TIGERsidekick |%repeat(" ",@TIGERLENCsidekick)@TIGERCsidekick |%cr| Poke %repeat(" ",7) |%repeat(" ",@TIGERLENpoke)@TIGERpoke |%repeat(" ",@TIGERLENCpoke)@TIGERCpoke |%cr| Strike %repeat(" ",5) |%repeat(" ",@TIGERLENstrike)@TIGERstrike |%repeat(" ",@TIGERLENCstrike)@TIGERCstrike |%cr| Hit %repeat(" ",8) |%repeat(" ",@TIGERLENhit)@TIGERhit |%repeat(" ",@TIGERLENChit)@TIGERChit |%cr| Joint-lock %repeat(" ",1) |%repeat(" ",@TIGERLENjointlock)@TIGERjointlock |%repeat(" ",@TIGERLENCjointlock)@TIGERCjointlock |%cr| Jump-kick %repeat(" ",2) |%repeat(" ",@TIGERLENjumpkick)@TIGERjumpkick |%repeat(" ",@TIGERLENCjumpkick)@TIGERCjumpkick |%cr| Thrust %repeat(" ",5) |%repeat(" ",@TIGERLENthrust)@TIGERthrust |%repeat(" ",@TIGERLENCthrust)@TIGERCthrust |%cr| Pummel %repeat(" ",5) |%repeat(" ",@TIGERLENpummel)@TIGERpummel |%repeat(" ",@TIGERLENCpummel)@TIGERCpummel |%cr+--------------+------+-------+%cr| Total hits %repeat(" ",1) |%repeat(" ",@TIGERLENtotal)@TIGERtotal |%cr+--------------+--------------+}

@@ -1,0 +1,96 @@
+#echo +------------------------------+
+#echo | PROTS STATUS REPORT (V1.1)   |
+#echo | MODIFIED 23.11.2007          |
+#echo | Prot inform triggers.        |
+#echo | Report any bugs by MUDmail,  |
+#echo | thank you ! :)               |
+#echo +------------------------------+
+#echo ### STATUSBAR, TIMER, ALIAS, TRIGGER ###
+#var prots {} {}
+#var prots2 {} {}
+#var protstimed {} {}
+#st {Prots: @prots}
+#alias checkprots {#if %ismember(BoT,@prots) {formattime bottime;#var prots2 {@prots2 BoT (@timed)}};#if %ismember(Unp,@prots) {formattime unpaintime;#var prots2 {@prots2 Unp (@timed)}};#if %ismember(Us,@prots) {formattime unstuntime;#var prots2 {@prots2 Us (@timed)}};#if %ismember(Eskin,@prots) {formattime eskintime;#var prots2 {@prots2 Eskin (@timed)}};#if %ismember(Epow,@prots) {formattime epowertime;#var prots2 {@prots2 Epow (@timed)}};#if %ismember(Flex,@prots) {formattime flextime;#var prots2 {@prots2 Flex (@timed)}};#if %ismember(Regen,@prots) {formattime regentime;#var prots2 {@prots2 Regen (@timed)}};#if %ismember(Vman,@prots) {formattime vinetime;#var prots2 {@prots2 Vman (@timed)}};#if %ismember(AoH,@prots) {formattime aohtime;#var prots2 {@prots2 AoH (@timed)}};#if %ismember(PfG,@prots) {formattime pfgtime;#var prots2 {@prots2 PfG (@timed)}};#if %ismember(PfE,@prots) {formattime pfetime;#var prots2 {@prots2 PfE (@timed)}};#if %ismember(SoF,@prots) {formattime shieldoffaithtime;#var prots2 {@prots2 SoF (@timed)}};#if %ismember(Fsh,@prots) {formattime fstime;#var prots2 {@prots2 Fsh (@timed)}};#if %ismember(PsiP,@prots) {formattime psiptime;#var prots2 {@prots2 PsiP (@timed)}};#if %ismember(EAware,@prots) {formattime eawatime;#var prots2 {@prots2 EAware (@timed)}};#if %ismember(Acid,@prots) {formattime acidtime;#var prots2 {@prots2 Acid (@timed)}};#if %ismember(AoA,@prots) {formattime aoatime;#var prots2 {@prots2 AoA (@timed)}};#if %ismember(Asphx,@prots) {formattime asphxtime;#var prots2 {@prots2 Asphx (@timed)}};#if %ismember(Cold,@prots) {formattime coldtime;#var prots2 {@prots2 Cold (@timed)}};#if %ismember(Elec,@prots) {formattime electrictime;#var prots2 {@prots2 Elec (@timed)}};#if %ismember(FAB,@prots) {formattime forcetime;#var prots2 {@prots2 FAB (@timed)}};#if %ismember(Fire,@prots) {formattime firetime;#var prots2 {@prots2 Fire (@timed)}};#if %ismember(Magic,@prots) {formattime magictime;#var prots2 {@prots2 Magic (@timed)}};#if %ismember(Poison,@prots) {formattime poisontime;#var prots2 {@prots2 Poison (@timed)}};#if %ismember(PSI,@prots) {formattime psitime;#var prots2 {@prots2 PSI (@timed)}};#if %ismember(SoP,@prots) {formattime soptime;#var prots2 {@prots2 SoP (@timed)}};#if %ismember(HW,@prots) {formattime hwtime;#var prots2 {@prots2 HW (@timed)}};#if %ismember(WarE,@prots) {formattime warestime;#var prots2 {@prots2 WarE (@timed)}};#if %ismember(Infra,@prots) {formattime infratime;#var prots2 {@prots2 Infra (@timed)}};#if %ismember(Invis,@prots) {formattime invistime;#var prots2 {@prots2 Invis (@timed)}};#if %ismember(Lev,@prots) {formattime levtime;#var prots2 {@prots2 Lev (@timed)}};#if %ismember(WW,@prots) {formattime wwtime;#var prots2 {@prots2 WW (@timed)}};#if (@prots2<>"") {party report Prots: @{prots2}} {party report Prots: NONE};#var prots2 {} {}}
+#alias clear {#var prots {} {}}
+#alias timer {#math %1 (%time(yyyy)-1970)*365*24*60*60);#math %1 @%1+(%time(m)*30*24*60*60);#math %1 @%1+(%time(d)*24*60*60);#math %1 @%1+(%time(h)*60*60);#math %1 @%1+(%time(n)*60);#math %1 @%1+%time(s)}
+#alias formattime {timer currenttime;#math tmptime @currenttime-@%1;#math tmpmin @tmptime/60;#math tmpsek @tmptime-(@tmpmin*60)];#if (@tmpmin=0) {#var timed [@{tmpsek}s]} {#var timed [@{tmpmin}m@{tmpsek}s]}}
+#trigger {^* tweaks your nose mischievously.} {checkprots} {prots-triggers}
+#echo ### TARMALEN PROTS ###
+#trigger {^You feel your will getting stronger.} {timer unpaintime;party report Unpain Active.;#if !%ismember(Unp,@prots) {#var prots %additem(Unp,@prots)}} {prots-tarmalen}
+#trigger {^You feel your will returning normal.} {formattime unpaintime;party report Unpain Expires. ~[[@{timed}]~];#var prots %delitem(Unp,@prots)} {prots-tarmalen}
+#trigger {^You feel strong - like you could carry the whole flat world on your back!} {timer bottime;party report Blessing of Tarmalen Active.;#if !%ismember(BoT,@prots) {#var prots %additem(BoT,@prots)}} {prots-tarmalen}
+#trigger {^You feel weaker.} {formattime bottime;party report Blessing of Tarmalen Expires. ~[[@{timed}]~];#var prots %delitem(BoT,@prots)} {prots-tarmalen}
+#trigger {^(%w)'s chanting appears to do absolutely nothing.} {timer unstuntime;party report Unstun Active.;#if !%ismember(Us,@prots) {#var prots %additem(Us,@prots)}} {prots-tarmalen}
+#trigger {^It doesn't hurt} {formattime unstuntime;party report Unstun Expired.~[[@{timed}]~];#var prots %delitem(Us,@prots)} {prots-tarmalen}
+#echo ### DRUID PROTS ###
+#trigger {^You sense a flex shield covering your body like a second skin.} {timer flextime;party report Flex Shield Active.;#if !%ismember(Flex,@prots) {#var prots %additem(Flex,@prots)}} {prots-druid}
+#trigger {^Your flex shield wobbles, PINGs and vanishes.} {formattime flextime;party report Flex Shield Expires. ~[[@{timed}]~];#var prots %delitem(Flex,@prots)} {prots-druid}
+#trigger {^You Die.} {#if %ismember(Flex,@prots) {formattime flextime;party report Flex Shield Expires. ~[[@{timed}]~];#var prots %delitem(Flex,@prots)}} {prots-druid}
+#trigger {^You feel your skin harden.} {timer eskintime;party report Earth Skin Active.;#if !%ismember(Eskin,@prots) {#var prots %additem(Eskin,@prots)}} {prots-druid}
+#trigger {^Your skin feels softer.} {formattime eskintime;party report Earth Skin Expires. ~[[@{timed}]~];#var prots %delitem(Eskin,@prots)} {prots-druid}
+#trigger {^Vines entangle your body.} {timer vinetime;party report Vine Mantle Active.;#if !%ismember(Vman,@prots) {#var prots %additem(Vman,@prots)}} {prots-druid}
+#trigger {^The vines around your body shrink.} {formattime vinetime;party report Vine Mantle Expires. ~[[@{timed}]~];#var prots %delitem(Vman,@prots)} {prots-druid}
+#trigger {^You feel your strength changing. You flex you muscles experimentally.} {timer epowertime;party report Earth Power Active.;#if !%ismember(Epow,@prots) {#var prots %additem(Epow,@prots)}} {prots-druid}
+#trigger {^The runic sigla *~%* fade away.. leaving you feeling strange.} {formattime epowertime;party report Earth Power Expires. ~[[@{timed}]~];#var prots %delitem(Epow,@prots)} {prots-druid}
+#trigger {^Your feel your metabolism speed up.} {timer regentime;party report Regeneration Active.;#if !%ismember(Regen,@prots) {#var prots %additem(Regen,@prots)}} {prots-druid}
+#trigger {^You no longer have a active regeneration spell on you} {formattime regentime;party report Regeneration Expires. ~[[@{timed}]~];#var prots %delitem(Regen,@prots)} {prots-druid}
+#echo ### PRIEST PROTS ###
+#trigger {^You feel burning hatred and rage erupt within you!} {timer aohtime;party report Aura of Hate Active.;#if !%ismember(AoH,@prots) {#var prots %additem(AoH,@prots)}} {prots-priest}
+#trigger {^You feel your anger and hate of the world recede.} {formattime aohtime;party report Aura of Hate Expires. ~[[@{timed}]~];#var prots %delitem(AoH,@prots)} {prots-priest}
+#trigger {^A vile black aura surrounds you.} {timer pfgtime;party report Protection from Good Active.;#if !%ismember(PfG,@prots) {#var prots %additem(PfG,@prots)}} {prots-priest}
+#trigger {^You no longer have a vile black aura around you.} {formattime pfgtime;party report Protection from Good Expires. ~[[@{timed}]~];#var prots %delitem(PfG,@prots)} {prots-priest}
+#echo ### NUN PROTS ###
+#trigger {^A white holy aura surrounds you.} {timer pfetime;party report Protection from Evil Active.;#if !%ismember(PfE,@prots) {#var prots %additem(PfE,@prots)}} {prots-nun}
+#trigger {^You no longer have a white aura around you.} {formattime pfetime;party report Protection from Evil Expires. ~[[@{timed}]~];#var prots %delitem(PfE,@prots)} {prots-nun}
+#echo ### TEMPLAR PROTS ###
+#trigger {^You are surrounded by divine glow!} {timer shieldoffaithtime;party report Shield of Faith Active.;#if !%ismember(SoF,@prots) {#var prots %additem(SoF,@prots)}} {prots-templar}
+#trigger {^Your glow disappears.} {formattime shieldoffaithtime;party report Shield of Faith Expires. ~[[@{timed}]~];#var prots %delitem(SoF,@prots)} {prots-templar}
+#echo ### PSI PROTS ###
+#trigger {^%w forms a shield of force around you.} {timer fstime;party report Force Shield Active.;#if !%ismember(Fsh,@prots) {#var prots %additem(Fsh,@prots)}} {prots-psi}
+#trigger {^Your armour feels thinner.} {formattime fstime;party report Force Shield Expires. ~[[@{timed}]~];#var prots %delitem(Fsh,@prots)} {prots-psi}
+#trigger {^You see a misty pale blue shield fade into existance around you.} {timer psiptime;party report Psionic phalanx Active.;#if !%ismember(PsiP,@prots) {#var prots %additem(PsiP,@prots)}} {prots-psi}
+#trigger {^Your misty pale blue shield fades out.} {formattime psiptime;party report Psionic phalanx Expires. ~[[@{timed}]~];#var prots %delitem(PsiP,@prots)} {prots-psi}
+#trigger {^You feel more aware of your surroundings.} {timer eawatime;party report Enhanced awareness Active.;#if !%ismember(EAware,@prots) {#var prots %additem(EAware,@prots)}} {prots-psi}
+#trigger {^You feel your enhanced awareness subside.} {formattime eawatime;party report Enhanced awareness Expires. ~[[@{timed}]~];#var prots %delitem(EAware,@prots)} {prots-psi}
+#echo ### CONJURER PROTS ###
+#trigger {^You sense a powerful protective aura around you.} {#if (@conjprot=force) {timer forcetime;party report Force Absorbsion Active.;#if !%ismember(FAB,@prots) {#var prots %additem(FAB,@prots)}};#if (@conjprot=fire) {timer firetime;party report Heat Reduction Active.;#if !%ismember(Fire,@prots) {#var prots %additem(Fire,@prots)}};#if (@conjprot=cold) {timer coldtime;party report Frost Insulation Active.;#if !%ismember(Cold,@prots) {#var prots %additem(Cold,@prots)}};#if (@conjprot=poison) {timer poisontime;party report Toxic Dilution Active.;#if !%ismember(Poison,@prots) {#var prots %additem(Poison,@prots)}};#if (@conjprot=magic) {timer magictime;party report Magic Dispersion Active.;#if !%ismember(Magic,@prots) {#var prots %additem(Magic,@prots)}};#if (@conjprot=Acid) {timer acidtime;party report Corrosion Shield Active.;#if !%ismember(Acid,@prots) {#var prots %additem(Acid,@prots)}};#if (@conjprot=electric) {timer electrictime;party report Energy channeling Active.;#if !%ismember(Elec,@prots) {#var prots %additem(Elec,@prots)}};#if (@conjprot=asphx) {timer asphxtime;party report Ether Boundary Active.;#if !%ismember(Asphx,@prots) {#var prots %additem(Asphx,@prots)}};#if (@conjprot=psi) {timer psitime;party report Psychic Sanctuary Active.;#if !%ismember(PSI,@prots) {#var prots %additem(PSI,@prots)}}} {prots-conjurer}
+#trigger {^You sense an extra powerful protective aura around you.} {#if (@conjprot=force) {timer forcetime;party report Force Absorbsion Active. (Sticky)};#if (@conjprot=fire) {timer firetime;party report Heat Reduction Active. (Sticky)};#if (@conjprot=cold) {timer coldtime;party report Frost Insulation Active. (Sticky)};#if (@conjprot=poison) {timer poisontime;party report Toxic Dilution Active. (Sticky)};#if (@conjprot=magic) {timer magictime;party report Magic Dispersion Active. (Sticky)};#if (@conjprot=acid) {timer acidtime;party report Corrosion Shield Active. (Sticky)};#if (@conjprot=electric) {timer electrictime;party report Energy channeling Active. (Sticky)};#if (@conjprot=asphx) {timer asphxtime;party report Ether Boundary Active. (Sticky)};#if (@conjprot=psi) {timer psitime;party report Psychic Sanctuary Active. (Sticky)}} {prots-conjurer}
+#trigger {ztonez des deckers} {#var conjprot force} {prots-conjurer}
+#trigger {^A skin brown flash momentarily surrounds you} {formattime forcetime;party report Force Absorbsion Expires. ~[[@{timed}]~];#var prots %delitem(FAB,@prots)} {prots-conjurer}
+#trigger {hot hot not zeis daimons} {#var conjprot fire} {prots-conjurer}
+#trigger {^A burning red flash momentarily surrounds you} {formattime firetime;party report Heat Reduction Expires. ~[[@{timed}]~];#var prots %delitem(Fire,@prots)} {prots-conjurer}
+#trigger {skaki barictos yetz fiil} {#var conjprot cold} {prots-conjurer}
+#trigger {^A cold white flash momentarily surrounds you} {formattime coldtime;party report Frost Insulation Expires. ~[[@{timed}]~];#var prots %delitem(Cold,@prots)} {prots-conjurer}
+#trigger {morri nam pantoloosa} {#var conjprot poison} {prots-conjurer}
+#trigger {^A green flash momentarily surrounds you} {formattime poisontime;party report Toxic Dilution Expires. ~[[@{timed}]~];#var prots %delitem(Poison,@prots)} {prots-conjurer}
+#trigger {meke tul magic} {#var conjprot magic} {prots-conjurer}
+#trigger {^A golden flash momentarily surrounds you} {formattime magictime;party report Magic Dispersion Expires. ~[[@{timed}]~];#var prots %delitem(Magic,@prots)} {prots-conjurer}
+#trigger {sulphiraidzik hydrochloodriz gidz zuf} {#var conjprot acid} {prots-conjurer}
+#trigger {^A disgusting yellow flash momentarily surrounds you} {formattime acidtime;party report Corrosion Shield Expires. ~[[@{timed}]~];#var prots %delitem(Acid,@prots)} {prots-conjurer}
+#trigger {kablaaaammmmm bliitz zundfer} {#var conjprot electric} {prots-conjurer}
+#trigger {^A crackling blue flash momentarily surrounds you} {formattime electrictime;party report Energy channeling Expires. ~[[@{timed}]~];#var prots %delitem(Elec,@prots)} {prots-conjurer}
+#trigger {qor monoliftus} {#var conjprot asphx} {prots-conjurer}
+#trigger {^A dull black flash momentarily surrounds you} {formattime asphxtime;party report Ether Boundary Expires. ~[[@{timed}]~];#var prots %delitem(Asphx,@prots)} {prots-conjurer}
+#trigger {toughen da mind reeez un biis} {#var conjprot psi} {prots-conjurer}
+#trigger {^A transparent flash momentarily surrounds you} {formattime psitime;party report Psychic Sanctuary Expires. ~[[@{timed}]~];#var prots %delitem(PSI,@prots)} {prots-conjurer}
+#trigger {^You feel no longer} {party report Iron Will Expires.} {prots-conjurer}
+#trigger {^You feel a slight tingle.} {timer soptime;party report Shield of Protection Active.;#if !%ismember(SoP,@prots) {#var prots %additem(SoP,@prots)}} {prots-conjurer}
+#trigger {^You feel more vulnerable now.} {formattime soptime;party report Shield of Protection Expires. ~[[@{timed}]~];#var prots %delitem(SoP,@prots)} {prots-conjurer}
+#trigger {^You feel much more vulnerable.} {party report All Conjurer Prots Expires.;#if %ismember(Fire,@prots) {%delitem(Fire,@prots)};#if %ismember(Cold,@prots) {#var prots %delitem(Cold,@prots)};#if %ismember(Elec,@prots) {#var prots %delitem(Elec,@prots)};#if %ismember(Acid,@prots) {#var prots %delitem(Acid,@prots)};#if %ismember(Asphx,@prots) {#var prots %delitem(Asphx,@prots)};#if %ismember(Magic,@prots) {#var prots %delitem(Magic,@prots)};#if %ismember(Poison,@prots) {#var prots %delitem(Poison,@prots)};#if %ismember(FAB,@prots) {#var prots %delitem(FAB,@prots)};#if %ismember(PSI,@prots) {#var prots %delitem(PSI,@prots)}} {prots-conjurer}
+#trigger {^You see a crystal clear shield fade into existance around you.} {timer aoatime;party report Armour of Aether Active.;#if !%ismember(AoA,@prots) {#var prots %additem(AoA,@prots)}} {prots-conjurer}
+#trigger {^Your crystal clear shield fades out.} {formattime aoatime;party report Armour of Aether Expires. ~[[@{timed}]~];#var prots %delitem(AoA,@prots)} {prots-conjurer}
+#echo ### NAVIGATOR PROTS ###
+#trigger {^You suddenly feel magically heavier.} {timer hwtime;party report Heavy Weight Active.;#if !%ismember(HW,@prots) {#var prots %additem(HW,@prots)}} {prots-nav}
+#trigger {^You feel lighter, but it doesn't seem to affect your weight!} {formattime hwtime;party report Heavy Weight Expires. ~[[@{timed}]~];#var prots %delitem(HW,@prots)} {prots-nav}
+#echo ### BARD PROTS ###
+#trigger {^You feel full of battle rage! Victory is CERTAIN!} {timer warestime;party report War ensemble Active.;#if !%ismember(HW,@prots) {#var prots %additem(WarE,@prots)}} {prots-bard}
+#trigger {^The effect of war ensemble wears off.} {formattime warestime;party report War ensemble Expires. ~[[@{timed}]~];#var prots %delitem(WarE,@prots)} {prots-bard}
+#echo ### MISC PROTS ###
+#trigger {^You suddenly can't see yourself.} {timer invistime;party report Invisibility Active.;#if !%ismember(Invis,@prots) {#var prots %additem(Invis,@prots)}} {prots-misc}
+#trigger {^You turn visible.} {formattime invistime;party report Invisibility Expires. ~[[@{timed}]~];#var prots %delitem(Invis,@prots)} {prots-misc}
+#trigger {^You have infravision.} {timer infratime;party report Infravision Active.;#if !%ismember(Infra,@prots) {#var prots %additem(Infra,@prots)}} {prots-misc}
+#trigger {^Everything no longer seems so red.} {formattime infratime;party report Infravision Expires. ~[[@{timed}]~];#var prots %delitem(Infra,@prots)} {prots-misc}
+#trigger {^You feel light.} {timer wwtime;party report Water walking Active.;#if !%ismember(WW,@prots) {#var prots %additem(WW,@prots)}} {prots-misc}
+#trigger {^You feel heavier.} {formattime wwtime;party report Water walking Expires. ~[[@{timed}]~];#var prots %delitem(WW,@prots)} {prots-misc}
+#trigger {^You slowly rise from the ground and start levitating.} {timer levtime;party report Levitation Active.;#if !%ismember(Lev,@prots) {#var prots %additem(Lev,@prots)}} {prots-misc}
+#trigger {^You decide that you have levitated enough and slowly descend to the ground.} {formattime levtime;party report Levitation Expires. ~[[@{timed}]~];#var prots %delitem(Lev,@prots)} {prots-misc}

@@ -1,0 +1,14 @@
+#echo +--------------------------------+
+#echo | EXP GOAL CALCULATOR (V1.0)     |
+#echo | MODIFIED 26.12.2006            |
+#echo | Calculates and shows exp goal. |
+#echo | # Idea from Antikiller. #      |
+#echo | Report any bugs by MUDmail,    |
+#echo | thank you ! :)                 |
+#echo +--------------------------------+
+#var OldExp {0} {0}
+#var NewExp {0} {0}
+#var ExpChange {0} {0}
+#var NewExpGoal {0} {0}
+#var ExpGoal {INSERT IN HERE YOUR GOAL EXPERIENCE} {INSERT IN HERE YOUR GOAL EXPERIENCE}
+#trigger {Exp:(%d)} {#var OldExp @NewExp;#var NewExp %1;#math ExpChange (@NewExp-@OldExp);#math NewExpGoal (@ExpGoal-@NewExp);#if (@ExpChange > 0) {emote gains @ExpChange xp and still needs @NewExpGoal xp more.}} {Exp Goal Calculator}

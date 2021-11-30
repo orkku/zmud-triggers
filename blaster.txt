@@ -1,0 +1,24 @@
+#echo +------------------------------------+
+#echo | BLASTER RESIST MESSAGES (V1.0)     |
+#echo | MODIFIED 18.10.2007                |
+#echo | Shows blast resist messages on     |
+#echo | party channel.                     |
+#echo | Report any bugs by MUDmail,        |
+#echo | thank you ! :)                     |
+#echo +------------------------------------+
+#echo ### Blast Resist Triggers ###
+#var analyze_status {0} {0}
+#var analyze {0} {0}
+#trigger {screams in pain.} {#var analyze_status 1;#var analyze 0} {blast}
+#trigger {writhes in agony.} {#var analyze_status 1;#var analyze 20} {blast}
+#trigger {shudders from the force of the attack.} {#var analyze_status 1;#var analyze 40} {blast}
+#trigger {grunts from the pain.} {#var analyze_status 1;#var analyze 60} {blast}
+#trigger {winces a little from the pain.} {#var analyze_status 1;#var analyze 80} {blast}
+#trigger {shrugs off the attack.} {#var analyze_status 1;#var analyze 100} {blast}
+#trigger {^You watch with selfpride as your * hits} {#wa 500;#if (@analyze_status == 1){party report blast in (@analyze % resist)};#if (@analyze_status == 0) {party report blast in (no analyze)};#var analyze_status 0;scan} {blast}
+#echo ### Inform Trigger for Hidden Cast ###
+#trigger {^You surreptitiously conceal your spell casting.} {party report casting concealed} {caster}
+#echo ### Dcrit levels ###
+#trigger {^You feel like your spell gained additional power.} {party report Dcrit level 1} {dcrit}
+#trigger {^You feel like you managed to channel additional POWER to your spell.} {party report Dcrit level 2} {dcrit}
+#trigger {^Your fingertips are surrounded with swirling ENERGY as you cast the spell.} {party report Dcrit level 3} {dcrit}

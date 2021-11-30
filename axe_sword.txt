@@ -1,0 +1,140 @@
+#echo +------------------------------------+
+#echo | AXE & SWORD HIT COUNTER (V2.3)     |
+#echo | MODIFIED 10.09.2007                |
+#echo | Shows hit count on status window   |
+#echo | or echoes to screen. Select!       |
+#echo | Report any bugs by MUDmail,        |
+#echo | thank you ! :)                     |
+#echo +------------------------------------+
+#echo ### Variables ###
+#var SAmiss {0} {0} {SWORD&AXE_Var}
+#var SAsolidlyslash {0} {0} {SWORD&AXE_Var}
+#var SAgash {0} {0} {SWORD&AXE_Var}
+#var SAlightlycut {0} {0} {SWORD&AXE_Var}
+#var SAcut {0} {0} {SWORD&AXE_Var}
+#var SAtear {0} {0} {SWORD&AXE_Var}
+#var SAincise {0} {0} {SWORD&AXE_Var}
+#var SAshred {0} {0} {SWORD&AXE_Var}
+#var SAhorriblyshred {0} {0} {SWORD&AXE_Var}
+#var SAslash {0} {0} {SWORD&AXE_Var}
+#var SAincisivelycut {0} {0} {SWORD&AXE_Var}
+#var SApierce {0} {0} {SWORD&AXE_Var}
+#var SAslit {0} {0} {SWORD&AXE_Var}
+#var SAcruellytatter {0} {0} {SWORD&AXE_Var}
+#var SArive {0} {0} {SWORD&AXE_Var}
+#var SAsavagelyshave {0} {0} {SWORD&AXE_Var}
+#var SAuncontrollablyslash {0} {0} {SWORD&AXE_Var}
+#var SAcruellyslash {0} {0} {SWORD&AXE_Var}
+#var SAquicklycut {0} {0} {SWORD&AXE_Var}
+#var SAsavagelyrip {0} {0} {SWORD&AXE_Var}
+#var SAtotal {0} {0} {SWORD&AXE_Var}
+#var SACsolidlyslash {0} {0} {SWORD&AXE_Var}
+#var SACgash {0} {0} {SWORD&AXE_Var}
+#var SAClightlycut {0} {0} {SWORD&AXE_Var}
+#var SACcut {0} {0} {SWORD&AXE_Var}
+#var SACtear {0} {0} {SWORD&AXE_Var}
+#var SACincise {0} {0} {SWORD&AXE_Var}
+#var SACshred {0} {0} {SWORD&AXE_Var}
+#var SAChorriblyshred {0} {0} {SWORD&AXE_Var}
+#var SACslash {0} {0} {SWORD&AXE_Var}
+#var SACincisivelycut {0} {0} {SWORD&AXE_Var}
+#var SACpierce {0} {0} {SWORD&AXE_Var}
+#var SACslit {0} {0} {SWORD&AXE_Var}
+#var SACcruellytatter {0} {0} {SWORD&AXE_Var}
+#var SACrive {0} {0} {SWORD&AXE_Var}
+#var SACsavagelyshave {0} {0} {SWORD&AXE_Var}
+#var SACuncontrollablyslash {0} {0} {SWORD&AXE_Var}
+#var SACcruellyslash {0} {0} {SWORD&AXE_Var}
+#var SACquicklycut {0} {0} {SWORD&AXE_Var}
+#var SACsavagelyrip {0} {0} {SWORD&AXE_Var}
+#var SALENmiss {4} {4} {SWORD&AXE_LEN_Var}
+#var SALENsolidlyslash {4} {4} {SWORD&AXE_LEN_Var}
+#var SALENgash {4} {4} {SWORD&AXE_LEN_Var}
+#var SALENlightlycut {4} {4} {SWORD&AXE_LEN_Var}
+#var SALENcut {4} {4} {SWORD&AXE_LEN_Var}
+#var SALENtear {4} {4} {SWORD&AXE_LEN_Var}
+#var SALENincise {4} {4} {SWORD&AXE_LEN_Var}
+#var SALENshred {4} {4} {SWORD&AXE_LEN_Var}
+#var SALENhorriblyshred {4} {4} {SWORD&AXE_LEN_Var}
+#var SALENslash {4} {4} {SWORD&AXE_LEN_Var}
+#var SALENincisivelycut {4} {4} {SWORD&AXE_LEN_Var}
+#var SALENpierce {4} {4} {SWORD&AXE_LEN_Var}
+#var SALENslit {4} {4} {SWORD&AXE_LEN_Var}
+#var SALENcruellytatter {4} {4} {SWORD&AXE_LEN_Var}
+#var SALENrive {4} {4} {SWORD&AXE_LEN_Var}
+#var SALENsavagelyshave {4} {4} {SWORD&AXE_LEN_Var}
+#var SALENuncontrollablyslash {4} {4} {SWORD&AXE_LEN_Var}
+#var SALENcruellyslash {4} {4} {SWORD&AXE_LEN_Var}
+#var SALENquicklycut {4} {4} {SWORD&AXE_LEN_Var}
+#var SALENsavagelyrip {4} {4} {SWORD&AXE_LEN_Var}
+#var SALENtotal {12} {12} {SWORD&AXE_LEN_Var}
+#var SALENCsolidlyslash {5} {5} {SWORD&AXE_LENC_Var}
+#var SALENCgash {5} {5} {SWORD&AXE_LENC_Var}
+#var SALENClightlycut {5} {5} {SWORD&AXE_LENC_Var}
+#var SALENCcut {5} {5} {SWORD&AXE_LENC_Var}
+#var SALENCtear {5} {5} {SWORD&AXE_LENC_Var}
+#var SALENCincise {5} {5} {SWORD&AXE_LENC_Var}
+#var SALENCshred {5} {5} {SWORD&AXE_LENC_Var}
+#var SALENChorriblyshred {5} {5} {SWORD&AXE_LENC_Var}
+#var SALENCslash {5} {5} {SWORD&AXE_LENC_Var}
+#var SALENCincisivelycut {5} {5} {SWORD&AXE_LENC_Var}
+#var SALENCpierce {5} {5} {SWORD&AXE_LENC_Var}
+#var SALENCslit {5} {5} {SWORD&AXE_LENC_Var}
+#var SALENCcruellytatter {5} {5} {SWORD&AXE_LENC_Var}
+#var SALENCrive {5} {5} {SWORD&AXE_LENC_Var}
+#var SALENCsavagelyshave {5} {5} {SWORD&AXE_LENC_Var}
+#var SALENCuncontrollablyslash {5} {5} {SWORD&AXE_LENC_Var}
+#var SALENCcruellyslash {5} {5} {SWORD&AXE_LENC_Var}
+#var SALENCquicklycut {5} {5} {SWORD&AXE_LENC_Var}
+#var SALENCsavagelyrip {5} {5} {SWORD&AXE_LENC_Var}
+#echo ### Triggers ###
+#trigger {^You miss} {#ad SAmiss 1;calcaxeswordhits;#IF (@SAmiss < 100 AND @SAmiss > 9) {#var SALENmiss 3} {};#IF (@SAmiss < 1000 AND @SAmiss > 99) {#var SALENmiss 2} {};#IF (@SAmiss < 10000 AND @SAmiss > 999) {#var SALENmiss 1} {}} {SWORD&AXE_Hit}
+#trigger {^You solidly slash} {#ad SAsolidlyslash 1;calcaxeswordhits;#IF (@SAsolidlyslash < 100 AND @SAsolidlyslash > 9) {#var SALENsolidlyslash 3} {};#IF (@SAsolidlyslash < 1000 AND @SAsolidlyslash > 99) {#var SALENsolidlyslash 2} {};#IF (@SAsolidlyslash < 10000 AND @SAsolidlyslash > 999) {#var SALENsolidlyslash 1} {}} {SWORD&AXE_Hit}
+#trigger {^You gash} {#ad SAgash 1;calcaxeswordhits;#IF (@SAgash < 100 AND @SAgash > 9) {#var SALENgash 3} {};#IF (@SAgash < 1000 AND @SAgash > 99) {#var SALENgash 2} {};#IF (@SAgash < 10000 AND @SAgash > 999) {#var SALENgash 1} {}} {SWORD&AXE_Hit}
+#trigger {^You lightly cut} {#ad SAlightlycut 1;calcaxeswordhits;#IF (@SAlightlycut < 100 AND @SAlightlycut > 9) {#var SALENlightlycut 3} {};#IF (@SAlightlycut < 1000 AND @SAlightlycut > 99) {#var SALENlightlycut 2} {};#IF (@SAlightlycut < 10000 AND @SAlightlycut > 999) {#var SALENlightlycut 1} {}} {SWORD&AXE_Hit}
+#trigger {^You cut} {#ad SAcut 1;calcaxeswordhits;#IF (@SAcut < 100 AND @SAcut > 9) {#var SALENcut 3} {};#IF (@SAcut < 1000 AND @SAcut > 99) {#var SALENcut 2} {};#IF (@SAcut < 10000 AND @SAcut > 999) {#var SALENcut 1} {}} {SWORD&AXE_Hit}
+#trigger {^You tear} {#ad SAtear 1;calcaxeswordhits;#IF (@SAtear < 100 AND @SAtear > 9) {#var SALENtear 3} {};#IF (@SAtear < 1000 AND @SAtear > 99) {#var SALENtear 2} {};#IF (@SAtear < 10000 AND @SAtear > 999) {#var SALENtear 1} {}} {SWORD&AXE_Hit}
+#trigger {^You incise} {#ad SAincise 1;calcaxeswordhits;#IF (@SAincise < 100 AND @SAincise > 9) {#var SALENincise 3} {};#IF (@SAincise < 1000 AND @SAincise > 99) {#var SALENincise 2} {};#IF (@SAincise < 10000 AND @SAincise > 999) {#var SALENincise 1} {}} {SWORD&AXE_Hit}
+#trigger {^You shred} {#ad SAshred 1;calcaxeswordhits;#IF (@SAshred < 100 AND @SAshred > 9) {#var SALENshred 3} {};#IF (@SAshred < 1000 AND @SAshred > 99) {#var SALENshred 2} {};#IF (@SAshred < 10000 AND @SAshred > 999) {#var SALENshred 1} {}} {SWORD&AXE_Hit}
+#trigger {^You horribly shred} {#ad SAhorriblyshred 1;calcaxeswordhits;#IF (@SAhorriblyshred < 100 AND @SAhorriblyshred > 9) {#var SALENhorriblyshred 3} {};#IF (@SAhorriblyshred < 1000 AND @SAhorriblyshred > 99) {#var SALENhorriblyshred 2} {};#IF (@SAhorriblyshred < 10000 AND @SAhorriblyshred > 999) {#var SALENhorriblyshred 1} {}} {SWORD&AXE_Hit}
+#trigger {^You slash} {#ad SAslash 1;calcaxeswordhits;#IF (@SAslash < 100 AND @SAslash > 9) {#var SALENslash 3} {};#IF (@SAslash < 1000 AND @SAslash > 99) {#var SALENslash 2} {};#IF (@SAslash < 10000 AND @SAslash > 999) {#var SALENslash 1} {}} {SWORD&AXE_Hit}
+#trigger {^You incisively cut} {#ad SAincisivelycut 1;calcaxeswordhits;#IF (@SAincisivelycut < 100 AND @SAincisivelycut > 9) {#var SALENincisivelycut 3} {};#IF (@SAincisivelycut < 1000 AND @SAincisivelycut > 99) {#var SALENincisivelycut 2} {};#IF (@SAincisivelycut < 10000 AND @SAincisivelycut > 999) {#var SALENincisivelycut 1} {}} {SWORD&AXE_Hit}
+#trigger {^You pierce} {#ad SApierce 1;calcaxeswordhits;#IF (@SApierce < 100 AND @SApierce > 9) {#var SALENpierce 3} {};#IF (@SApierce < 1000 AND @SApierce > 99) {#var SALENpierce 2} {};#IF (@SApierce < 10000 AND @SApierce > 999) {#var SALENpierce 1} {}} {SWORD&AXE_Hit}
+#trigger {^You slit} {#ad SAslit 1;calcaxeswordhits;#IF (@SAslit < 100 AND @SAslit > 9) {#var SALENslit 3} {};#IF (@SAslit < 1000 AND @SAslit > 99) {#var SALENslit 2} {};#IF (@SAslit < 10000 AND @SAslit > 999) {#var SALENslit 1} {}} {SWORD&AXE_Hit}
+#trigger {^You cruelly tatter} {#ad SAcruellytatter 1;calcaxeswordhits;#IF (@SAcruellytatter < 100 AND @SAcruellytatter > 9) {#var SALENcruellytatter 3} {};#IF (@SAcruellytatter < 1000 AND @SAcruellytatter > 99) {#var SALENcruellytatter 2} {};#IF (@SAcruellytatter < 10000 AND @SAcruellytatter > 999) {#var SALENcruellytatter 1} {}} {SWORD&AXE_Hit}
+#trigger {^You rive} {#ad SArive 1;calcaxeswordhits;#IF (@SArive < 100 AND @SArive > 9) {#var SALENrive 3} {};#IF (@SArive < 1000 AND @SArive > 99) {#var SALENrive 2} {};#IF (@SArive < 10000 AND @SArive > 999) {#var SALENrive 1} {}} {SWORD&AXE_Hit}
+#trigger {^You savagely shave} {#ad SAsavagelyshave 1;calcaxeswordhits;#IF (@SAsavagelyshave < 100 AND @SAsavagelyshave > 9) {#var SALENsavagelyshave 3} {};#IF (@SAsavagelyshave < 1000 AND @SAsavagelyshave > 99) {#var SALENsavagelyshave 2} {};#IF (@SAsavagelyshave < 10000 AND @SAsavagelyshave > 999) {#var SALENsavagelyshave 1} {}} {SWORD&AXE_Hit}
+#trigger {^You uncontrollably slash} {#ad SAuncontrollablyslash 1;calcaxeswordhits;#IF (@SAuncontrollablyslash < 100 AND @SAuncontrollablyslash > 9) {#var SALENuncontrollablyslash 3} {};#IF (@SAuncontrollablyslash < 1000 AND @SAuncontrollablyslash > 99) {#var SALENuncontrollablyslash 2} {};#IF (@SAuncontrollablyslash < 10000 AND @SAuncontrollablyslash > 999) {#var SALENuncontrollablyslash 1} {}} {SWORD&AXE_Hit}
+#trigger {^You cruelly slash} {#ad SAcruellyslash 1;calcaxeswordhits;#IF (@SAcruellyslash < 100 AND @SAcruellyslash > 9) {#var SALENcruellyslash 3} {};#IF (@SAcruellyslash < 1000 AND @SAcruellyslash > 99) {#var SALENcruellyslash 2} {};#IF (@SAcruellyslash < 10000 AND @SAcruellyslash > 999) {#var SALENcruellyslash 1} {}} {SWORD&AXE_Hit}
+#trigger {^You quickly cut} {#ad SAquicklycut 1;calcaxeswordhits;#IF (@SAquicklycut < 100 AND @SAquicklycut > 9) {#var SALENquicklycut 3} {};#IF (@SAquicklycut < 1000 AND @SAquicklycut > 99) {#var SALENquicklycut 2} {};#IF (@SAquicklycut < 10000 AND @SAquicklycut > 999) {#var SALENquicklycut 1} {}} {SWORD&AXE_Hit}
+#trigger {^You savagely rip} {#ad SAsavagelyrip 1;calcaxeswordhits;#IF (@SAsavagelyrip < 100 AND @SAsavagelyrip > 9) {#var SALENsavagelyrip 3} {};#IF (@SAsavagelyrip < 1000 AND @SAsavagelyrip > 99) {#var SALENsavagelyrip 2} {};#IF (@SAsavagelyrip < 10000 AND @SAsavagelyrip > 999) {#var SALENsavagelyrip 1} {}} {SWORD&AXE_Hit}
+#trigger {^* successfully dodges your *.} {#ad SAmiss 1;calcaxeswordhits;#IF (@SAmiss < 100 AND @SAmiss > 9) {#var SALENmiss 3} {};#IF (@SAmiss < 1000 AND @SAmiss > 99) {#var SALENmiss 2} {};#IF (@SAmiss < 10000 AND @SAmiss > 999) {#var SALENmiss 1} {}} {SWORD&AXE_Hit}
+#trigger {^* successfully parries your *.} {#ad SAmiss 1;calcaxeswordhits;#IF (@SAmiss < 100 AND @SAmiss > 9) {#var SALENmiss 3} {};#IF (@SAmiss < 1000 AND @SAmiss > 99) {#var SALENmiss 2} {};#IF (@SAmiss < 10000 AND @SAmiss > 999) {#var SALENmiss 1} {}} {SWORD&AXE_Hit}
+
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you solidly slash} {#ad SACsolidlyslash 1;calcaxeswordhits;#IF (@SACsolidlyslash < 100 AND @SACsolidlyslash > 9) {#var SALENCsolidlyslash 4} {};#IF (@SACsolidlyslash < 1000 AND @SACsolidlyslash > 99) {#var SALENCsolidlyslash 3} {};#IF (@SACsolidlyslash < 10000 AND @SACsolidlyslash > 999) {#var SALENCsolidlyslash 2} {}} {SWORD&AXE_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you gash} {#ad SACgash 1;calcaxeswordhits;#IF (@SACgash < 100 AND @SACgash > 9) {#var SALENCgash 4} {};#IF (@SACgash < 1000 AND @SACgash > 99) {#var SALENCgash 3} {};#IF (@SACgash < 10000 AND @SACgash > 999) {#var SALENCgash 2} {}} {SWORD&AXE_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you lightly cut} {#ad SAClightlycut 1;calcaxeswordhits;#IF (@SAClightlycut < 100 AND @SAClightlycut > 9) {#var SALENClightlycut 4} {};#IF (@SAClightlycut < 1000 AND @SAClightlycut > 99) {#var SALENClightlycut 3} {};#IF (@SAClightlycut < 10000 AND @SAClightlycut > 999) {#var SALENClightlycut 2} {}} {SWORD&AXE_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you cut} {#ad SACcut 1;calcaxeswordhits;#IF (@SACcut < 100 AND @SACcut > 9) {#var SALENCcut 4} {};#IF (@SACcut < 1000 AND @SACcut > 99) {#var SALENCcut 3} {};#IF (@SACcut < 10000 AND @SACcut > 999) {#var SALENCcut 2} {}} {SWORD&AXE_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you tear} {#ad SACtear 1;calcaxeswordhits;#IF (@SACtear < 100 AND @SACtear > 9) {#var SALENCtear 4} {};#IF (@SACtear < 1000 AND @SACtear > 99) {#var SALENCtear 3} {};#IF (@SACtear < 10000 AND @SACtear > 999) {#var SALENCtear 2} {}} {SWORD&AXE_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you incise} {#ad SACincise 1;calcaxeswordhits;#IF (@SACincise < 100 AND @SACincise > 9) {#var SALENCincise 4} {};#IF (@SACincise < 1000 AND @SACincise > 99) {#var SALENCincise 3} {};#IF (@SACincise < 10000 AND @SACincise > 999) {#var SALENCincise 2} {}} {SWORD&AXE_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you shred} {#ad SACshred 1;calcaxeswordhits;#IF (@SACshred < 100 AND @SACshred > 9) {#var SALENCshred 4} {};#IF (@SACshred < 1000 AND @SACshred > 99) {#var SALENCshred 3} {};#IF (@SACshred < 10000 AND @SACshred > 999) {#var SALENCshred 2} {}} {SWORD&AXE_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you horribly shred} {#ad SAChorriblyshred 1;calcaxeswordhits;#IF (@SAChorriblyshred < 100 AND @SAChorriblyshred > 9) {#var SALENChorriblyshred 4} {};#IF (@SAChorriblyshred < 1000 AND @SAChorriblyshred > 99) {#var SALENChorriblyshred 3} {};#IF (@SAChorriblyshred < 10000 AND @SAChorriblyshred > 999) {#var SALENChorriblyshred 2} {}} {SWORD&AXE_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you slash} {#ad SACslash 1;calcaxeswordhits;#IF (@SACslash < 100 AND @SACslash > 9) {#var SALENCslash 4} {};#IF (@SACslash < 1000 AND @SACslash > 99) {#var SALENCslash 3} {};#IF (@SACslash < 10000 AND @SACslash > 999) {#var SALENCslash 2} {}} {SWORD&AXE_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you incisively cut} {#ad SACincisivelycut 1;calcaxeswordhits;#IF (@SACincisivelycut < 100 AND @SACincisivelycut > 9) {#var SALENCincisivelycut 4} {};#IF (@SACincisivelycut < 1000 AND @SACincisivelycut > 99) {#var SALENCincisivelycut 3} {};#IF (@SACincisivelycut < 10000 AND @SACincisivelycut > 999) {#var SALENCincisivelycut 2} {}} {SWORD&AXE_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you pierce} {#ad SACpierce 1;calcaxeswordhits;#IF (@SACpierce < 100 AND @SACpierce > 9) {#var SALENCpierce 4} {};#IF (@SACpierce < 1000 AND @SACpierce > 99) {#var SALENCpierce 3} {};#IF (@SACpierce < 10000 AND @SACpierce > 999) {#var SALENCpierce 2} {}} {SWORD&AXE_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you slit} {#ad SACslit 1;calcaxeswordhits;#IF (@SACslit < 100 AND @SACslit > 9) {#var SALENCslit 4} {};#IF (@SACslit < 1000 AND @SACslit > 99) {#var SALENCslit 3} {};#IF (@SACslit < 10000 AND @SACslit > 999) {#var SALENCslit 2} {}} {SWORD&AXE_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you cruelly tatter} {#ad SACcruellytatter 1;calcaxeswordhits;#IF (@SACcruellytatter < 100 AND @SACcruellytatter > 9) {#var SALENCcruellytatter 4} {};#IF (@SACcruellytatter < 1000 AND @SACcruellytatter > 99) {#var SALENCcruellytatter 3} {};#IF (@SACcruellytatter < 10000 AND @SACcruellytatter > 999) {#var SALENCcruellytatter 2} {}} {SWORD&AXE_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you rive} {#ad SACrive 1;calcaxeswordhits;#IF (@SACrive < 100 AND @SACrive > 9) {#var SALENCrive 4} {};#IF (@SACrive < 1000 AND @SACrive > 99) {#var SALENCrive 3} {};#IF (@SACrive < 10000 AND @SACrive > 999) {#var SALENCrive 2} {}} {SWORD&AXE_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you savagely shave} {#ad SACsavagelyshave 1;calcaxeswordhits;#IF (@SACsavagelyshave < 100 AND @SACsavagelyshave > 9) {#var SALENCsavagelyshave 4} {};#IF (@SACsavagelyshave < 1000 AND @SACsavagelyshave > 99) {#var SALENCsavagelyshave 3} {};#IF (@SACsavagelyshave < 10000 AND @SACsavagelyshave > 999) {#var SALENCsavagelyshave 2} {}} {SWORD&AXE_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you uncontrollably slash} {#ad SACuncontrollablyslash 1;calcaxeswordhits;#IF (@SACuncontrollablyslash < 100 AND @SACuncontrollablyslash > 9) {#var SALENCuncontrollablyslash 4} {};#IF (@SACuncontrollablyslash < 1000 AND @SACuncontrollablyslash > 99) {#var SALENCuncontrollablyslash 3} {};#IF (@SACuncontrollablyslash < 10000 AND @SACuncontrollablyslash > 999) {#var SALENCuncontrollablyslash 2} {}} {SWORD&AXE_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you cruelly slash} {#ad SACcruellyslash 1;calcaxeswordhits;#IF (@SACcruellyslash < 100 AND @SACcruellyslash > 9) {#var SALENCcruellyslash 4} {};#IF (@SACcruellyslash < 1000 AND @SACcruellyslash > 99) {#var SALENCcruellyslash 3} {};#IF (@SACcruellyslash < 10000 AND @SACcruellyslash > 999) {#var SALENCcruellyslash 2} {}} {SWORD&AXE_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you quickly cut} {#ad SACquicklycut 1;calcaxeswordhits;#IF (@SACquicklycut < 100 AND @SACquicklycut > 9) {#var SALENCquicklycut 4} {};#IF (@SACquicklycut < 1000 AND @SACquicklycut > 99) {#var SALENCquicklycut 3} {};#IF (@SACquicklycut < 10000 AND @SACquicklycut > 999) {#var SALENCquicklycut 2} {}} {SWORD&AXE_Hit}
+#trigger {^{Cackling demonically|Grinning diabolically|Smiling demonically} you savagely rip} {#ad SACsavagelyrip 1;calcaxeswordhits;#IF (@SACsavagelyrip < 100 AND @SACsavagelyrip > 9) {#var SALENCsavagelyrip 4} {};#IF (@SACsavagelyrip < 1000 AND @SACsavagelyrip > 99) {#var SALENCsavagelyrip 3} {};#IF (@SACsavagelyrip < 10000 AND @SACsavagelyrip > 999) {#var SALENCsavagelyrip 2} {}} {SWORD&AXE_Hit}
+#echo ### Aliases ###
+#alias calcaxeswordhits {#math SAtotal (@SAmiss+@SAsolidlyslash+@SAgash+@SAlightlycut+@SAcut+@SAtear+@SAincise+@SAshred+@SAhorriblyshred+@SAslash+@SAincisivelycut+@SApierce+@SAslit+@SAcruellytatter+@SArive+@SAsavagelyshave+@SAuncontrollablyslash+@SAcruellyslash+@SAquicklycut+@SAsavagelyrip);#IF (@SAtotal < 100 AND @SAtotal > 9) {#var SALENtotal 11} {};#IF (@SAtotal < 1000 AND @SAtotal > 99) {#var SALENtotal 10} {};#IF (@SAtotal < 10000 AND @SAtotal > 999) {#var SALENtotal 9} {};#IF (@SAtotal < 100000 AND @SAtotal > 9999) {#var SALENtotal 8} {}}
+
+#echo ### SELECT WINDOW OR ECHO STYLE ###
+#echo ### Status window style (hits shows in small window) ###
+#STW {+----------------------+------+-------+%cr| Axe&Sword (V2.2) %repeat(" ",3) | Hits | Crits |%cr+----------------------+------+-------+%cr| Misses %repeat(" ",13) |%repeat(" ",@SALENmiss)@SAmiss | %repeat(" ",1) N/A |%cr| Solidly slash %repeat(" ",6) |%repeat(" ",@SALENsolidlyslash)@SAsolidlyslash |%repeat(" ",@SALENCsolidlyslash)@SACsolidlyslash |%cr| Gash %repeat(" ",15) |%repeat(" ",@SALENgash)@SAgash |%repeat(" ",@SALENCgash)@SACgash |%cr| Lightly cut %repeat(" ",8) |%repeat(" ",@SALENlightlycut)@SAlightlycut |%repeat(" ",@SALENClightlycut)@SAClightlycut |%cr| Cut %repeat(" ",16) |%repeat(" ",@SALENcut)@SAcut |%repeat(" ",@SALENCcut)@SACcut |%cr| Tear %repeat(" ",15) |%repeat(" ",@SALENtear)@SAtear |%repeat(" ",@SALENCtear)@SACtear |%cr| Incise %repeat(" ",13) |%repeat(" ",@SALENincise)@SAincise |%repeat(" ",@SALENCincise)@SACincise |%cr| Shred %repeat(" ",14) |%repeat(" ",@SALENshred)@SAshred |%repeat(" ",@SALENCshred)@SACshred |%cr| Horribly shred %repeat(" ",5) |%repeat(" ",@SALENhorriblyshred)@SAhorriblyshred |%repeat(" ",@SALENChorriblyshred)@SAChorriblyshred |%cr| Slash %repeat(" ",14) |%repeat(" ",@SALENslash)@SAslash |%repeat(" ",@SALENCslash)@SACslash |%cr| Incisively cut %repeat(" ",5) |%repeat(" ",@SALENincisivelycut)@SAincisivelycut |%repeat(" ",@SALENCincisivelycut)@SACincisivelycut |%cr| Pierce %repeat(" ",13) |%repeat(" ",@SALENpierce)@SApierce |%repeat(" ",@SALENCpierce)@SACpierce |%cr| Slit %repeat(" ",15) |%repeat(" ",@SALENslit)@SAslit |%repeat(" ",@SALENCslit)@SACslit |%cr| Cruelly tatter %repeat(" ",5) |%repeat(" ",@SALENcruellytatter)@SAcruellytatter |%repeat(" ",@SALENCcruellytatter)@SACcruellytatter |%cr| Rive %repeat(" ",15) |%repeat(" ",@SALENrive)@SArive |%repeat(" ",@SALENCrive)@SACrive |%cr| Savagely shave %repeat(" ",5) |%repeat(" ",@SALENsavagelyshave)@SAsavagelyshave |%repeat(" ",@SALENCsavagelyshave)@SACsavagelyshave |%cr| Uncontrollably slash |%repeat(" ",@SALENuncontrollablyslash)@SAuncontrollablyslash |%repeat(" ",@SALENCuncontrollablyslash)@SACuncontrollablyslash |%cr| Cruelly slash %repeat(" ",6) |%repeat(" ",@SALENcruellyslash)@SAcruellyslash |%repeat(" ",@SALENCcruellyslash)@SACcruellyslash |%cr| Quickly cut %repeat(" ",8) |%repeat(" ",@SALENquicklycut)@SAquicklycut |%repeat(" ",@SALENCquicklycut)@SACquicklycut |%cr| Savagely rip %repeat(" ",7) |%repeat(" ",@SALENsavagelyrip)@SAsavagelyrip |%repeat(" ",@SALENCsavagelyrip)@SACsavagelyrip |%cr+----------------------+------+-------+%cr| Total hits %repeat(" ",9) |%repeat(" ",@SALENtotal)@SAtotal |%cr+----------------------+--------------+}
+#echo ### Echo style (hits shows in screen after typing hitcount) ###
+#ALIAS hitcount {#echo +----------------------+------+-------+%cr| Axe&Sword (V2.2) %repeat(" ",3) | Hits | Crits |%cr+----------------------+------+-------+%cr| Misses %repeat(" ",13) |%repeat(" ",@SALENmiss)@SAmiss | %repeat(" ",1) N/A |%cr| Solidly slash %repeat(" ",6) |%repeat(" ",@SALENsolidlyslash)@SAsolidlyslash |%repeat(" ",@SALENCsolidlyslash)@SACsolidlyslash |%cr| Gash %repeat(" ",15) |%repeat(" ",@SALENgash)@SAgash |%repeat(" ",@SALENCgash)@SACgash |%cr| Lightly cut %repeat(" ",8) |%repeat(" ",@SALENlightlycut)@SAlightlycut |%repeat(" ",@SALENClightlycut)@SAClightlycut |%cr| Cut %repeat(" ",16) |%repeat(" ",@SALENcut)@SAcut |%repeat(" ",@SALENCcut)@SACcut |%cr| Tear %repeat(" ",15) |%repeat(" ",@SALENtear)@SAtear |%repeat(" ",@SALENCtear)@SACtear |%cr| Incise %repeat(" ",13) |%repeat(" ",@SALENincise)@SAincise |%repeat(" ",@SALENCincise)@SACincise |%cr| Shred %repeat(" ",14) |%repeat(" ",@SALENshred)@SAshred |%repeat(" ",@SALENCshred)@SACshred |%cr| Horribly shred %repeat(" ",5) |%repeat(" ",@SALENhorriblyshred)@SAhorriblyshred |%repeat(" ",@SALENChorriblyshred)@SAChorriblyshred |%cr| Slash %repeat(" ",14) |%repeat(" ",@SALENslash)@SAslash |%repeat(" ",@SALENCslash)@SACslash |%cr| Incisively cut %repeat(" ",5) |%repeat(" ",@SALENincisivelycut)@SAincisivelycut |%repeat(" ",@SALENCincisivelycut)@SACincisivelycut |%cr| Pierce %repeat(" ",13) |%repeat(" ",@SALENpierce)@SApierce |%repeat(" ",@SALENCpierce)@SACpierce |%cr| Slit %repeat(" ",15) |%repeat(" ",@SALENslit)@SAslit |%repeat(" ",@SALENCslit)@SACslit |%cr| Cruelly tatter %repeat(" ",5) |%repeat(" ",@SALENcruellytatter)@SAcruellytatter |%repeat(" ",@SALENCcruellytatter)@SACcruellytatter |%cr| Rive %repeat(" ",15) |%repeat(" ",@SALENrive)@SArive |%repeat(" ",@SALENCrive)@SACrive |%cr| Savagely shave %repeat(" ",5) |%repeat(" ",@SALENsavagelyshave)@SAsavagelyshave |%repeat(" ",@SALENCsavagelyshave)@SACsavagelyshave |%cr| Uncontrollably slash |%repeat(" ",@SALENuncontrollablyslash)@SAuncontrollablyslash |%repeat(" ",@SALENCuncontrollablyslash)@SACuncontrollablyslash |%cr| Cruelly slash %repeat(" ",6) |%repeat(" ",@SALENcruellyslash)@SAcruellyslash |%repeat(" ",@SALENCcruellyslash)@SACcruellyslash |%cr| Quickly cut %repeat(" ",8) |%repeat(" ",@SALENquicklycut)@SAquicklycut |%repeat(" ",@SALENCquicklycut)@SACquicklycut |%cr| Savagely rip %repeat(" ",7) |%repeat(" ",@SALENsavagelyrip)@SAsavagelyrip |%repeat(" ",@SALENCsavagelyrip)@SACsavagelyrip |%cr+----------------------+------+-------+%cr| Total hits %repeat(" ",9) |%repeat(" ",@SALENtotal)@SAtotal |%cr+----------------------+--------------+}

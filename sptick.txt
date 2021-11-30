@@ -1,0 +1,11 @@
+#echo +-----------------------------+
+#echo | SPELLPOINT TICK REPORT V1.0 |
+#echo | MODIFIED 27.4.2006          |
+#echo | Shows tick amount by emote  |
+#echo | from short score. Also sets |
+#echo | short score and colors.     |
+#echo | Report any bugs by MUDmail, |
+#echo | thank you ! :)              |
+#echo +-----------------------------+
+#trigger {Sp: (%d) +(%d)} {emote ticks %2 Sp ~[Now %1 Sps~]} {SpTick}
+sc set Hp: {colorhp} {diffhp} Sp: {colorsp} {diffsp} Ep: {colorep} {diffep}

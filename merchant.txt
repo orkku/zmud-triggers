@@ -1,0 +1,73 @@
+#echo +-----------------------------------------+
+#echo | MERCHANT CHEST & MINING MESSAGES (V1.2) |
+#echo | MODIFIED 25.10.2007                     |
+#echo | Shows chest & mining status messages.   |
+#echo | Report any bugs by MUDmail,             |
+#echo | thank you ! :)                          |
+#echo +-----------------------------------------+
+#echo ###...CHEST HULL DESC STATUS TRIGGERS...###
+#trigger {It looks totally incomplete.} {#echo Chest hull status: 0 (0%)} {Chest_hull_desc}
+#trigger {The basic structure is forming up.} {#echo Chest hull status: 1 (6%)} {Chest_hull_desc}
+#trigger {It slightly resembles a chest.} {#echo Chest hull status: 2 (13%)} {Chest_hull_desc}
+#trigger {It is missing a lid.} {#echo Chest hull status: 3 (19%)} {Chest_hull_desc}
+#trigger {It is still quite shaky.} {#echo Chest hull status: 4 (25%)} {Chest_hull_desc}
+#trigger {It looks like a small chest but it could be so much more.} {#echo Chest hull status: 5 (31%)} {Chest_hull_desc}
+#trigger {It does not look quite safe yet.} {#echo Chest hull status: 6 (38%)} {Chest_hull_desc}
+#trigger {The base looks strong now but lid is still quite weak.} {#echo Chest hull status: 7 (44%)} {Chest_hull_desc}
+#trigger {The chest is looking much larger.} {#echo Chest hull status: 8 (50%)} {Chest_hull_desc}
+#trigger {The construction looks bigger and bigger.} {#echo Chest hull status: 9 (56%)} {Chest_hull_desc}
+#trigger {The structure is now stronger than ever before.} {#echo Chest hull status: 10 (63%)} {Chest_hull_desc}
+#trigger {The chest looks big enough to hold out several equipments.} {#echo Chest hull status: 11 (69%)} {Chest_hull_desc}
+#trigger {The extra material has made the chest almost impossible to breach.} {#echo Chest hull status: 12 (75%)} {Chest_hull_desc}
+#trigger {The chest construction looks quite large and safe.} {#echo Chest hull status: 13 (81%)} {Chest_hull_desc}
+#trigger {The extra material in support-structure guarantees quality.} {#echo Chest hull status: 14 (88%)} {Chest_hull_desc}
+#trigger {The chest looks just perfect and there is very little unfinished.} {#echo Chest hull status: 15 (94%)} {Chest_hull_desc}
+#trigger {The construction looks very big and sturdy.} {#echo Chest hull status: 16 (100%)} {Chest_hull_desc}
+#echo ###...CHEST REINFORCE DESC STATUS TRIGGERS...###
+#trigger {The reinforcement looks totally incomplete} {#echo Chest reinforce status: 1 (13%)} {Chest_reinforce_desc}
+#trigger {The reinforcement is still quite weak.} {#echo Chest reinforce status: 2 (25%)} {Chest_reinforce_desc}
+#trigger {The structure looks much stronger because of the reinforcement.} {#echo Chest reinforce status: 3 (38%)} {Chest_reinforce_desc}
+#trigger {The reinforcement still lacks quality.} {#echo Chest reinforce status: 4 (50%)} {Chest_reinforce_desc}
+#trigger {The reinforcement looks fine but it could be improved.} {#echo Chest reinforce status: 5 (63%)} {Chest_reinforce_desc}
+#trigger {The reinforced chest looks quite sturdy now.} {#echo Chest reinforce status: 6 (75%)} {Chest_reinforce_desc}
+#trigger {It would be a pain to force through the reinforcements.} {#echo Chest reinforce status: 7 (88%)} {Chest_reinforce_desc}
+#trigger {Just a final touch and the reinforcement is fully complete.} {#echo Chest reinforce status: 8 (100%)} {Chest_reinforce_desc}
+#echo ###...CHEST LOCK DESC STATUS TRIGGERS...###
+#trigger {The lock looks totally imcomplete.} {#echo Chest lock status: 1 (0%)} {Chest_lock_desc}
+#trigger {It slightly resembles a chest lock but much needs to be done.} {#echo Chest lock status: 2 (8%)} {Chest_lock_desc}
+#trigger {The basic structure is forming up quite nicely.} {#echo Chest lock status: 3 (16%)} {Chest_lock_desc}
+#trigger {The inner structure looks almost completed.} {#echo Chest lock status: 4 (22%)} {Chest_lock_desc}
+#trigger {The lock still lacks all the rolls.} {#echo Chest lock status: 5 (30%)} {Chest_lock_desc}
+#trigger {The lock looks somewhat ready.} {#echo Chest lock status: 6 (38%)} {Chest_lock_desc}
+#trigger {It looks like a primary lock but it could be so much more.} {#echo Chest lock status: 7 (46%)} {Chest_lock_desc}
+#trigger {The extra material in mechanism should pay off.} {#echo Chest lock status: 8 (52%)} {Chest_lock_desc}
+#trigger {The lock looks very complicated.} {#echo Chest lock status: 9 (60%)} {Chest_lock_desc}
+#trigger {It looks very strong, almost impossible to break.} {#echo Chest lock status: 10 (68%)} {Chest_lock_desc}
+#trigger {The mechanism is now stronger than before.} {#echo Chest lock status: 11 (76%)} {Chest_lock_desc}
+#trigger {The quality of lock is very high but dials could be more sturdy.} {#echo Chest lock status: 12 (84%)} {Chest_lock_desc}
+#trigger {The lock looks extremely strong and supreme quality.} {#echo Chest lock status: 13 (92%)} {Chest_lock_desc}
+#trigger {The lock looks incredibly strong and of divine quality.} {#echo Chest lock status: 14 (100%)} {Chest_lock_desc}
+#echo ###...CHEST TRAP DESC STATUS TRIGGERS...###
+#trigger {The trap is forming up.} {#echo Chest trap status: 1 (1%)} {Chest_trap_desc}
+#trigger {The outer structure looks strong enough.} {#echo Chest trap status: 1 (10%)} {Chest_trap_desc}
+#trigger {The mechanism looks somewhat trimmed.} {#echo Chest trap status: 2 (20%)} {Chest_trap_desc}
+#trigger {The structure is now sturdy but small in size.} {#echo Chest trap status: 3 (30%)} {Chest_trap_desc}
+#trigger {The triggering device looks sophisticated.} {#echo Chest trap status: 4 (40%)} {Chest_trap_desc}
+#trigger {It looks like a basic trap but it could be so much more.} {#echo Chest trap status: 5 (50%)} {Chest_trap_desc}
+#trigger {It is a clever and nasty looking trap.} {#echo Chest trap status: 6 (60%)} {Chest_trap_desc}
+#trigger {The trap is complex and more protected against disarming.} {#echo Chest trap status: 7 (70%)} {Chest_trap_desc}
+#trigger {It looks very small yet lethal machine.} {#echo Chest trap status: 8 (80%)} {Chest_trap_desc}
+#trigger {It is an awesome trap but it could be superb.} {#echo Chest trap status: 9 (90%)} {Chest_trap_desc}
+#trigger {It is a superb trap by your standards.} {#echo Chest trap status: 10 (100%)} {Chest_trap_desc}
+#echo ###...MINING CALCULATOR TRIGGER...###
+#var MineSuccess {0} {0}
+#var MineFail {0} {0}
+#var MineDouble {0} {0}
+#var MineTotal {0} {0}
+#var MineSuccessPercent {0} {0}
+#var MineFailPercent {0} {0}
+#var MineDoublePercent {0} {0}
+#trigger {^You begin mining the} {#ad MineSuccess 1} {Mining}
+#trigger {^You mine for a long time but don't find anything.} {#ad MineFail 1} {Mining}
+#trigger {^With your finely honed skills you notice another loose chunk} {#ad MineDouble 1} {Mining}
+#alias mstatus {#math MineTotal (@MineSuccess+@MineFail);#math MineSuccessPercent ((@MineSuccess*100)/@MineTotal);#math MineDoublePercent ((@MineDouble*100)/@MineTotal);#math MineFailPercent ((@MineFail*100)/@MineTotal);#echo Mining status: ~[ Success: @MineSuccess (@MineSuccessPercent%), Fails: @MineFail  (@MineFailPercent%), Doubles: @MineDouble (@MineDoublePercent%) ~]}

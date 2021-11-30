@@ -1,0 +1,41 @@
+#echo +----------------------------------------+
+#echo | BARBARIAN REPUTATION CALCULATOR (V1.1) |
+#echo | MODIFIED 5.5.2006                      |
+#echo | Calculates and shows earned reputation |
+#echo | on burned corpses.                     |
+#echo | Report any bugs by MUDmail,            |
+#echo | thank you ! :)                         |
+#echo +----------------------------------------+
+#var status {0} {0}
+#trigger {^~[([X@#:.]])} {#var pituus %pos("]","%1")
+#var kohta1 %pos(".","%1")
+#math tulos1 @pituus-@kohta1
+#if (@kohta1 == 0) {#var tulos1 0}
+#var kohta2 %pos(":","%1")
+#if (@kohta1 == 0) {#var kohta1 %pos("]","%1")}
+#math tulos2 @kohta1-@kohta2
+#if (@kohta2 == 0) {#var tulos2 0}
+#var kohta3 %pos("#","%1")
+#if (@kohta2 == 0) {#var kohta2 %pos(".","%1")}
+#if (@kohta2 == 0) {#var kohta2 %pos("]","%1")}
+#math tulos3 @kohta2-@kohta3
+#if (@kohta3 == 0) {#var tulos3 0}
+#var kohta4 %pos("@","%1")
+#if (@kohta3 == 0) {#var kohta3 %pos(":","%1")}
+#if (@kohta3 == 0) {#var kohta3 %pos(".","%1")}
+#if (@kohta3 == 0) {#var kohta3 %pos("]","%1")}
+#math tulos4 @kohta3-@kohta4
+#if (@kohta4 == 0) {#var tulos4 0}
+#var kohta5 %pos("X","%1")
+#if (@kohta4 == 0) {#var kohta4 %pos("#","%1")}
+#if (@kohta4 == 0) {#var kohta4 %pos(":","%1")}
+#if (@kohta4 == 0) {#var kohta4 %pos(".","%1")}
+#if (@kohta4 == 0) {#var kohta4 %pos("]","%1")}
+#math tulos5 @kohta4-@kohta5
+#if (@kohta5 == 0) {#var tulos5 0}
+#math yht ((@tulos5*10000)+(@tulos4*1000)+(@tulos3*100)+(@tulos2*10)+@tulos1)
+#echo Reputation: (@yht)
+#if (@status == 0) {#var oldrep @yht}
+#var status {1} {0}
+#math repgain @yht-@oldrep
+#echo Reputation gained: ~{@repgain points~}}
