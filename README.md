@@ -1,2 +1,2 @@
 # zmud-triggers
-Some triggers i have made for ZMud
+Some BatMUD triggers i have made for ZMud
