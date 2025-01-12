@@ -1,0 +1,13 @@
+#echo +---------------------------------+
+#echo | ENTITY LEVEL CALCULATOR (V1.0)  |
+#echo | MODIFIED 12.01.2025             |
+#echo | Calculates entity level from    |
+#echo | from entity short desc! Enjoy!  |
+#echo | # Idea from Antikiller. #       |
+#echo | Report any bugs by MUDmail,     |
+#echo | thank you ! :)                  |
+#echo +---------------------------------+
+#var EntitySize {0} {0} {Entity_Var}
+#var EntityAdjective {0} {0} {Entity_Var}
+#var EntityLevels {0 {0} {Entity_Var}
+#trigger {^A (%w) (%w) entity (%w) with power ~[yours~]} {#if (%1 = tiny) {#var EntitySize {0}};#if (%1 = titchy) {#var EntitySize {10}};#if (%1 = miniscule) {#var EntitySize {20}};#if (%1 = small) {#var EntitySize {30}};#if (%1 = medium) {#var EntitySize {40}};#if (%1 = large) {#var EntitySize {50}};#if (%1 = huge) {#var EntitySize {60}};#if (%1 = enormous) {#var EntitySize {70}};#if (%1 = humongous) {#var EntitySize {80}};#if (%1 = gargantuan) {#var EntitySize {90}};#if (%3 = glowing) {#var EntityAdjective {1}};#if (%3 = shimmering) {#var EntityAdjective {2}};#if (%3 = gleaming) {#var EntityAdjective {3}};#if (%3 = sizzling) {#var EntityAdjective {4}};#if (%3 = sparkling) {#var EntityAdjective {5}};#if (%3 = glittering) {#var EntityAdjective {6}};#if (%3 = radiating) {#var EntityAdjective {7}};#if (%3 = throbbing) {#var EntityAdjective {8}};#if (%3 = pulsating) {#var EntityAdjective {9}};#if (%3 = blazing) {#var EntityAdjective {10}};#math EntityLevels (@EntitySize+@EntityAdjective);#echo entity level = @EntityLevels} {EntityLevelCalculator}
